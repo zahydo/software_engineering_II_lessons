@@ -44,3 +44,9 @@ public class User {
 ```
 
 This code only includes the necessary fields and methods to register a user with their name and email, without including any additional features that are not currently needed. This results in a simpler and easier to maintain implementation.
+
+
+
+
+
+[Back to the list](./README.md)

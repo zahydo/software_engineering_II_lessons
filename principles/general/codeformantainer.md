@@ -79,3 +79,9 @@ public class Payment {
 ```
 
 In this example, the code is designed with maintainability in mind. The PaymentProcessor class has a single responsibility of processing payments and is designed to be easy to modify or extend. It is easy to change the payment gateway used by modifying the constructor parameter, without needing to modify the processPayment method. The code is also easy to test because the PaymentGateway interface allows for easy mocking of dependencies.
+
+
+
+
+
+[Back to the list](./README.md)

@@ -47,3 +47,9 @@ public  class Palindrome {
 ```
 
 This code uses the built-in StringBuilder class to reverse the string, and then compares the reversed string to the original string using the equalsIgnoreCase method. This implementation is much simpler and easier to read and understand, while still achieving the same result.
+
+
+
+
+
+[Back to the list](./README.md)

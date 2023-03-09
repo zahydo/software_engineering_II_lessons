@@ -1,6 +1,10 @@
 ### SOLID Principles
-- [Single Responsibility](principles/solid/singleresponsibility.md)
-- [Open/Closed](principles/solid/openclosed.md)
-- [Liskov Substitution](principles/solid/liskvsustitution.md)
-- [Interfaces Segregation](principles/solid/interfacesegregation.md)
-- [Dependency Injection](principles/solid/dependencyInjection.md)
+- [Single Responsibility](./singleresponsibility.md)
+- [Open/Closed](./openclosed.md)
+- [Liskov Substitution](./liskvsustitution.md)
+- [Interfaces Segregation](./interfacesegregation.md)
+- [Dependency Injection](./dependencyInjection.md)
+
+
+
+[Back to the list](../../README.md)

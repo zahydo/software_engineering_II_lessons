@@ -104,3 +104,9 @@ In this example, the code is organized according to the "Separation of Concerns"
 In the good example, the UserController, UserService, UserRepository, and User classes each have a single responsibility related to user management, and are loosely coupled through dependencies. This makes it easier to modify or replace any individual component without affecting the others.
 
 In the bad example, the UserController class violates the principle by combining multiple responsibilities into a single class, which makes the code more difficult to understand, test, and modify. To apply the "Separation of Concerns" principle, you should identify the different responsibilities in your code and create separate classes or components to handle each one.
+
+
+
+
+
+[Back to the list](./README.md)

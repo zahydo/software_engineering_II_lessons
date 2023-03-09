@@ -70,3 +70,9 @@ public class BankAccount {
 ```
 
 In the case of the BankAccount class, the simpler implementation is not only easier to read and understand, but it also reduces the risk of introducing bugs or errors into the code. When you're faced with a programming task, start by considering the simplest possible solution that meets the requirements. Then, gradually refine and optimize the code as needed, while keeping it as simple and readable as possible.
+
+
+
+
+
+[Back to the list](./README.md)

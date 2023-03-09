@@ -32,3 +32,8 @@ public class ArrayUtils {
 ```
 
 In this example, the code is written to be simple and easy to understand. The `contains` method simply checks whether a given value exists in an array. This code is not optimized for performance, but it is easy to read, write, and test.
+
+
+
+
+[Back to the list](./README.md)
