@@ -32,9 +32,7 @@ You can also use Maven to manage dependencies for your project. To add a new dep
 
 Maven also supports plugins, which are extensions that provide additional functionality for Maven. Plugins can be used to perform tasks such as code analysis, code coverage, and code quality checks.
 
-To summarize, getting started with Maven involves creating a new Maven project using an archetype, using the mvn command to perform various tasks, managing dependencies, and using plugins to extend Maven's functionality. With these basic concepts, you can start using Maven to build and manage your Java projects.
 
+## Running users-app
 
-
-
-
+Check the [README](./users-app/README.md)

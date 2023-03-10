@@ -17,7 +17,7 @@ To set the JAVA_HOME environment variable, follow the steps according to your OS
 ## Run
 Check the [Getting Started](./gettingstarted.md)
 
-Uninstall
+## Uninstall
 To uninstall Maven, simply delete the directory containing the Maven executable and supporting files. There are no additional steps required to remove Maven from your system.
 
 Congratulations! You have learned the basics of Maven, including what it is, how to download and install it, how to configure it, and how to use it to build Java projects. Happy coding!
