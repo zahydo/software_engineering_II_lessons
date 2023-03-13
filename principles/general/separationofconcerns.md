@@ -108,5 +108,5 @@ In the bad example, the UserController class violates the principle by combining
 
 
 
-
+---
 [Back to the list](./README.md)

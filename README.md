@@ -50,6 +50,7 @@ Upon completion of this course, you should be able to:
 - [General Programming Principles](principles/general/README.md)
 - [SOLID Principles](principles/solid/README.md)
 - [Maven](maven/README.md)
+- [Git](git/README.md)
 
 ## How to Contribute
 
