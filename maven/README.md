@@ -4,7 +4,7 @@ Maven is a powerful build tool for Java projects. It is designed to simplify the
 Maven is widely used in the Java community, and is supported by many popular Java IDEs, including Eclipse and IntelliJ IDEA.
 
 ## Download
-To download Maven, go to the Maven website at https://maven.apache.org/download.cgi. On this page, you will see a list of available versions of Maven. Select the version that you want to download, and click on the link to download the corresponding archive file.
+To download Maven, go to the Maven website at [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi). On this page, you will see a list of available versions of Maven. Select the version that you want to download, and click on the link to download the corresponding archive file.
 
 ## Installing
 To install Maven, simply extract the archive file to a location on your system. Once you have extracted the archive, you will have a directory containing the Maven executable and supporting files.
@@ -25,5 +25,5 @@ Congratulations! You have learned the basics of Maven, including what it is, how
 
 [Official docs](https://maven.apache.org/index.html)
 
-------
+---
 [Back to Index](../README.md)
