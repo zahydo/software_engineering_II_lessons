@@ -32,6 +32,7 @@ You can also use Maven to manage dependencies for your project. To add a new dep
 
 Maven also supports plugins, which are extensions that provide additional functionality for Maven. Plugins can be used to perform tasks such as code analysis, code coverage, and code quality checks.
 
+[Official docs](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
 
 ## Running users-app
 

@@ -46,9 +46,10 @@ Upon completion of this course, you should be able to:
 - [Refactoring Guru](https://refactoring.guru/es)
 - [Martin Fowler's website](https://martinfowler.com/)
 
-### Internal links
+### Lessons
 - [General Programming Principles](principles/general/README.md)
 - [SOLID Principles](principles/solid/README.md)
+- [Maven](maven/README.md)
 
 ## How to Contribute
 
