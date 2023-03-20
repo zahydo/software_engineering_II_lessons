@@ -56,7 +56,7 @@ Upon completion of this course, you should be able to:
 
 If you want to contribute to this Repo, you must follow the next steps:
 
-1. Request access to the owner `@ahydo`.
+1. Request access to the owner `@zahydo`.
 2. Clone the repo: `git clone https://github.com/zahydo/software_engineering_II_lessons`
 3. Create a new branch with your contributions: `git checkout -b feature/name_lastName/solid`
 4. Commit your changes in the new branch: `git add .`, `git commit -m "descriptive commit message"`
