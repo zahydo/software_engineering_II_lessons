@@ -34,7 +34,7 @@ class notificationService{
 
 You can create a generic event handler interface and have the event handler class implement the interface. Then, you can create new classes that implement the interface to handle different types of events.
 
-```Kotlin
+```Java
 interface Notification {
     fun sendNotification ()
 }
