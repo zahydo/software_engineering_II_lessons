@@ -6,7 +6,7 @@ Open for extension but closed for modification. Organize the code in a modular w
 
 In an application, an event handler class is designed to handle the response to a single event. If another event needs to be handled, the existing event handler class must be modified.
 
-```Kotlin
+```Java
 enum class Notification {
     push_notification,
     email,

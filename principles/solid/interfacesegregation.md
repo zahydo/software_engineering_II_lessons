@@ -6,7 +6,7 @@ If an interface grows too much it loses its objective and violates the first pri
 
 In an application, an interface that defines methods for saving and loading data also includes a method for sending e-mails. If a client only needs the methods for saving and loading data, it is forced to implement the method for sending e-mails.
 
-```Kotlin
+```Java
 interface DataManager {
     fun saveData(data: Any)
     fun loadData()
@@ -32,7 +32,7 @@ class MyClient : DataManager {
 
 Interfaces can be divided into two: one for saving and loading data and one for sending e-mails. In this way, clients only implement the interfaces they need.
 
-```Kotlin
+```Java
 interface DataSaver {
     fun saveData(Object data);
     fun loadData();

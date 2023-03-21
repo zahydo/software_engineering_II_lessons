@@ -6,7 +6,7 @@ It depends on an abstraction and not on something concrete. It defines that an e
 
 In an application, a view presenter class has a direct dependency on the data model class. This makes the presenter very dependent on the data model and difficult to test.
 
-```Kotlin
+```Java
 class ViewPresenter {
     private val dataModel = DataModel()
 
@@ -24,7 +24,7 @@ class DataModel {
 
 You can create an interface to the data model and make the presenter depend on the interface instead of the particular data model class. In this way, you can provide a different implementation of the data model for different use cases and you can easily test the presenter with a test data model.
 
-```Kotlin
+```Java
 interface DataModel {
     // Métodos del modelo de datos
 }
