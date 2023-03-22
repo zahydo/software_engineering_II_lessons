@@ -1,22 +1,77 @@
+# L
 ## Liskov Substitution
-
-[TODO]
+Child classes must be perfectly compatible with their parent class, and these child classes must not change their behavior or add new functionalities that break the code.
 
 ### Bad example:
+Let's say we have to create two classes, one for vehicle and another for bicycle.
 
-[TODO]
+```JAVA:
+    public class ElectricBicycle {
+        private String motor;
 
+        public void travel(String pointA, String pointB){
+            System.out.println("Traveling from "+ pointA+ " to "+ pointB);
+            System.out.println("The electric bicycle is using its motor to travel");
+        }
+
+        public String getMotor(){
+            return this.motor;
+        }
+    }
+
+    public class MountainBike extends ElectricBicycle {
+
+        @Override
+        public void travel(String pointA, String pointB, boolean isMountain, boolean isMountainDescent){
+
+            if (isMountain == false){
+                System.out.println("Traveling from "+ pointA+ " to "+ pointB);
+            }else if(isMountainDescent){
+                System.out.println("Descending the mountain from "+ pointA+ " to "+ pointB);
+            } else{
+                System.out.println("Climbing the mountain from "+ pointA+ " to "+ pointB);
+            }
+            
+        }
+
+    }
+```
+The principle is being violated because ElectricBicycle and MountainBike are not compatible.
 ### Good example:
+```JAVA:
+    public class Bicycle{
+        public void travel(String pointA, String pointB){
+            System.out.println("Traveling from "+ pointA+ " to "+ pointB);
+        }
+    }
 
-[TODO]
+    public class ElectricBicycle extends Bicycle{
+        private String motor;
+        public String getMotor(){
+            return this.motor;
+        }
 
-### Related principles
+        @Override
+        public void travel(String pointA, String pointB) {
+            super.travel(pointA, pointB);
+            System.out.println("The electric bicycle is using its motor to travel");
+        }
+    }
+    
+    public class MountainBike extends Bicycle {
+        public void climbMountain(String pointA, String pointB) {
+            System.out.println("Climbing the mountain from "+ pointA+ " to "+ pointB);
+        }
 
-- [Links to other principles] 
+        public void descendMountain(String pointA, String pointB) {
+            System.out.println("Descending the mountain from "+ pointA+ " to "+ pointB);
+        }
+    }
+```
+The Bicycle class has been created so that the messages of ElectricBicycle and MountainBike are really coherent.
+
 
 ### Related patterns
-
-- [Pattern names]
-
----
-[Back to the list](./README.md)
+- Separation of Concerns
+- Code For The Maintainer
+- DRY (Don't Repeat Yourself)
