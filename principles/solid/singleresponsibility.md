@@ -86,9 +86,9 @@ In this example, the Student class only has the responsibility of representing a
 
 ### Related principles
 
-* Separation of Concerns
-* Code For The Maintainer
-* KISS (Keep It Simple, Stupid)
+* [Separation of Concerns](../general/separationofconcerns.md)
+* [Composition Over Inheritance](../general/compositionoverinheritance.md)
+* [KISS (Keep It Simple, Stupid)](../general/kiss.md)
 
 ### Related patterns
 

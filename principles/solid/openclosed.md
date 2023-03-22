@@ -73,9 +73,9 @@ In this example, an abstract class FiguraGeometrica has been created that define
 
 ### Related principles
 
-* Composition Over Inheritance
-* Separation of Concerns
-* Code For The Maintainer
+* [Separation of Concerns](../general/separationofconcerns.md)
+* [Composition Over Inheritance](../general/compositionoverinheritance.md)
+* [Code For The Maintainer](../general/codeformantainer.md)
 
 ### Related patterns
 

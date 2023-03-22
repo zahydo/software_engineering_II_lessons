@@ -92,8 +92,8 @@ In this example, all subclasses of Animal implement the same set of methods as t
 
 ### Related principles
 
-* Composition Over Inheritance
-* Separation of Concerns
+* [Separation of Concerns](../general/separationofconcerns.md)
+* [Composition Over Inheritance](../general/compositionoverinheritance.md)
 
 
 ### Related patterns

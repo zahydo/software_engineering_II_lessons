@@ -67,9 +67,9 @@ In this example, each type of printer implements only the interfaces it needs, w
 
 ### Related principles
 
-* Separation of Concerns
-* Composition Over Inheritance
-* KISS (Keep It Simple, Stupid)
+* [Separation of Concerns](../general/separationofconcerns.md)
+* [Composition Over Inheritance](../general/compositionoverinheritance.md)
+* [KISS (Keep It Simple, Stupid)](../general/kiss.md)
 
 ### Related patterns
 

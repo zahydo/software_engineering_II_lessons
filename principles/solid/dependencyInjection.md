@@ -49,8 +49,8 @@ In this example, the MyClass class depends on the Database class to perform oper
 
 ### Related principles
 
-* Separation of Concerns
-* Composition Over Inheritance
+* [Separation of Concerns](../general/separationofconcerns.md)
+* [Composition Over Inheritance](../general/compositionoverinheritance.md)
 
 ### Related patterns
 
