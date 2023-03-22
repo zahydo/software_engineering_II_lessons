@@ -6,28 +6,24 @@ The Liskov Substitution Principle (LSP) is a software design principle that stat
 
 In this example, we have a Animal base class with a virtual MakeSound method, and two subclasses Dog and Cat that override the MakeSound method to make a specific sound:
 
-```c#
-public class Animal
-{
-    public virtual void MakeSound()
-    {
-        Console.WriteLine("Animal is making a sound.");
+```java
+public class Animal {
+    public void makeSound() {
+        System.out.println("Animal is making a sound.");
     }
 }
 
-public class Dog : Animal
-{
-    public override void MakeSound()
-    {
-        Console.WriteLine("Woof!");
+public class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
     }
 }
 
-public class Cat : Animal
-{
-    public override void MakeSound()
-    {
-        Console.WriteLine("Meow!");
+public class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
     }
 }
 
@@ -36,30 +32,26 @@ public class Cat : Animal
 However, this violates the Liskov Substitution Principle because if we have code that expects an Animal object, we might call the MakeSound method on it assuming that it makes a generic animal sound. If we pass a Dog or Cat object to this code, the MakeSound method would print a specific sound, which might break the code.
 
 ### Good example:
-```c#
-public interface IAnimal
-{
-    void MakeSound();
+```java
+public interface IAnimal {
+    void makeSound();
 }
 
-public abstract class Animal : IAnimal
-{
-    public abstract void MakeSound();
+public abstract class Animal implements IAnimal {
+    public abstract void makeSound();
 }
 
-public class Dog : Animal
-{
-    public override void MakeSound()
-    {
-        Console.WriteLine("Woof!");
+public class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
     }
 }
 
-public class Cat : Animal
-{
-    public override void MakeSound()
-    {
-        Console.WriteLine("Meow!");
+public class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
     }
 }
 

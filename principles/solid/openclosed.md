@@ -3,20 +3,24 @@
 Open/closed principle is a software design principle that states that software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This means that you should be able to add new functionality to a system without having to modify the existing code.
 
 ### Bad example:
-```c#
-public class Vehicle
-{
-    public string Type { get; set; }
+```java
+public class Vehicle {
 
-    public void Drive()
-    {
-        if (Type == "Car")
-        {
-            Console.WriteLine("Driving a car");
-        }
-        else if (Type == "Truck")
-        {
-            Console.WriteLine("Driving a truck");
+private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void drive() {
+        if (type.equals("Car")) {
+            System.out.println("Driving a car");
+        } else if (type.equals("Truck")) {
+            System.out.println("Driving a truck");
         }
     }
 }
@@ -25,30 +29,26 @@ public class Vehicle
 In this code, the Drive method violates the OCP because it has to be modified every time a new type of vehicle is added.
 
 ### Good example:
-```c#
-public abstract class Shape
-{
-    public abstract double GetArea();
+```java
+public abstract class Shape {
+    public abstract double getArea();
 }
 
-public abstract class Vehicle
-{
-    public abstract void Drive();
+public abstract class Vehicle {
+    public abstract void drive();
 }
 
-public class Car : Vehicle
-{
-    public override void Drive()
-    {
-        Console.WriteLine("Driving a car");
+public class Car extends Vehicle {
+    @Override
+    public void drive() {
+        System.out.println("Driving a car");
     }
 }
 
-public class Truck : Vehicle
-{
-    public override void Drive()
-    {
-        Console.WriteLine("Driving a truck");
+public class Truck extends Vehicle {
+    @Override
+    public void drive() {
+        System.out.println("Driving a truck");
     }
 }
 

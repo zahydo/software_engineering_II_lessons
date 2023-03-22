@@ -4,96 +4,84 @@ Single Responsibility Principle (SRP) es un principio de diseño de software que
 
 ### Bad example:
 In this example, the "Calculator" class has the responsibility of performing mathematical operations and also printing the results:
-```c#
-public class Calculator
-{
-    public double Add(double num1, double num2)
-    {
+```java
+public class Calculator {
+
+    public double add(double num1, double num2) {
         double result = num1 + num2;
-        Console.WriteLine($"The sum of {num1} and {num2} is {result}");
+        System.out.println("The sum of " + num1 + " and " + num2 + " is " + result);
         return result;
     }
-    
-    public double Subtract(double num1, double num2)
-    {
+
+    public double subtract(double num1, double num2) {
         double result = num1 - num2;
-        Console.WriteLine($"The difference of {num1} and {num2} is {result}");
+        System.out.println("The difference of " + num1 + " and " + num2 + " is " + result);
         return result;
     }
-    
-    public double Multiply(double num1, double num2)
-    {
+
+    public double multiply(double num1, double num2) {
         double result = num1 * num2;
-        Console.WriteLine($"The product of {num1} and {num2} is {result}");
+        System.out.println("The product of " + num1 + " and " + num2 + " is " + result);
         return result;
     }
-    
-    public double Divide(double num1, double num2)
-    {
-        if (num2 == 0)
-        {
-            throw new ArgumentException("Cannot divide by zero");
+
+    public double divide(double num1, double num2) {
+        if (num2 == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
         }
         double result = num1 / num2;
-        Console.WriteLine($"The quotient of {num1} and {num2} is {result}");
+        System.out.println("The quotient of " + num1 + " and " + num2 + " is " + result);
         return result;
     }
 }
+
 ```
 This violates the SRP principle because the class has more than one responsibility. If we needed to change the way results are printed, we would have to modify the "Calculator" class code, which means the class has more than one reason to change.
 
 ### Good example:
 
-```c#
-public class Calculator
-{
-    public double Add(double num1, double num2)
-    {
+```java
+public class Calculator {
+
+    public double add(double num1, double num2) {
         return num1 + num2;
     }
-    
-    public double Subtract(double num1, double num2)
-    {
+
+    public double subtract(double num1, double num2) {
         return num1 - num2;
     }
-    
-    public double Multiply(double num1, double num2)
-    {
+
+    public double multiply(double num1, double num2) {
         return num1 * num2;
     }
-    
-    public double Divide(double num1, double num2)
-    {
-        if (num2 == 0)
-        {
-            throw new ArgumentException("Cannot divide by zero");
+
+    public double divide(double num1, double num2) {
+        if (num2 == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
         }
         return num1 / num2;
     }
 }
 
-public class ResultPrinter
-{
-    public void PrintSum(double num1, double num2, double result)
-    {
-        Console.WriteLine($"The sum of {num1} and {num2} is {result}");
+public class ResultPrinter {
+
+    public void printSum(double num1, double num2, double result) {
+        System.out.println("The sum of " + num1 + " and " + num2 + " is " + result);
     }
-    
-    public void PrintDifference(double num1, double num2, double result)
-    {
-        Console.WriteLine($"The difference of {num1} and {num2} is {result}");
+
+    public void printDifference(double num1, double num2, double result) {
+        System.out.println("The difference of " + num1 + " and " + num2 + " is " + result);
     }
-    
-    public void PrintProduct(double num1, double num2, double result)
-    {
-        Console.WriteLine($"The product of {num1} and {num2} is {result}");
+
+    public void printProduct(double num1, double num2, double result) {
+        System.out.println("The product of " + num1 + " and " + num2 + " is " + result);
     }
-    
-    public void PrintQuotient(double num1, double num2, double result)
-    {
-        Console.WriteLine($"The quotient of {num1} and {num2} is {result}");
+
+    public void printQuotient(double num1, double num2, double result) {
+        System.out.println("The quotient of " + num1 + " and " + num2 + " is " + result);
     }
 }
+
 
 ```
 The "Calculator" class has the sole responsibility of performing mathematical operations, while the "ResultPrinter" class has the sole responsibility of printing the results. If we needed to change the way results are printed, we would only have to modify the "ResultPrinter" class code, without affecting the "Calculator" class. This means each class has a single reason to change, and we follow the SRP principle.

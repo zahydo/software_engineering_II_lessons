@@ -3,120 +3,113 @@
 The Interface Segregation Principle (ISP) is a design principle that states that clients should not be forced to depend on interfaces they do not use. In other words, interfaces should be small and focused on a single responsibility, rather than having a large, monolithic interface.
 
 ### Bad example:
-```c#
-public interface IAnimal
-{
-    void Eat();
-    void Sleep();
-    void Fly();
-    void Swim();
+```java
+public interface IAnimal {
+    void eat();
+    void sleep();
+    void fly();
+    void swim();
 }
 
-public class Bird : IAnimal
-{
-    public void Eat()
-    {
-        Console.WriteLine("I'm eating.");
+public class Bird implements IAnimal {
+    @Override
+    public void eat() {
+        System.out.println("I'm eating.");
     }
 
-    public void Sleep()
-    {
-        Console.WriteLine("I'm sleeping.");
+    @Override
+    public void sleep() {
+        System.out.println("I'm sleeping.");
     }
 
-    public void Fly()
-    {
-        Console.WriteLine("I'm flying.");
+    @Override
+    public void fly() {
+        System.out.println("I'm flying.");
     }
 
-    public void Swim()
-    {
-        throw new NotImplementedException("I cannot swim.");
+    @Override
+    public void swim() {
+        throw new UnsupportedOperationException("I cannot swim.");
     }
 }
 
-public class Fish : IAnimal
-{
-    public void Eat()
-    {
-        Console.WriteLine("I'm eating.");
+public class Fish implements IAnimal {
+    @Override
+    public void eat() {
+        System.out.println("I'm eating.");
     }
 
-    public void Sleep()
-    {
-        Console.WriteLine("I'm sleeping.");
+    @Override
+    public void sleep() {
+        System.out.println("I'm sleeping.");
     }
 
-    public void Fly()
-    {
-        throw new NotImplementedException("I cannot fly.");
+    @Override
+    public void fly() {
+        throw new UnsupportedOperationException("I cannot fly.");
     }
 
-    public void Swim()
-    {
-        Console.WriteLine("I'm swimming.");
+    @Override
+    public void swim() {
+        System.out.println("I'm swimming.");
     }
 }
+
 ```
 In this example, we have an IAnimal interface with four methods: Eat, Sleep, Fly, and Swim. The Bird and Fish classes implement the IAnimal interface, but they do not implement all of its methods. The Bird class can fly but cannot swim, while the Fish class can swim but cannot fly. This violates the ISP because clients that only care about animals that can swim or fly will be forced to depend on the methods they do not need.
 ### Good example:
 
-```c#
-public interface IEatable
-{
-    void Eat();
+```java
+public interface IEatable {
+    void eat();
 }
 
-public interface ISleepable
-{
-    void Sleep();
+public interface ISleepable {
+    void sleep();
 }
 
-public interface IFlyable
-{
-    void Fly();
+public interface IFlyable {
+    void fly();
 }
 
-public interface ISwimmable
-{
-    void Swim();
+public interface ISwimmable {
+    void swim();
 }
 
-public class Bird : IEatable, ISleepable, IFlyable
-{
-    public void Eat()
-    {
-        Console.WriteLine("I'm eating.");
+public class Bird implements IEatable, ISleepable, IFlyable {
+    @Override
+    public void eat() {
+        System.out.println("I'm eating.");
     }
 
-    public void Sleep()
-    {
-        Console.WriteLine("I'm sleeping.");
+    @Override
+    public void sleep() {
+        System.out.println("I'm sleeping.");
     }
 
-    public void Fly()
-    {
-        Console.WriteLine("I'm flying.");
+    @Override
+    public void fly() {
+        System.out.println("I'm flying.");
     }
 }
 
-public class Fish : IEatable, ISleepable, ISwimmable
-{
-    public void Eat()
-    {
-        Console.WriteLine("I'm eating.");
+public class Fish implements IEatable, ISleepable, ISwimmable {
+    @Override
+    public void eat() {
+        System.out.println("I'm eating.");
     }
 
-    public void Sleep()
-    {
-        Console.WriteLine("I'm sleeping.");
+    @Override
+    public void sleep() {
+        System.out.println("I'm sleeping.");
     }
 
-    public void Swim()
-    {
-        Console.WriteLine("I'm swimming.");
+    @Override
+    public void swim() {
+        System.out.println("I'm swimming.");
     }
 }
+
 ```
 In this example, we have separated the IAnimal interface into four smaller, more focused interfaces: IEatable, ISleepable, IFlyable, and ISwimmable. The Bird and Fish classes now implement only the interfaces they need, so clients can depend on the interfaces they need without being forced to depend on the methods they do not need. This follows the ISP and makes the code more flexible and maintainable.
 
