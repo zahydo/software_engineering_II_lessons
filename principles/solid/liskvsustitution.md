@@ -92,7 +92,8 @@ public class ShapePrinter {
 
 ### Related principles
 
-- [Code For The Maintainer](~/principles/general/codeformantainer.md) 
+- [Boy-Scout Rule](../../principles/general/boyscoutrule.md)
+- [Code For The Maintainer](../../principles/general/codeformantainer.md) 
 
 ### Related patterns
 

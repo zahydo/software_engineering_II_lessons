@@ -35,9 +35,10 @@ public class ValidateUser {
 
 ### Related principles
 
-- [Separation of Concerns](~/principles/general/separationofconcerns.md)
-- [KISS](~/principles/general/kiss.md)
-- [Do the Simplest Thing That Could Possibly Work](~/principles/general/dothesimplestthing.md)
+- [Separation of Concerns](../../principles/general/separationofconcerns.md)
+- [KISS](../../principles/general/kiss.md)
+- [Do the Simplest Thing That Could Possibly Work](../../principles/general/dothesimplestthing.md)
+- [Boy-Scout Rule](../../principles/general/boyscoutrule.md)
 
 ### Related patterns
 
