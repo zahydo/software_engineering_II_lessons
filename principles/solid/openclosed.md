@@ -7,24 +7,26 @@ Open for extension but closed for modification. Organize the code in a modular w
 In an application, an event handler class is designed to handle the response to a single event. If another event needs to be handled, the existing event handler class must be modified.
 
 ```Java
-enum class Notification {
+public enum Notification {
     push_notification,
     email,
     sms
 }
 
-class notificationService{
-    fun sendNotification (notification: Notification){
-        when (notification){
-            Notification.push_notification ->{
+public class NotificationService{
+    public void sendNotification(Notification notification){
+        switch (notification){
+            case push_notification:
                 //enviar push notification
-            }
-            Notification.email -> {
+                break;
+            case email:
                 //enviar email notification
-            }
-            Notification.sms -> {
+                break;
+            case sms:
                 //enviar sms notification
-            }
+                break;
+            default:
+                throw new IllegalArgumentException("Tipo de notificación no reconocido: " + notification);
         }
     }
 }
@@ -35,24 +37,27 @@ class notificationService{
 You can create a generic event handler interface and have the event handler class implement the interface. Then, you can create new classes that implement the interface to handle different types of events.
 
 ```Java
-interface Notification {
-    fun sendNotification ()
+public interface Notification {
+    void sendNotification();
 }
 
-class pushNotification: Notificacion {
-    override fun sendNotification(){
+public class PushNotification implements Notification {
+    @Override
+    public void sendNotification(){
         //enviar push notification
     }
 }
 
-class emailNotification: Notification {
-    override fun sendNotification(){
+public class EmailNotification implements Notification {
+    @Override
+    public void sendNotification(){
         //enviar email notification
     }
 }
 
-class smsNotification: Notification {
-    override fun sendNotification(){
+public class SmsNotification implements Notification {
+    @Override
+    public void sendNotification(){
         //enviar sms notification
     }
 }

@@ -8,27 +8,45 @@ In other words, if we have an object 1 of type S and there is an object 2 of typ
 The Square class inherits from the Shape class and redefines the calculateArea() method. However, the implementation of the calculateArea() method in Square does not comply with the definition of a square, since a square has all its sides equal. Therefore, passing an instance of Square to the printArea() method will result in an incorrect result.
 
 ```Java
-class Shape {
-    fun calculateArea(): Double {
-         return 0.0
+public class Shape {
+    public double calculateArea() {
+         return 0.0;
     }
 }
 
-class Rectangle(val width: Double, val height: Double) : Shape() {
-    override fun calculateArea(): Double {
-        return width * height
+public class Rectangle extends Shape {
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public double calculateArea() {
+        return width * height;
     }
 }
 
-class Square(val side: Double) : Shape() {
-    override fun calculateArea(): Double {
-        return side * side
+public class Square extends Shape {
+    private double side;
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    @Override
+    public double calculateArea() {
+        return side * side;
     }
 }
 
-fun printArea(shape: Shape) {
-    val area = shape.calculateArea()
-    println("El area es: $area")
+public class ShapePrinter {
+    public static void printArea(Shape shape) {
+        double area = shape.calculateArea();
+        System.out.println("El area es: " + area);
+    }
 }
 ```
 
@@ -37,23 +55,38 @@ fun printArea(shape: Shape) {
 The Square class is modified to inherit from the Rectangle class and the implementation of the calculateArea() method in Square is eliminated. This ensures that the implementation of Square complies with the definition of a square, since Square inherits the implementation of the calculateArea() method of Rectangle. By doing this, it does not violate the Liskov Substitution Principle (LSP), since instances of Square can be used in place of instances of Rectangle without affecting the result of the program.
 
 ```Java
- class Shape {
-     fun calculateArea(): Double {
-        return 0.0
+public class Shape {
+    public double calculateArea() {
+        return 0.0;
     }
 }
 
- class Rectangle(val width: Double, val height: Double) : Shape() {
-    override fun calculateArea(): Double {
-        return width * height
+public class Rectangle extends Shape {
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public double calculateArea() {
+        return width * height;
     }
 }
 
-class Square(side: Double) : Rectangle(side, side)
+public class Square extends Rectangle {
+    public Square(double side) {
+        super(side, side);
+    }
+}
 
-fun printArea(shape: Shape) {
-    val area = shape.calculateArea()
-    println("El area es: $area")
+public class ShapePrinter {
+    public static void printArea(Shape shape) {
+        double area = shape.calculateArea();
+        System.out.println("El area es: " + area);
+    }
 }
 ```
 

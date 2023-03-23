@@ -7,22 +7,25 @@ If an interface grows too much it loses its objective and violates the first pri
 In an application, an interface that defines methods for saving and loading data also includes a method for sending e-mails. If a client only needs the methods for saving and loading data, it is forced to implement the method for sending e-mails.
 
 ```Java
-interface DataManager {
-    fun saveData(data: Any)
-    fun loadData()
-    fun sendEmail(recipient: String, message: String)
+public interface DataManager {
+    void saveData(Object data);
+    void loadData();
+    void sendEmail(String receiver, String message);
 }
 
-class MyClient : DataManager {
-    override fun saveData(data: Any) {
+public class MyClient implements DataManager {
+    @Override
+    public void saveData(Object data) {
         // Guardar datos
     }
 
-    override fun loadData() {
+    @Override
+    public void loadData() {
         // Cargar datos
     }
 
-    override fun sendEmail(recipient: String, message: String) {
+    @Override
+    public void sendEmail(String receiver, String message) {
         // Enviar correo electrónico
     }
 }
@@ -33,24 +36,27 @@ class MyClient : DataManager {
 Interfaces can be divided into two: one for saving and loading data and one for sending e-mails. In this way, clients only implement the interfaces they need.
 
 ```Java
-interface DataSaver {
-    fun saveData(Object data);
-    fun loadData();
+public interface DataSaver {
+    void saveData(Object data);
+    void loadData();
 }
 
-interface EmailSender {
-    fun sendEmail(String recipient, String message);
+public interface EmailSender {
+    void sendEmail(String receiver, String message);
 }
 
-class MyClient implements DataSaver {
-    override fun saveData(Object data) {
+public class MyClient implements DataSaver {
+    @Override
+    public void saveData(Object data) {
         // Guardar datos
     }
 
-    override fun loadData() {
+    @Override
+    public void loadData() {
         // Cargar datos
     }
 }
+
 ```
 
 ### Related principles

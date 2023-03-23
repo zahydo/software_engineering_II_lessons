@@ -7,17 +7,18 @@ It depends on an abstraction and not on something concrete. It defines that an e
 In an application, a view presenter class has a direct dependency on the data model class. This makes the presenter very dependent on the data model and difficult to test.
 
 ```Java
-class ViewPresenter {
-    private val dataModel = DataModel()
+public class ViewPresenter {
+    private DataModel dataModel = new DataModel();
 
-    fun doSomethingWithData() {
+    public void doSomethingWithData() {
         // Utilizar dataModel
     }
 }
 
-class DataModel {
+public class DataModel {
     // Implementación de modelo de datos
 }
+
 ```
 
 ### Good example
@@ -25,17 +26,23 @@ class DataModel {
 You can create an interface to the data model and make the presenter depend on the interface instead of the particular data model class. In this way, you can provide a different implementation of the data model for different use cases and you can easily test the presenter with a test data model.
 
 ```Java
-interface DataModel {
+public interface DataModel {
     // Métodos del modelo de datos
 }
 
-class ViewPresenter(val dataModel: DataModel) {
-    fun doSomethingWithData() {
+public class ViewPresenter {
+    private DataModel dataModel;
+
+    public ViewPresenter(DataModel dataModel) {
+        this.dataModel = dataModel;
+    }
+
+    public void doSomethingWithData() {
         // Utilizar dataModel
     }
 }
 
-class MyDataModel : DataModel {
+public class MyDataModel implements DataModel {
     // Implementación de modelo de datos
 }
 ```
