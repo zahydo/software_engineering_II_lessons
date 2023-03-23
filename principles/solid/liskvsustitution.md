@@ -75,3 +75,6 @@ The Bicycle class has been created so that the messages of ElectricBicycle and M
 - Separation of Concerns
 - Code For The Maintainer
 - DRY (Don't Repeat Yourself)
+
+---
+[Back to the list](./README.md)

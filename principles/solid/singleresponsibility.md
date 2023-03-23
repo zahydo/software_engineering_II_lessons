@@ -62,3 +62,6 @@ And thus, we adhere to the Single Responsibility Principle.
 
 - Separation of Concerns
 - Code For The Maintainer
+
+---
+[Back to the list](./README.md)

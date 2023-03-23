@@ -46,3 +46,6 @@ By separating the different functionalities into smaller and specialized interfa
 - Separation of Concerns
 - Code For The Maintainer
 - Composition Over Inheritance
+
+---
+[Back to the list](./README.md)

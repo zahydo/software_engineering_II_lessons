@@ -84,3 +84,6 @@ The class Interruptor depends on the abstraction DispositivoElectrico instead of
 - DRY (Don't Repeat Yourself)
 - Code For The Maintainer
 - Composition Over Inheritance
+
+---
+[Back to the list](./README.md)

@@ -77,3 +77,6 @@ By having EmailBase as an abstract class, we can create more types of emails wit
 ### Related patterns
 - Separation of Concerns
 - Code For The Maintainer
+
+---
+[Back to the list](./README.md)
