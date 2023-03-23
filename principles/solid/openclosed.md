@@ -9,6 +9,7 @@ The benefits that it brings are:
 - Reduced risk of introducing bugs or breaking existing functionality.
 ### Bad example:
 
+<<<<<<< HEAD
 Suppose you have a class `Shape` that represents various geometric shapes, and you want to calculate the area of each shape. 
 
 ``` java
@@ -33,12 +34,29 @@ public class Shape {
         }
     }
 }
+=======
+```java
+public class VehicleCalculations {
+
+    public double calculateValue(Vehicle v) {
+        if (v instanceof Car) {
+            return v.getValue() * 0.8;
+        }
+
+        if (v instanceof Bike) {
+            return v.getValue() * 0.5;
+        }
+    }
+}
+```
+>>>>>>> 6814cdd (Some changes added)
 
 ```
 
 This violates the OCP because the `Shape` class is no longer closed for modification. Adding a new shape requires modifying the `Shape` class, which can lead to bugs and make the code harder to maintain.
 ### Good example:
 
+<<<<<<< HEAD
 To apply the OCP, you can use inheritance and create a new class `Triangle` that extends the `Shape` class:
 
 ``` java
@@ -60,6 +78,25 @@ public class Circle extends Shape {
         // code to calculate area of a circle
     }
 }
+=======
+```java
+public class Vehicle {
+    public double calculateValue() {...}
+}
+
+public class Car extends Vehicle {
+    public double calculateValue() {
+        return this.getValue() * 0.8;
+    }
+}
+
+public class Truck extends Vehicle{
+    public double calculateValue() {
+        return this.getValue() * 0.9;
+    }
+}
+```
+>>>>>>> 6814cdd (Some changes added)
 
 public class Rectangle extends Shape {
     // fields and methods specific to rectangles
@@ -74,6 +111,7 @@ This implementation is closed for modification because you can add new shapes to
 
 ### Related principles
 
+<<<<<<< HEAD
 - [Do the Do the Simplest Thing That Could Possibly Work](../general/dothesimplestthing.md)
 - [KISS](../general/kiss.md)
 - [YAGNI](../general/yagni.md)
@@ -82,5 +120,14 @@ This implementation is closed for modification because you can add new shapes to
 
 - [Pattern names]
 
+=======
+- [Single Responsability](./singleresponsibility.md)
+- [Liskov Substitution](./liskvsustitution.md)
+
+### Related patterns
+
+- [Code For Mantainer](../general/codeformantainer.md)
+- [Boy-Scout Rule](../general/boyscoutrule.md)
+>>>>>>> 6814cdd (Some changes added)
 ---
 [Back to the list](./README.md)

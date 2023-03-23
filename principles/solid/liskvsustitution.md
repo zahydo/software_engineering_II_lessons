@@ -12,6 +12,7 @@ The benefits of applying it are:
 - Reduced coupling.
 ### Bad example:
 
+<<<<<<< HEAD
 Imagine you have a class hierarchy for shapes, with a `Shape` superclass and `Rectangle` and `Triangle` subclasses. The `Shape` class has a `getArea` method that calculates the area of the shape.
 
 ``` java
@@ -32,7 +33,29 @@ public class Rectangle extends Shape {
 
     public double getWidth() {
         return width;
+=======
+```java
+public class Rectangle {
+    private double height;
+    private double width;
+    public void setHeight(double h) { height = h; }
+    public void setWidht(double w) { width = w; }
+    ...
+}
+
+public class Square extends Rectangle {
+    public void setHeight(double h) {
+        super.setHeight(h);
+        super.setWidth(h);
     }
+
+    public void setWidth(double w) {
+        super.setHeight(w);
+        super.setWidth(w);
+>>>>>>> 6814cdd (Some changes added)
+    }
+}
+```
 
     public double getHeight() {
         return height;
@@ -88,6 +111,7 @@ calculateArea(triangle); // throws an exception
 ```
 ### Good example:
 
+<<<<<<< HEAD
 To apply the Liskov Substitution Principle, you should ensure that subclasses behave correctly when used in place of their superclass. In this case, you could add preconditions to the constructor of the `Triangle` class to ensure that the base and height are greater than 0.
 ``` java
 public class Triangle extends Shape {
@@ -104,11 +128,44 @@ public class Triangle extends Shape {
 
     public double getBase() {
         return base;
-    }
+=======
+```java
+public class Quadrilateral {
+    private double height;
+    private double width;
+    public void setHeight(double h) { height = h; }
+    public void setWidht(double w) { width = w; }
+    ...
+}
 
+public class Square extends Quadrilateral {
+    public void setHeight(double h) {
+        super.setHeight(h);
+        super.setWidth(h);
+>>>>>>> 6814cdd (Some changes added)
+    }
+    public void setWidth(double w) {
+        super.setHeight(w);
+        super.setWidth(w);
+    }
+}
+
+<<<<<<< HEAD
     public double getHeight() {
         return height;
+=======
+public class Rectangle extends Quadrilateral {
+    public void setHeight(double h) {
+        super.setHeight(h);
+        super.setWidth(h);
+>>>>>>> 6814cdd (Some changes added)
     }
+    public void setWidth(double w) {
+        super.setHeight(w);
+        super.setWidth(w);
+    }
+}
+```
 
     @Override
     public double getArea() {
@@ -127,12 +184,16 @@ calculateArea(triangle); // not reached
 This ensures that the `Triangle` class can be used interchangeably with the `Shape` class, without affecting the correctness of the program.
 ### Related principles
 
+<<<<<<< HEAD
 - [Links to other principles] 
+=======
+- [Open/Closed](./openclosed.md)
+>>>>>>> 6814cdd (Some changes added)
 
 ### Related patterns
 
-- Code For The Maintainer
-- Boy-Scout Rule
+- [Code For Mantainer](../general/codeformantainer.md)
+- [Boy-Scout Rule](../general/boyscoutrule.md)
 
 
 [Back to the list](./README.md)
