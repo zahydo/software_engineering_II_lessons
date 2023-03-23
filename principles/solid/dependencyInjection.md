@@ -21,17 +21,23 @@ public class UserService {
 In this example, the UserService class is tightly coupled to the UserRepository class. If the implementation of the UserRepository changes, the UserService class would also need to change.
 ### Good example
 
-To apply the Dependency Injection principle, you would inject the UserRepository dependency into the UserService class:
+To apply the Dependency Injection principle, you would inject the UserRepository dependency into the UserService class using an interface (we'll discuss why later):
 ``` java
-public class UserService {
-	private UserRepository userRepository;
 
-	public UserService(UserRepository userRepository) {
+public interface IUserRepository{
+	boolean save(User user);
+	User findByEmail(String email);
+
+}
+public class UserService {
+	private IUserRepository userRepository;
+
+	public UserService(IUserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
 
-	public void addUser(User user) {
-		userRepository.save(user);
+	public boolean addUser(User user) {
+		return userRepository.save(user);
 	}
 
 	public User getUser(String email) {
@@ -41,7 +47,37 @@ public class UserService {
 
 ```
 
-In this example, the `UserRepository` dependency is passed in through the constructor of the `UserService` class. If the implementation of the `UserRepository` changes, only the code that creates the `UserRepository` object needs to be modified.
+In this example, the `IUserRepository` dependency is passed in through the constructor of the `UserService` class. If the implementation of the class that implements `IUserRepository` changes, only the code of the class that implements `IUserRepository`  needs to be modified, using interfaces is a better option because you can do thigs like this:
+
+
+``` java
+	public class OracleUserRepository implements IUserRespository{
+		@Override
+		boolean save(User user){
+			// Do Something with user and return something
+		}
+
+		@Override
+		User findByEmail(String email){
+			// Do something with email and return something
+		}
+	}
+
+	public class MongoUserRepository implements IUserRespository{
+		@Override
+		boolean save(User user){
+			// Do Something with user and return something
+		}
+
+		@Override
+		User findByEmail(String email){
+			// Do something with email and return something
+		}
+	}	
+
+```
+This allows you to easily inject an implementation of those databases as dependency of the `UserService` class, thus allowing you to write code without modifying the class itself.
+
 
 
 ### Related principles
