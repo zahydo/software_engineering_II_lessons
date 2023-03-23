@@ -121,5 +121,4 @@ In this example, we have separated the IAnimal interface into four smaller, more
 ### Related patterns
 
 
-
 [Back to the list](./README.md)

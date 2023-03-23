@@ -65,20 +65,8 @@ public class Calculator {
 
 public class ResultPrinter {
 
-    public void printSum(double num1, double num2, double result) {
-        System.out.println("The sum of " + num1 + " and " + num2 + " is " + result);
-    }
-
-    public void printDifference(double num1, double num2, double result) {
-        System.out.println("The difference of " + num1 + " and " + num2 + " is " + result);
-    }
-
-    public void printProduct(double num1, double num2, double result) {
-        System.out.println("The product of " + num1 + " and " + num2 + " is " + result);
-    }
-
-    public void printQuotient(double num1, double num2, double result) {
-        System.out.println("The quotient of " + num1 + " and " + num2 + " is " + result);
+    public void printResult(String operation, double num1, double num2, double result) {
+        System.out.println("The " + operation + " of " + num1 + " and " + num2 + " is " + result);
     }
 }
 
@@ -95,6 +83,5 @@ The "Calculator" class has the sole responsibility of performing mathematical op
 
 ### Related patterns
 
-- Factory
 
 [Back to the list](./README.md)
