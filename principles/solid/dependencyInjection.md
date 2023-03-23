@@ -1,6 +1,7 @@
 ## Dependency Injection
 
-The dependency injection principle suggests that objects should receive dependencies from external sources instead of creating them internally. 
+The dependency injection principle suggests that objects should receive dependencies from external sources instead of creating them internally, the problem that it solves is the tight coupling between objects and their dependencies, it does it by supplying its dependencies from an external source, the benefits of applying this are that the classes that receive those dependencies do not need to know how they are implemented, thus decoupling the interaction of them.
+
 ### Bad example
 
 Suppose you have a UserService class that requires a UserRepository object to perform database operations. Instead of injecting the dependency, the UserService class creates the UserRepository object internally:

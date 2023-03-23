@@ -1,6 +1,6 @@
 ## Interface Segregation
 
-The Interface Segregation Principle (ISP) states that classes should not be forced to depend on interfaces they do not use. This principle emphasizes that interfaces should be designed to be cohesive and focused on a specific set of related functions.
+The Interface Segregation Principle (ISP) states that classes should not be forced to depend on interfaces they do not use. This principle emphasizes that interfaces should be designed to be cohesive and focused on a specific set of related functions, the problem that it aims to solve is the creation of large and bloated interfaces that force the implementation of unnecessary methods, the way it solves this problem is by promoting the creation of interfaces that are specific to the needs of the classes that will use them, the benefits that it brings are a better maintainabilty (the interfaces are smaller), extensibility, and testability (the code is more isolated)
 
 ### Bad example:
 

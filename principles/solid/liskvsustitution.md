@@ -1,6 +1,15 @@
 ## Liskov Substitution
 
-The Liskov Substitution Principle is a fundamental tenet of object-oriented programming, where any subclass should be able to be used in place of its parent class without impacting the correctness of the program.
+The Liskov Substitution Principle is a fundamental tenet of object-oriented programming, where any subclass should be able to be used in place of its parent class without impacting the correctness of the program, the problem that it aims to solve is the violation of Open/Closed principle when a subtype cannot be used as a substitute for its base type, forcing the client code to check the type of the object and modify its behavior accordingly, it does so by defining a set of rules that a subclass must follow in order to be used as a substitute for its base class, including: 
+- Substitutability
+- Preservation of invariants 
+- Respect for preconditions and postconditions.
+
+The benefits of applying it are: 
+- Improved maintainability
+- Increased flexibility
+- Better testability
+- Reduced coupling.
 ### Bad example:
 
 Imagine you have a class hierarchy for shapes, with a `Shape` superclass and `Rectangle` and `Triangle` subclasses. The `Shape` class has a `getArea` method that calculates the area of the shape.

@@ -1,6 +1,11 @@
 ## Single Responsibility
 
-The Single Responsibility Principle (SRP) states that a class should have only one reason to change. In other words, a class should have only one responsibility or job to do. 
+The Single Responsibility Principle (SRP) states that a class should have only one reason to change. In other words, a class should have only one responsibility or job to do, the problem it aims to solve is that a class, interface or module with multiple responsibilities is difficult to understand, test, and maintain, the way it tries to solve it is by designing classes, interfaces and modules that have only one responsibility, meaning that they have only one reason to change.
+
+The benefits that it brings are:
+- Improved maintainability
+- Easier testing
+- Promotes better organization and modularity of code.
 
 ### Bad example:
 
