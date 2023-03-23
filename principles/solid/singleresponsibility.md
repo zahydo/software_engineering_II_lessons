@@ -7,11 +7,11 @@ One class, one responsibility. This is because you lose the independence of each
 In an application, a class that handles login logic is also in charge of user data validation. This makes the class have more than one responsibility.
 
 ```Java
-class loginUser{
-    fun login (username: String, password: String){
-        //iniciar sesion
-        //validar usuario
-    } 
+public class LoginUser {
+    public void login(String username, String password) {
+        // iniciar sesión
+        // validar usuario
+    }
 }
 ```
 
@@ -20,14 +20,14 @@ class loginUser{
 The login class should have only the responsibility of handling user login, while user data validation should be moved to a separate class.
 
 ```Java
-class loginUser {
-    fun login(username: String, password: String){
-        //iniciar sesion
+public class LoginUser {
+    public void login(String username, String password) {
+        //iniciar sesión
     }
 }
 
-class validateUser{
-    fun validate(username: String, password: String): Boolean{
+public class ValidateUser {
+    public boolean validate(String username, String password) {
         //validar usuario
     }
 }
