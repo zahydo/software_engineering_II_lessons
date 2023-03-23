@@ -92,7 +92,7 @@ public class ShapePrinter {
 
 ### Related principles
 
-- [Links to other principles] 
+- [Code For The Maintainer](~/principles/general/codeformantainer.md) 
 
 ### Related patterns
 

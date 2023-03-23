@@ -61,7 +61,9 @@ public class MyClient implements DataSaver {
 
 ### Related principles
 
-- [Links to other principles] 
+- [YAGNI](~/principles/general/yagni.md)
+- [KISS](~/principles/general/kiss.md)
+- [Boy-Scout Rule](~/principles/general/boyscoutrule.md)
 
 ### Related patterns
 

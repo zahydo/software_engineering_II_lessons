@@ -65,7 +65,8 @@ public class SmsNotification implements Notification {
 
 ### Related principles
 
-- [Links to other principles] 
+- [Separation of Concerns](~/principles/general/separationofconcerns.md)
+- [Do the Simplest Thing That Could Possibly Work](~/principles/general/dothesimplestthing.md)
 
 ### Related patterns
 

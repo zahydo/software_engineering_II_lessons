@@ -49,7 +49,9 @@ public class MyDataModel implements DataModel {
 
 ### Related principles
 
-- [Links to other principles] 
+- [Separation of Concerns](~/principles/general/separationofconcerns.md)
+- [Code For The Maintainer](~/principles/general/codeformantainer.md)
+- [Boy-Scout Rule](~/principles/general/boyscoutrule.md)
 
 ### Related patterns
 
