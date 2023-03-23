@@ -7,23 +7,25 @@ Suppose there’s an interface for vehicle and a Bike class:
 
 ### Bad example:
 
-    public interface Vehicle {
-        public void drive();
-        public void stop();
-        public void refuel();
-        public void openDoors();
-    }
+```java
+public interface Vehicle {
+    public void drive();
+    public void stop();
+    public void refuel();
+    public void openDoors();
+}
 
-    public class Bike implements Vehicle {
+public class Bike implements Vehicle {
 
-        // Can be implemented
-        public void drive() {...}
-        public void stop() {...}
+    // Can be implemented
+    public void drive() {...}
+    public void stop() {...}
         
-        // Can not be implemented
-        public void refuel() {...}
-        public void openDoors() {...}
-    }
+    // Can not be implemented
+    public void refuel() {...}
+    public void openDoors() {...}
+}
+```
 
 As you can see, it does not make sense for a Bike class to implement the openDoors() method as a bike does not have any doors! To fix this, 
 ISP proposes that the interfaces be broken down into multiple, small cohesive interfaces so that no class is forced to implement any interface,
@@ -31,48 +33,50 @@ and therefore methods, that it does not need.
 
 ### Good example:
 
-    //Different interface
-    public interface DriveVehicle {
-        public void drive();
-    }
+```java
+//Different interface
+public interface DriveVehicle {
+    public void drive();
+}
 
-    public interface StopVehicle {
-        public void stop();
-    }
+public interface StopVehicle {
+    public void stop();
+}
 
-    public interface RefuelVehicle {
-        public void refuel();
-    }
+public interface RefuelVehicle {
+    public void refuel();
+}
 
-    public interface OpenDoorsVehicle {
-        public void openDoors();
-    }
+public interface OpenDoorsVehicle {
+    public void openDoors();
+}
 
-    //Different usage
-    //Car
-    public class car implements DriveVehicle, StopVehicle, RefuelVehicle, OpenDoorsVehicle{
-        public public void drive() {...}
-        public public void stop() {...}
-        public public void refuel() {...}
-        public public void openDoors() {...}
-    }
+//Different usage
+//Car
+public class car implements DriveVehicle, StopVehicle, RefuelVehicle, OpenDoorsVehicle{
+    public public void drive() {...}
+    public public void stop() {...}
+    public public void refuel() {...}
+    public public void openDoors() {...}
+}
 
-    //Bike
-    public class Bike implements DriveVehicle,  StopVehicle{
-        public public void drive() {...}
-        public public void stop() {...}
-    }
+//Bike
+public class Bike implements DriveVehicle,  StopVehicle{
+    public public void drive() {...}
+    public public void stop() {...}
+}
+```
 
 ### Related principles
 
-- Dependency Injection 
+- [Dependency Injection](./dependencyInjection.md)
 
 ### Related patterns
 
-- YAGNI 
-- KISS 
-- Separation of Concerns
-- Boy-Scout Rule
+- [YAGNI](../general/yagni.md)
+- [KISS](../general/kiss.md)
+- [Separation of Concerns](../general/separationofconcerns.md)
+- [Boy-Scout Rule](../general/boyscoutrule.md)
 
 ---
 [Back to the list](./README.md)

@@ -1,68 +1,86 @@
 ## Dependency Injection
 
-The principle of dependency inversion refers to the decoupling of software modules. 
-This way, instead of high-level modules depending on low-level modules, both will depend on abstractions.
+In object-oriented programming, a class may rely on objects of other classes. A dependency injection is a strategy that is used to separate the creation of dependency objects from the class that needs them.
 
-Consider the example below. We have a Car class that depends on the concrete Engine class; therefore, it is not obeying DIP.
+To help you understand, the following code snippet shows no dependency injection:
 
 ### Bad example
 
-    public class Car {
-        private Engine engine;
+```java
+class Question {
+    private Answer answer;
 
-        public Car(Engine e) {
-            engine = e;
-        }
-
-        public void start() {
-            engine.start();
-        }
+    public Question(){
+      answer = new Answer();
     }
+}
+```
 
-    public class Engine {
-        public void start() {...}
-    }
+*Dependency Injection not implemented since Question is responsible for the creation of Answer.*
 
-The code will work, for now, but what if we wanted to add another engine type, let’s say a diesel engine? 
-This will require refactoring the Car class. However, we can solve this by introducing a layer of abstraction. 
-Instead of Car depending directly on Engine, let’s add an interface:
+As opposed to this, the following shows a dependency injection:
 
 ### Good example
 
-    public interface Engine {
-        public void start();
-    }
+```java
+class Question {
+    private Answer answer;
 
-Now we can connect any type of Engine that implements the Engine interface to the Car class:
-
-    public class Car {
-        private Engine engine;
-
-        public Car(Engine e) {
-            engine = e;
-        }
-
-        public void start() {
-            engine.start();
-        }
+    public Question(Answer ans){
+      this.answer = ans;
     }
-    public class PetrolEngine implements Engine {
-        public void start() {...}
+}
+```
+
+*Dependency injection implemented since Question does not have to worry about the creation of Answer.*
+
+There are three different types of dependency injections:
+
+### Constructor injection
+Constructor injection is shown in the first code example. The dependent class receives the object it requires as a parameter of the constructor.
+
+### Setter injection
+The dependent class has a public setter method through which the dependency is injected. An example is given in the code below:
+
+```java
+class Building {
+    private Room room;
+
+    public setRoom(Room room){
+        this.room = room;
     }
-    public class DieselEngine implements Engine {
-        public void start() {...}
-    }
+}
+```
+
+### Interface injection
+An interface provides an injector method that is responsible for injecting the dependency to any class that may require it. The client class has to implement the interface and override the injector method. For example
+
+```java
+public interface Injector {
+  public void injectDependency(Dependency object);
+}
+
+public class Client implements Injector {
+  private Dependency dependentObject;
+
+  @Override
+  public void injectDependency(Dependency object){
+    this.dependentObject = object;
+  }
+}
+```
 
 ### Related principles
 
-- Interface Segregation
+- [Interface Segregation](./interfacesegregation.md)
+- [Open/Closed](./openclosed.md)
 
 ### Related patterns
 
-- Separation of Concerns
-- Composition Over Inheritance
-- Code For The Maintainer
-- Boy-Scout Rule
+- [Separation of Concerns](../general/separationofconcerns.md)
+- [Composition Over Inheritance](../general/compositionoverinheritance.md)
+- [Code For Mantainer](../general/codeformantainer.md)
+- [Boy-Scout Rule](../general/boyscoutrule.md)
 
 ---
 [Back to the list](./README.md)
