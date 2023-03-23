@@ -2,7 +2,7 @@
 ## Interface Segregation
 One should avoid having a single large and confusing interface, and instead should divide it into smaller and more manageable interfaces.
 ### Bad example:
-Suppose we have an interface that does the following:
+We need to group functions that allow us to do statistical calculations, so we do the following.
 ```JAVA:
     public interface Calculate{
         void arithmeticMean();
@@ -18,9 +18,9 @@ Suppose we have an interface that does the following:
 ```
 This naturally violates the principle because Calculate is taking care of many functions, and some are not really of its nature.
 ### Good example:
-
+Therefore, it is decided to separate by several interfaces (CalculateStatistics, MinMax and PersonStatistics), 
 ```JAVA:
-    public interface Calculate{
+    public interface CalculateStadistics{
         void arithmeticMean();
         void geometricMean();
         void mode();
@@ -31,14 +31,14 @@ This naturally violates the principle because Calculate is taking care of many f
         void maxData();
     }
 
-    public interface PersonData{
+    public interface PersonStadistics{
         void personsCloseToArithmeticMean();
         void personWithMaxData();
         void personsWithMode();
     }
 
 ```
-By separating the different functionalities into smaller and specialized interfaces, it allows classes to implement the necessary functionalities.
+This allows the classes to implement the necessary functionalities, enforcing Interface Segregation.
 
 
 

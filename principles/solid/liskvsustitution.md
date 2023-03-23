@@ -3,8 +3,8 @@
 Child classes must be perfectly compatible with their parent class, and these child classes must not change their behavior or add new functionalities that break the code.
 
 ### Bad example:
-Let's say we have to create two classes, one for vehicle and another for bicycle.
-
+Let's say we have to create two classes, one for ElectricBicycle and another for MountainBike.
+We make MountainBike inherit from ElectricBicycle:
 ```JAVA:
     public class ElectricBicycle {
         private String motor;
@@ -36,8 +36,9 @@ Let's say we have to create two classes, one for vehicle and another for bicycle
 
     }
 ```
-The principle is being violated because ElectricBicycle and MountainBike are not compatible.
+But, The principle is being violated because ElectricBicycle and MountainBike are not compatible.
 ### Good example:
+Therefore it is decided to create another class called Bicycle that allows compatibility between ElectricBicycle and MountainBike
 ```JAVA:
     public class Bicycle{
         public void travel(String pointA, String pointB){
@@ -68,7 +69,7 @@ The principle is being violated because ElectricBicycle and MountainBike are not
         }
     }
 ```
-The Bicycle class has been created so that the messages of ElectricBicycle and MountainBike are really coherent.
+The Bicycle class has been created so that the messages of ElectricBicycle and MountainBike are really coherent, making classes easier to understand.
 
 
 ### Related patterns

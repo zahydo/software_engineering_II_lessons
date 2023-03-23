@@ -2,7 +2,8 @@
 ## Dependency Injection
 Classes should not depend on others, but on abstractions that are implemented by other classes.
 ### Bad example:
-We need to define a switch class, a lamp class, and in the future add a power source.
+We need to define a switch, a lamp, and in the future add a power source.
+For this, it is decided to create a Lamp class, an ElectricDevice interface and a Switch class.
 ```JAVA:
     public class Lamp{
         public void turnOn(){
@@ -38,7 +39,7 @@ We need to define a switch class, a lamp class, and in the future add a power so
     }
 
 ```
-The Interruptor class is strongly dependent on the Lampara class, as the lamp instance is created in the constructor of the Interruptor. Therefore, Interruptor cannot be easily modified.
+The Interruptor class is strongly dependent on the Lamp class, as the lamp instance is created in the constructor of the Interruptor. Therefore, Switch cannot be easily modified.
 ### Good example:
 
 To do this, we do the following:
@@ -76,7 +77,7 @@ To do this, we do the following:
     }
 
 ```
-The class Interruptor depends on the abstraction DispositivoElectrico instead of depending on a concrete implementation. This allows the Interruptor class to be flexible and reusable, as it can be used with any device that implements the DispositivoElectrico interface.
+The class Switch depends on the abstraction ElectricalDevice instead of depending on a concrete implementation. This allows the Switch class to be flexible and reusable, as it can be used with any device that implements the ElectricalDevice interface.
 
 
 ### Related patterns

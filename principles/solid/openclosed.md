@@ -35,6 +35,7 @@ Let's say we have to send emails and encrypt them.
 ```
 Unfortunately, we cannot add new code to that class because we would need to modify it, thereby violating the Open-Closed Principle.
 ### Good example:
+So it is decided to create a class called EmailBase to act as a parent and an EncryptedEmail to act as a child.
 ```JAVA:
     public abstract class EmailBase {
         private String subject;
