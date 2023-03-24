@@ -193,7 +193,6 @@ By applying the SRP in this way, we have ensured that each class has a clear and
 
 ### Related principles
 
-- [Links to other principles] 
 - [Separation of Concerns](../general/separationofconcerns.md)
 - [Code For The Maintainer](../general/codeformantainer.md)
 - [Boy-Scout Rule](../general/boyscoutrule.md)

@@ -4,7 +4,7 @@ The Liskov Substitution Principle is about ensuring that any instance of a subty
 
 ### Bad example:
 
-´´´
+```
 public class Rectangle {
     private int width;
     private int height;
@@ -60,12 +60,13 @@ public class AreaCalculator {
         return r.getArea();
     }
 }
-´´´
+
+```
 In this example, the Square class extends the Rectangle class, but it violates the Liskov Substitution Principle because the setWidth() and setHeight() methods behave differently in Square than they do in Rectangle. This can lead to unexpected behavior when instances of Square are used in place of instances of Rectangle.
 
 ### Good example:
 
-´´´
+```
 public interface Shape {
     int getArea();
 }
@@ -127,7 +128,8 @@ public class AreaCalculator {
         return shape.getArea();
     }
 }
-´´´
+
+```
 
 In this example, the Shape interface defines a common getArea() method that is implemented by both Rectangle and Square. This ensures that any instance of either type can be used interchangeably with no unexpected behavior. This design follows the Liskov Substitution Principle.
 
@@ -135,7 +137,8 @@ In this example, the Shape interface defines a common getArea() method that is i
 
 
 ### Related principles
- -[Code For The Maintainer](../general/codeformantainer.md)
+
+- [Code For The Maintainer](../general/codeformantainer.md)
 - [Boy-Scout Rule](../general/boyscoutrule.md)
 
 ### Related patterns
