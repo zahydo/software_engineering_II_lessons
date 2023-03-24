@@ -51,6 +51,9 @@ Upon completion of this course, you should be able to:
 - [SOLID Principles](principles/solid/README.md)
 - [Maven](maven/README.md)
 - [Git](git/README.md)
+- [Design patterns](design_patterns/README.md)
+  - [Structural patterns](design_patterns/structural/README.md)
+    - [Decorator](design_patterns/structural/decorator.md)
 
 ## How to Contribute
 
