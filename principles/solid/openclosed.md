@@ -1,6 +1,6 @@
 ## Open/Closed
 
-[TODO]
+
 
 ### Bad example:
 
