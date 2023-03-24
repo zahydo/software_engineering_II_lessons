@@ -38,9 +38,6 @@ char* uppercase_string(char* message) {
 
 - [Separación de intereses] 
 
-### Related patterns
-
-- [Pattern names]
 
 ---
 [Back to the list](./README.md)

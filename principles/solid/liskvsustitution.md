@@ -61,9 +61,7 @@ En este ejemplo, se definen dos funciones print_point() y move_point() que traba
 
 - [Links to other principles] 
 
-### Related patterns
 
-- [Pattern names]
 
 ---
 [Back to the list](./README.md)

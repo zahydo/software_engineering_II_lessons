@@ -75,12 +75,10 @@ int main() {
 
 ### Related principles
 
---- YAGNI
---- Boy-Scout
+- YAGNI
+- Boy-Scout
 
-### Related patterns
 
-- [Pattern names]
 
 ---
 [Back to the list](./README.md)
