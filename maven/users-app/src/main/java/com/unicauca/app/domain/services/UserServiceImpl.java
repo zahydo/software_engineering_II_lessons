@@ -22,4 +22,10 @@ public class UserServiceImpl implements IUserService{
             userRepository.delete(user);
         }
     }
+
+    @Override
+    public String getJWT(String username, String password) {    
+        System.out.println("Calling getJWT");
+        return "este es el JWT";
+    }
 }

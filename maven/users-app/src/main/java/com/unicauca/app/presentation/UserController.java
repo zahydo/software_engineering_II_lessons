@@ -18,4 +18,8 @@ public class UserController {
     public void deleteUser(String username) {
         userService.deleteUser(username);
     }
+
+    public void authenticate(String username, String password) {
+        userService.getJWT(username, password);
+    }
 }

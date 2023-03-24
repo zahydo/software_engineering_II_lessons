@@ -3,6 +3,8 @@ package com.unicauca.app;
 import com.unicauca.app.access.IUserRepository;
 import com.unicauca.app.access.UserRepositoryImpl;
 import com.unicauca.app.domain.services.IUserService;
+import com.unicauca.app.domain.services.LoggingDecorator;
+import com.unicauca.app.domain.services.UserServiceDecorator;
 import com.unicauca.app.domain.services.UserServiceImpl;
 import com.unicauca.app.presentation.UserController;
 
@@ -16,8 +18,11 @@ public class App
     {
         IUserRepository repository = new UserRepositoryImpl();
         IUserService service = new UserServiceImpl(repository);
-        UserController controller = new UserController(service);
+        UserServiceDecorator decorator = new LoggingDecorator(service);
 
-        controller.createUser("User name", "password");
+        UserController controller = new UserController(decorator);
+
+        // controller.createUser("User name", "password");
+        controller.authenticate("sahydo", "12345");
     }
 }
