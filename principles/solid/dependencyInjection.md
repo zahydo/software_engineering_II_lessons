@@ -55,7 +55,7 @@ This is a more flexible and modular way to implement the functionality of Car us
 
 ### Related principles
 
-- [Composition over inheritance][../general/compositionoverinheritance.md] 
+- [Composition over inheritance](../general/compositionoverinheritance.md)
 
 ### Related patterns
 

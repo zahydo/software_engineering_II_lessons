@@ -120,7 +120,7 @@ In this way, we have achieved a safer and more consistent implementation in acco
 
 ### Related principles
 
-- [Links to other principles] 
+- [Composition over inheritance](../general/compositionoverinheritance.md) 
 
 ### Related patterns
 

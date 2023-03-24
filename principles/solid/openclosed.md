@@ -46,7 +46,7 @@ In this example, a new class called FuelConsumptionVehicle has been created that
 
 ### Related principles
 
-- [Links to other principles] 
+- [Code for the mantainer](../general/codeformantainer.md) 
 
 ### Related patterns
 

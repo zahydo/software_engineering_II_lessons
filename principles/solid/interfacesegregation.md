@@ -80,7 +80,7 @@ In this way, we have separated the methods related to driving and music into two
 
 ### Related principles
 
-- [Links to other principles] 
+- [Separation of concerns](../general/separationofconcerns.md) 
 
 ### Related patterns
 
