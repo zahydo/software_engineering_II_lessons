@@ -56,6 +56,6 @@ int main() {
 
 ### Related principles
 
---- BESO
---- separation of interests
+- BESO
+- separation of interests
 
