@@ -1,104 +1,61 @@
 ## Liskov Substitution
 
-It is an object-oriented programming principle that states that if a class A is a subclass of a class B, then objects of class A should be able to be used anywhere objects of class B are expected, without affecting the correctness of the program.
+The Liskov Substitution Principle states that, in an object-oriented program, if we substitute a superclass object reference with an object of any of its subclasses, the program should not break.
+
+This principle is applicable when there is a supertype-subtype inheritance relationship, either through class extension or interface implementation. We can think of the methods defined in the supertype as the definition of a contract. It is expected that each subtype adheres to this contract. If a subclass does not adhere to the contract of the superclass, it would be violating the Liskov Substitution.
 
 ### Bad example:
 
 ~~~java
-class Animal {
-    String name;
-    
-    public Animal(String name) {
-        this.name = name;
-    }
-    
-    public void makeSound() {
-        // implementation details
-    }
+public class Animal {
+  public void fly() {
+    System.out.println("I'm flying!");
+  }
 }
 
-class Dog extends Animal {
-    public Dog(String name) {
-        super(name);
-    }
-        
-    public void makeSound() {
-        System.out.println("Bark bark!");
-    }
+public class Bird extends Animal {
+  public void fly() {
+    System.out.println("I'm flying!");
+  }
 }
 
-class Cat extends Animal {
-    public Cat(String name) {
-        super(name);
-    }
-        
-    public void makeSound() {
-        System.out.println("Meow meow!");
-    }
-}
-
-class Fish extends Animal {
-    public Fish(String name) {
-        super(name);
-    }
-        
-    public void swim() {
-        System.out.println("Swimming...");
-    }
+public class Fish extends Animal {
+  public void fly() {
+    //"Error: I can't fly!";
+  }
 }
 ~~~
+In this example, the Animal class has a fly method, and the Bird and Fish classes inherit from it. However, this causes a problem in the Fish class since fish are animals but cannot fly.
 
-In this example, the Fish class is a subclass of the Animal class, but it introduces a swim() method that is not present in the base class. This violates the Liskov Substitution principle, as instances of Fish cannot replace instances of Animal in all situations. For example, if an object of type Animal is expected to make a sound, an error will occur if the makeSound() method is called on an instance of Fish.
 
 ### Good example:
 
 ~~~java
-class Animal {
-    String name;
-    
-    public Animal(String name) {
-        this.name = name;
-    }
-    
-    public void makeSound() {
-        // implementation details
-    }
+public abstract class Animal {
+  public abstract void displacement();
 }
 
-class Dog extends Animal {
-    public Dog(String name) {
-        super(name);
-    }
-        
-    public void makeSound() {
-        System.out.println("Bark bark!");
-    }
+public class Bird extends Animal {
+  public void displacement() {
+    System.out.println("I'm flying!");
+  }
 }
 
-class Cat extends Animal {
-    public Cat(String name) {
-        super(name);
-    }
-        
-    public void makeSound() {
-        System.out.println("Meow meow!");
-    }
+public class Fish extends Animal {
+  public void displacement() {
+    System.out.println("I'm swimming!");
+  }
 }
-
 
 ~~~
+In this example, To solve this problem, one could consider creating an abstract class called Animal that contains an abstract method called desplazamiento instead of fly. This way, each subclass of Animal could implement its own displacement behavior, allowing for more flexible creation of new types of animals.
 
-In this example, all subclasses of Animal implement the same set of methods as the base class, and no new methods are added that can violate the Liskov Substitution principle. This means that instances of the subclasses can seamlessly replace instances of the base class in any situation.
 
 ### Related principles
 
 * [Separation of Concerns](../general/separationofconcerns.md)
 * [Composition Over Inheritance](../general/compositionoverinheritance.md)
 
-
-### Related patterns
-
-- [Pattern names]
 
 ---
 [Back to the list](./README.md)

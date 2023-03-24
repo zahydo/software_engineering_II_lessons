@@ -2,6 +2,8 @@
 
 It is a design principle that states that a class should not depend on interfaces that it does not use. That is, a class should have a specific interface that corresponds exactly to the needs of the clients that use it.
 
+Similar to the [Single Responsibility](./singleresponsibility.md) Principle, the goal of the Interface Segregation Principle is to reduce the side effects and frequency of required changes by splitting the software into multiple, independent parts.
+
 
 ### Bad example:
 
@@ -63,17 +65,15 @@ class FaxMachine implements IPrint, IFax {
 }
 ~~~
 
-In this example, each type of printer implements only the interfaces it needs, which makes the code more modular and easier to maintain.
+In this example, Instead of having a single interface with methods that may not be relevant to all classes that implement that interface, separate interfaces containing specific methods have been created. Each class only implements the interfaces that are relevant to its functionality and does not have to implement unnecessary methods.
+
+Furthermore, by having smaller and more specific interfaces, it is easier for the classes that implement them to comply with interface contracts and not have to worry about implementing methods that are not relevant to their functionality. This makes the code easier to maintain and extend in the future.
 
 ### Related principles
 
 * [Separation of Concerns](../general/separationofconcerns.md)
 * [Composition Over Inheritance](../general/compositionoverinheritance.md)
 * [KISS (Keep It Simple, Stupid)](../general/kiss.md)
-
-### Related patterns
-
-- [Pattern names]
 
 ---
 [Back to the list](./README.md)

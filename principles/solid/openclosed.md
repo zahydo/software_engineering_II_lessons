@@ -1,6 +1,10 @@
 ## Open/Closed
 
-An entity of software should be open to extension but closed to modification. We should be able to extend the behavior of our classes without modifying their code.
+The Open/Closed Principle states that software entities, such as classes, should be open for extension but closed for direct modification of their source code. This means that we should design our classes in such a way that they can be extended with new functionality without needing to modify the original source code.
+
+* Being open for extension means that we can add new functionality to the class by creating new subclasses or by adding new methods and properties. The original class is not affected by these extensions.
+
+* Being closed for modification means that the source code of the original class is not modified to add new functionality. Instead, techniques such as inheritance, composition, and design patterns are used to extend its behavior.
 
 ### Bad example:
 
@@ -76,10 +80,6 @@ In this example, an abstract class FiguraGeometrica has been created that define
 * [Separation of Concerns](../general/separationofconcerns.md)
 * [Composition Over Inheritance](../general/compositionoverinheritance.md)
 * [Code For The Maintainer](../general/codeformantainer.md)
-
-### Related patterns
-
-- [Pattern names]
 
 ---
 [Back to the list](./README.md)
