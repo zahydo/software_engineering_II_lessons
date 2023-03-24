@@ -17,13 +17,11 @@ is a programming principle that states that objects should not create their own 
 
 ### Related principles
 
----Dependency inversion principle
----Single responsibility principle
----Liskov substitution principle
+- Dependency inversion principle
+- Single responsibility principle
+- Liskov substitution principle
 
-### Related patterns
 
-- [Pattern names]
 
 ---
 [Back to the list](./README.md)
