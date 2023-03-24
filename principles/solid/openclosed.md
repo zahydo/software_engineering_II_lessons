@@ -80,9 +80,9 @@ To comply with this principle we could do the following:
     }
 ```
 
-Each car extends the abstract class Car and implements the abstract method priceMedioCoche(). Thus, each car has its own implementation of the method AverageCarPrice(), so the method printAverageCarPrice() iterates the array of cars and only calls the method AverageCarPrice().
+Each car extends the abstract class Car and implements the abstract method averageCarPrice(). Thus, each car has its own implementation of the method averageCarPrice(), so the method printAverageCarPrice() iterates the array of cars and only calls the method averageCarPrice().
 
-Now, if we add a new car, priceAverageCar() will not have to be modified. We will only have to add the new car to the array, thus fulfilling the open/closed principle
+Now, if we add a new car, averageCarPrice() will not have to be modified. We will only have to add the new car to the array, thus fulfilling the open/closed principle
 
 ### Related principles
 

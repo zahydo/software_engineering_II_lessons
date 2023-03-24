@@ -6,16 +6,16 @@ Adhering to this principle will confirm that our program has an easy-to-understa
 
 ### Bad example:
 
-```JAVA:
+```:
     public static void printNumSeats(Car[] arrayCars){
-    for (Car car : arrayCars) {
-        if(instanceof Renault car)
-            System.out.println(numSeatsRenault(car));
-        if(instanceof Audi car)
-            System.out.println(numSeatsAudi(car));
-        if(instanceof Mercedes car)
-            System.out.println(numSeatsMercedes(car));
-    }
+        for (Car car : arrayCars) {
+            if(instanceof Renault car)
+                System.out.println(numSeatsRenault(car));
+            if(instanceof Audi car)
+                System.out.println(numSeatsAudi(car));
+            if(instanceof Mercedes car)
+                System.out.println(numSeatsMercedes(car));
+        }
     }
     printNumSeats(arrayCars);
 ```
@@ -24,14 +24,8 @@ This violates both the Liskov substitution principle and the open/closed princip
 
 ### Good example:
 
-For this method to comply with the principle, we will follow these principles:
 
-- If the superclass (Car) has a method that accepts a parameter of the type of the superclass (Car), then its subclass
-  (Renault) should accept a type of the superclass (Car) or a type of the subclass (Renault) as its argument.
-- If the superclass returns a type of itself (Car), then its subclass (Renault) should either return a type of the
-  superclass (Car) or a type of the subclass (Renault).
-
-```JAVA:
+```:
     abstract class Car {
 
         // ...
@@ -49,10 +43,10 @@ For this method to comply with the principle, we will follow these principles:
     // ...
 
     public static void printNumSeats(Car[] arrayCars){
-            for (Car car : arrayCars) {
-                System.out.println(car.numSeats());
-            }
+        for (Car car : arrayCars) {
+            System.out.println(car.numSeats());
         }
+    }
 
     printNumSeats(arrayCars);
 ```
