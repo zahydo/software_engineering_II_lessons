@@ -63,6 +63,9 @@ public class Triangle extends Shape {
 
     @Override
     public double getArea() {
+        if (base <= 0 || height <= 0) {
+            throw new IllegalArgumentException("Base and height must be greater than 0");
+        }
         return (base * height) / 2;
     }
 }
