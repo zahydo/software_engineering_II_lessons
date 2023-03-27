@@ -45,6 +45,7 @@ Upon completion of this course, you should be able to:
 - [Online Moodle Course](http://univirtual.unicauca.edu.co/moodle/course/view.php?id=2234)
 - [Refactoring Guru](https://refactoring.guru/es)
 - [Martin Fowler's website](https://martinfowler.com/)
+- [Learn Git Branching](https://learngitbranching.js.org/)
 
 ### Lessons
 - [General Programming Principles](principles/general/README.md)
