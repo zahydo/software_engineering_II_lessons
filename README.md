@@ -54,8 +54,12 @@ Upon completion of this course, you should be able to:
 - [Git](git/README.md)
 - [Design patterns](design_patterns/README.md)
   - [Structural patterns](design_patterns/structural/README.md)
+    - [Adapter](design_patterns/structural/adapter.md)
     - [Decorator](design_patterns/structural/decorator.md)
-
+    - [Facade](design_patterns/structural/facade.md)
+    - [Proxy](design_patterns/structural/proxy.md)
+  - [Creational patterns](design_patterns/creational/README.md)
+    - [Singleton](design_patterns/creational/singleton.md)
 ## How to Contribute
 
 If you want to contribute to this Repo, you must follow the next steps:
