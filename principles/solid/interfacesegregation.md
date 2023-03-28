@@ -1,55 +1,75 @@
-# INTERFACES SEGREGATION
+## Interfaces Segregation
 
-It states that a class should not be forced to implement interfaces that it does not use. In other words, a class should be able to implement only the methods it needs from an interface and not the others. This principle helps prevent classes from becoming too coupled and rigid, which can make code difficult to understand and maintain.
+It states that a class should not be forced to implement interfaces that it does not use. That is, interfaces should be designed so that clients only depend on the methods they need and not on those they do not need.
+The ISP addresses the problem of excessive coupling and unnecessary dependency between classes. When a class implements an interface it does not need, it is forced to provide empty implementations or throw exceptions on methods it does not use. This can increase complexity and confusion in the code, and can result in code that is unnecessary, inefficient and difficult to maintain.
 
-## Bad Example
-```
-// Interface for a printer that can print, scan and photocopy
-public interface MultifunctionPrinter {
-    void Print();
-    void Scan();
-    void Photocopy();
+To solve this problem, the ISP proposes to split larger interfaces into smaller, more specific interfaces, allowing classes to implement only what they need. In this way, unnecessary dependencies can be avoided and complexity and coupling between classes can be reduced.
+
+### Bad Example
+For example, suppose we have a Printable interface that defines a print() method. If a class only needs to print to one printer, it doesn't make sense for it to implement all the other methods of the Printable interface. Instead, we can split the Printable interface into two smaller, more specific interfaces: PrintableOnPrinter and PrintableOnScreen. This way, a class that only needs to print to a printer only implements PrintableOnPrinter and does not have to worry about the methods of PrintableOnScreen.
+``` java
+// Large interface violating the ISP
+public interface Printable {
+    void print();
+    void fax();
+    void email();
+    void printToPrinter();
+    void printToScreen();
 }
-
 // A class that implements all the interface methods, but does not need to photocopy
-public class Printer implements MultifunctionPrinter {
+public class Invoice implements Printable {
     @Override
-    public void Print() {
+    public void print() {
         // Print logic
     }
     @Override
-    public void Scan() {
+    public void fax() {
         // Scan logic
     }
     @Override
-    public void Photocopy() {
+    public void email() {
+        // Photocopy logic
+    }
+    @Override
+    public void printToPrinter() {
+        // Photocopy logic
+    }
+    @Override
+    public void printToScreen() {
         // Photocopy logic
     }
 }
 ```
 
-In this example, the Printer class implements all the methods of the "PrinterMultifunction" interface, but does not need to implement the photocopy() method. This means that the class is forced to implement a method that it does not need, which makes it more complex and rigid. If the interface is updated in the future and more methods are added, the Printer class will have to implement all of them, which may result in an overloaded and unnecessarily complex class.
+### Good Example
+In this example, we see how a large interface Printable is divided into two smaller, more specific interfaces: PrintableToPrinter and PrintableToScreen. We also have two classes Invoice and Report that implement only the interface they need.
 
-## Good Example
-```
-// Interface for a printer that can print, scan and photocopy
-public interface MultifunctionPrinter {
-    void Print();
-    void Scan();
-    void Photocopy();
+```java
+// Smaller, specific interfaces fulfilling the ISP
+public interface PrintableToPrinter {
+    void printToPrinter();
 }
 
-// A class implementing only the print methods
-public class Printer implements MultifunctionPrinter {
-    @Override
-    public void Print() {
-        // Print logic
+public interface PrintableToScreen {
+    void printToScreen();
+}
+
+public class Invoice implements PrintableToPrinter {
+    public void printToPrinter() {
+        // Printer printing logic
+    }
+}
+
+public class Report implements PrintableToScreen {
+    public void printToScreen() {
+        // Screen printing logic
     }
 }
 ```
-On the other hand, in this other example, the "Printer" class implements the "PrinterMultifunction" interface, but only implements the print() method and not the scan() and photocopy() methods. This way, the class only cares about what it needs to do, which makes the code easier to understand and maintain.
 
 ## Related principles
-- KISS
-- YAGNI
-- Boy-Scout Rule
+- [KISS](../general/kiss.md)
+- [YAGNI](../general/yagni.md)
+- [Boy-Scout Rule](../general/boyscoutrule.md)
+
+[Back to the list](./README.md)
