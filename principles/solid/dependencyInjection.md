@@ -4,16 +4,30 @@ is a programming principle that states that objects should not create their own 
 
 ### Bad example
 
-    const char* MESSAGE = "Hola mundo";
-    void print_message() {
-        printf("%s\n", MESSAGE);
+    public class Main {
+    static final String MESSAGE = "Hola mundo";
+    
+    public static void main(String[] args) {
+        printMessage();
     }
+    
+    static void printMessage() {
+        System.out.println(MESSAGE);
+    }
+}
 
 ### Good example
 
-    void print_message(const char* message) {
-        printf("%s\n", message);
-    }   
+  public class Main {
+    public static void main(String[] args) {
+        String message = "Hola mundo";
+        printMessage(message);
+    }
+    
+    static void printMessage(String message) {
+        System.out.println(message);
+    }
+}
 
 ### Related principles
 

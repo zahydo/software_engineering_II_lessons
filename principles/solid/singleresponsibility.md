@@ -1,58 +1,74 @@
 ## Single Responsibility
 
-[The Single Responsibility Principle (SRP) states that a class or module should have only one responsibility. In other words, a class or module should have only one reason to change. The SRP promotes cohesion and modularity in software design, which makes the system easier to understand, maintain, and scale.]
+The Single Responsibility Principle (SRP) states that a class or module should have only one responsibility. In other words, a class or module should have only one reason to change. The SRP promotes cohesion and modularity in software design, which makes the system easier to understand, maintain, and scale.
 
 ### Bad example:
 
-[#include <stdio.h>
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-void read_file(char* filename) {
-   FILE* file = fopen(filename, "r");
-   char buffer[256];
-   while (fgets(buffer, sizeof(buffer), file)) {
-      printf("%s", buffer);
-   }
-   fclose(file);
-   // Do some data processing
-   // ...
-   // Write data to the database
-   // ...
-}]
+public class Main {
+    public static void main(String[] args) {
+        String filename = "example.txt";
+        read_file(filename);
+    }
+
+    public static void read_file(String filename) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+}
 
 ### Good example:
 
-[#include <stdio.h>
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-void read_file(char* filename) {
-   FILE* file = fopen(filename, "r");
-   char buffer[256];
-   while (fgets(buffer, sizeof(buffer), file)) {
-      printf("%s", buffer);
-   }
-   fclose(file);
+public class Main {
+    public static void read_file(String filename) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(filename));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+        reader.close();
+    }
+
+    public static void process_data(String data) {
+        // Do some data processing
+        // ...
+    }
+
+    public static void write_to_database(String data) {
+        // Write data to the database
+        // ...
+    }
+
+    public static void main(String[] args) {
+        String filename = "data.txt";
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                process_data(line);
+                write_to_database(line);
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
-
-void process_data(char* data) {
-   // Do some data processing
-   // ...
-}
-
-void write_to_database(char* data) {
-   // Write data to the database
-   // ...
-}
-
-int main() {
-   char* filename = "data.txt";
-   FILE* file = fopen(filename, "r");
-   char buffer[256];
-   while (fgets(buffer, sizeof(buffer), file)) {
-      process_data(buffer);
-      write_to_database(buffer);
-   }
-   fclose(file);
-   return 0;
-}]
 
 ### Related principles
 

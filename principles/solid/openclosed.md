@@ -1,42 +1,61 @@
 ## Open/Closed
 
-["The Open/Closed Principle (OCP) is an object-oriented design principle that states that classes should be open for extension but closed for modification. This means that a class should be able to extend its behavior without changing its original source code. In other words, new functionalities should be added to a class without modifying its existing implementation. This ensures greater stability and reliability of the system as a whole, as changes made to a class will not affect its current operation or that of other components that depend on it."]
+"The Open/Closed Principle (OCP) is an object-oriented design principle that states that classes should be open for extension but closed for modification. This means that a class should be able to extend its behavior without changing its original source code. In other words, new functionalities should be added to a class without modifying its existing implementation. This ensures greater stability and reliability of the system as a whole, as changes made to a class will not affect its current operation or that of other components that depend on it."
 
 ### Bad example:
 
-[#include <stdio.h>
+import java.util.Date;
 
-void print_message(char* message) {
-   printf("%s\n", message);
+public class Main {
+    
+    public static void printMessage(String message) {
+        System.out.println(message);
+    }
+    
+    public static void printMessageWithTime(String message) {
+        Date currentDate = new Date();
+        System.out.printf("%s: %s\n", currentDate.toString(), message);
+    }
+    
+    public static void main(String[] args) {
+        printMessage("Hello, world!");
+        printMessageWithTime("Hello, world with time!");
+    }
+    
 }
-
-void print_message_with_time(char* message) {
-   time_t current_time;
-   time(&current_time);
-   printf("%s: %s\n", ctime(&current_time), message);
-}]
 
 ### Good example:
 
-[#include <stdio.h>
-
-void print_message(char* message) {
-   printf("%s\n", message);
+public class Main {
+    
+    public static void main(String[] args) {
+        String message = "Hola mundo";
+        printMessage(message);
+        printMessageUppercase(message);
+    }
+    
+    public static void printMessage(String message) {
+        System.out.println(message);
+    }
+    
+    public static void printMessageUppercase(String message) {
+        String uppercaseMessage = message.toUpperCase();
+        printMessage(uppercaseMessage);
+    }
 }
-
-void print_message_uppercase(char* message) {
-   char* uppercase_message = uppercase_string(message);
-   print_message(uppercase_message);
-   free(uppercase_message);
+public static String uppercaseString(String message) {
+    StringBuilder sb = new StringBuilder();
+    for (char c : message.toCharArray()) {
+        sb.append(Character.toUpperCase(c));
+    }
+    return sb.toString();
 }
+Luego se puede utilizar esta función en lugar de toUpperCase en la función printMessageUppercase.
 
-char* uppercase_string(char* message) {
-   // implementation to convert the message to uppercase
-}]
 
 ### Related principles
 
-- [Separación de intereses] 
+- Separación de intereses
 
 
 ---

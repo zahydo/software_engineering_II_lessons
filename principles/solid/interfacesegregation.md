@@ -4,74 +4,77 @@
 
 ### Bad example:
 
-[#include <stdio.h>
-
-
-typedef struct {
-  int (*sum)(int x, int y);
-  int (*multiply)(int x, int y);
-} OperationInterface;
-
-typedef struct {
-  int x;
-  int y;
-} Data;
-
-
-void performOperation(Data* data, OperationInterface* operationInterface) {
-  // Sumar x e y
-  int result = operationInterface->sum(data->x, data->y);
-  printf("Resultado de la suma: %d\n", result);
-  
-
-  result = operationInterface->multiply(data->x, data->y);
-  printf("Resultado de la multiplicación: %d\n", result);
+interface OperationInterface {
+    int sum(int x, int y);
+    int multiply(int x, int y);
 }
 
-int main() {
+class Data {
+    int x;
+    int y;
+    
+    public Data(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
 
-  Data myData = { .x = 5, .y = 10 };
-  
-
-  OperationInterface* operationInterface = &(OperationInterface) { 
-    .sum = [](int x, int y) -> int { return x + y; },
-    .multiply = [](int x, int y) -> int { return x * y; }
-  };
-  performOperation(&myData, operationInterface);
-  
-  return 0;
-}]
+class Main {
+    static void performOperation(Data data, OperationInterface operationInterface) {
+        // Sumar x e y
+        int result = operationInterface.sum(data.x, data.y);
+        System.out.println("Resultado de la suma: " + result);
+        
+        result = operationInterface.multiply(data.x, data.y);
+        System.out.println("Resultado de la multiplicación: " + result);
+    }
+    
+    public static void main(String[] args) {
+        Data myData = new Data(5, 10);
+        
+        OperationInterface operationInterface = new OperationInterface() {
+            public int sum(int x, int y) { return x + y; }
+            public int multiply(int x, int y) { return x * y; }
+        };
+        
+        performOperation(myData, operationInterface);
+    }
+}
 
 ### Good example:
 
-[#include <stdio.h>
-
-
-typedef struct {
-  int (*multiply)(int x, int y);
-} MultiplyInterface;
-
-
-typedef struct {
-  int x;
-  int y;
-} Data;
-
-
-void multiplyData(Data* data, MultiplyInterface* multiplyInterface) {
-  // Multiplicar x e y
-  int result = multiplyInterface->multiply(data->x, data->y);
-  printf("Resultado de la multiplicación: %d\n", result);
+interface MultiplyInterface {
+    int multiply(int x, int y);
 }
 
-int main() {
-  
-  Data myData = { .x = 5, .y = 10 };
-  
-  MultiplyInterface* multiplyInterface = &(MultiplyInterface) { .multiply = [](int x, int y) -> int { return x * y; } };
-  multiplyData(&myData, multiplyInterface);
-  return 0;
-]
+class Data {
+    int x;
+    int y;
+    
+    public Data(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class Main {
+    static void multiplyData(Data data, MultiplyInterface multiplyInterface) {
+        // Multiplicar x e y
+        int result = multiplyInterface.multiply(data.x, data.y);
+        System.out.println("Resultado de la multiplicación: " + result);
+    }
+    
+    public static void main(String[] args) {
+        Data myData = new Data(5, 10);
+        
+        MultiplyInterface multiplyInterface = new MultiplyInterface() {
+            public int multiply(int x, int y) { return x * y; }
+        };
+        
+        multiplyData(myData, multiplyInterface);
+    }
+  }
+
 
 ### Related principles
 
