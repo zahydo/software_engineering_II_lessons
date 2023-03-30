@@ -143,3 +143,5 @@ UserController loggingUserController = new LoggingDecorator(basicUserController)
 ```
 
 This creates a BasicUserController object and wraps it with a LoggingDecorator, adding the behavior of logging authentication attempts to a file. Now, when you call the authenticateUser() method on the loggingUserController object, it will first log the authentication attempt to a file before calling the wrapped object to authenticate the user.
+
+[Back to the list](./README.md)

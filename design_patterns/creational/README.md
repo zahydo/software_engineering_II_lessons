@@ -4,7 +4,7 @@ Creational patterns are design patterns that provide various ways of creating ob
 
 There are several types of creational patterns, including:
 
-1. Singleton Pattern
+1. [Singleton Pattern](singleton.md)
 2. Factory Method Pattern
 3. Abstract Factory Pattern
 4. Builder Pattern
