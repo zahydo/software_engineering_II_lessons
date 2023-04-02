@@ -60,6 +60,8 @@ Upon completion of this course, you should be able to:
     - [Proxy](design_patterns/structural/proxy.md)
   - [Creational patterns](design_patterns/creational/README.md)
     - [Singleton](design_patterns/creational/singleton.md)
+    - [Builder](../software_engineering_II_lessons/design_patterns/creational/builder.md)
+    
 ## How to Contribute
 
 If you want to contribute to this Repo, you must follow the next steps:
