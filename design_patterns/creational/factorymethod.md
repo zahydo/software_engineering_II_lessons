@@ -1,5 +1,70 @@
 # Factory Method
 
-[TODO description]
+The "Factory Method" design pattern is a creation pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects to be created. In other words, the "Factory Method" pattern defines an interface for creating objects, but allows subclasses to decide which objects to create.
 
-[TODO example] 
+The idea behind the pattern is to define an abstract class that has a method for creating objects. Subclasses can then implement that method to create different types of objects. In this way, the abstract class can provide a generic interface for creating objects, while subclasses can customize object creation as needed.
+
+In Java, the "Factory Method" pattern is implemented by creating an abstract class that defines the "Factory Method" method for creating objects. Then, several subclasses are created that implement the "Factory Method" method to create different types of objects.
+
+## Example
+
+A real example of the implementation of the "Factory Method" design pattern would be in an order management system in an online store. Suppose the store has different types of shipping, such as express shipping, standard shipping, economy shipping, etc. To implement the "Factory Method" pattern, we could create an interface called "ShippingMethod" that defines the "calculateShippingCost()" method to calculate the shipping cost of an order.
+
+``` java
+public interface ShippingMethod {
+    public double calculateShippingCost(Order order);
+}
+```
+
+Then, we could create different classes that implement the "ShippingMethod" interface, each of which would provide a different implementation for the "calculateShippingCost()" method. For example, a "StandardShipping" class might implement the method one way, while an "ExpressShipping" class might implement it another way.
+
+``` java
+public class StandardShipping implements ShippingMethod {
+    public double calculateShippingCost(Order order) {
+        // Calculation of shipping cost for standard shipping
+    }
+}
+
+public class ExpressShipping implements ShippingMethod {
+    public double calculateShippingCost(Order order) {
+        // Calculation of shipping cost for express shipment
+    }
+}
+```
+
+Finally, in our main class that handles orders, instead of having a long block of code that calculates the shipping cost for each type of shipping, we could create a shipping factory that allows us to create an instance of the appropriate class based on the type of shipping selected. This way, our code is easier to read and maintain, and the responsibility of creating objects is delegated to the factory.
+
+``` java
+public class ShippingMethodFactory {
+    public static ShippingMethod createShippingMethod(String shippingType) {
+        if (shippingType.equalsIgnoreCase("standard")) {
+            return new StandardShipping();
+        } else if (shippingType.equalsIgnoreCase("express")) {
+            return new ExpressShipping();
+        } else {
+            throw new IllegalArgumentException("Tipo de envío no válido");
+        }
+    }
+}
+```
+In this example, the class "Order" represents an order in the online store. The class has a "shippingType" attribute that indicates the type of shipping selected by the customer and a "shippingMethod" attribute that represents the implementation of the appropriate shipping method.
+
+In the constructor of the "Order" class, we create an instance of the appropriate class using the shipping factory "ShippingMethodFactory". In the "calculateShippingCost()" method, we call the "calculateShippingCost()" method of the appropriate "ShippingMethod" class instance to calculate the shipping cost of the order.
+
+In this way, we can easily add new shipping types by simply adding new classes that implement the "ShippingMethod" interface and updating the "ShippingMethodFactory" shipping factory.
+
+```java
+public class Order {
+    private String shippingType;
+    private ShippingMethod shippingMethod;
+
+    public Order(String shippingType) {
+        this.shippingType = shippingType;
+        this.shippingMethod = ShippingMethodFactory.createShippingMethod(shippingType);
+    }
+
+    public double calculateShippingCost() {
+        return shippingMethod.calculateShippingCost(this);
+    }
+}
+```
