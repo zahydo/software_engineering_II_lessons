@@ -1,4 +1,4 @@
-# Adapter pattern
+# Adapter pattern  
 
 [TODO descripción]
 
