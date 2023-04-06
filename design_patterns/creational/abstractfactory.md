@@ -1,12 +1,14 @@
 #  Abstract Factory
 
-The "Abstract Factory" design pattern is an authoring pattern that allows you to create families of related objects without specifying their concrete classes. In other words, the pattern provides an interface to create a series of related objects without specifying their concrete classes.
+The "Abstract Factory" design pattern solves the problem of creating families of related objects without having to explicitly specify their concrete classes. The pattern provides an interface for creating related objects without specifying their concrete classes, which allows changing the families of objects that are created without changing the code that uses them.
 
 The idea behind the pattern is to create an abstract factory that defines a set of methods to create each of the object types that make up the family. Then, different implementations of the abstract factory can be created to create different families of objects. The abstract factory is used to hide the details of object creation and provide a generic way to create related objects.
 
-In Java, the Abstract Factory pattern is implemented by creating an abstract interface or class that defines the methods to create the objects. Then, several concrete classes that implement the abstract interface are created to create different families of objects. Finally, a "Factory" class is created that uses the abstract interface to create objects of the corresponding family.
+The Abstract Factory pattern is implemented by creating an abstract interface or class that defines the methods to create the objects. Then, several concrete classes that implement the abstract interface are created to create different families of objects. Finally, a "Factory" class is created that uses the abstract interface to create objects of the corresponding family.
 
 ## Example
+
+![ClassDiagram](../creational/classDiagrams/)
 
 Suppose we have two families of objects: Buttons and Boxes. Each family has two variants: Buttons for Windows and Buttons for MacOS, Frames for Windows and Frames for MacOS. We want to create an application that can use the different variants depending on the operating system it runs on.
 

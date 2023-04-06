@@ -1,12 +1,14 @@
 # Builder pattern
 
-The "Builder" pattern is a creative design pattern that is used to build complex objects in a step-by-step manner. Instead of creating a complex object all at once, the "Builder" pattern breaks the construction process into small parts to allow the creation of objects with different configurations and complexities.
+The "Builder" design pattern solves the problem of creating complex objects with multiple parts that must be built in a specific order. The pattern allows building objects step by step, which facilitates the construction of complex objects without having to provide a large number of arguments to a constructor.
 
-In Java, the "Builder" pattern is implemented by creating a "Builder" class that contains the methods needed to build the complex object. These methods define each part of the object and are used to set the values of the attributes. In addition, the "Builder" class may also include methods that validate the values set and ensure that the constructed object is consistent.
+The "Builder" pattern is implemented by creating a "Builder" class that contains the methods needed to build the complex object. These methods define each part of the object and are used to set the values of the attributes. In addition, the "Builder" class can also include methods that validate the set values and ensure the consistency of the constructed object.
 
 The "Builder" class can be complemented by a "Director" class that uses the methods of the "Builder" class to construct the complex object. The "Director" is responsible for the construction sequence and uses the methods of the "Builder" class to set the values of the attributes. This allows the creation of complex objects in a more flexible and structured way.
 
 ## Example
+
+![ClassDiagram](../creational/classDiagrams/)
 
 A real example of implementation of the "Builder" pattern in Java could be the construction of a "User" object for an authentication system. The "User" object is complex and has many attributes, such as first name, last name, email, password, date of birth, among others. Using the "Builder" pattern, we can create a constructor that receives each of the attributes and sets them in the "User" object incrementally.
 

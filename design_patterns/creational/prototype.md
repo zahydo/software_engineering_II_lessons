@@ -1,12 +1,14 @@
 # Prototype
 
-The "Prototype" design pattern is a software design technique that belongs to the group of creative patterns. This pattern is used to create new objects from an existing object by cloning. Instead of creating an object from scratch, we clone an existing object and customize it as needed.
+The "Prototype" design pattern is a software design technique that belongs to the group of creational patterns. This pattern solves the inefficient creation of objects by creating them from an existing cloned object. In more detail, instead of creating an object from scratch, we clone an existing object and customize it as needed.
 
-In Java, to implement the "Prototype" pattern, it is necessary to create a prototype class that implements the "Cloneable" interface. This interface has no methods, but serves as a flag to indicate that the class can be cloned. Next, the "clone()" method of the class, which is responsible for creating an exact copy of the object, must be implemented.
+To implement the "Prototype" pattern, it is necessary to create a prototype class that implements the "Cloneable" interface. This interface has no methods, but serves as a flag to indicate that the class can be cloned. Next, the "clone()" method of the class, which is responsible for creating an exact copy of the object, must be implemented.
 
 Once the prototype class has been created, instances of this class can be created and cloned when necessary. In this way, complex objects with many attributes can be created in a more efficient way, since it is not necessary to create each object from scratch. The "Prototype" pattern is particularly useful when many similar objects are needed, but with small differences in their attributes. By cloning an existing object, you can save a lot of resources and time in creating new objects.
 
 ## Example
+
+![ClassDiagram](../creational/classDiagrams/)
 
 In this example, the "Shape" class is the abstract prototype class that defines the basic structure of a shape. The classes "Rectangle" and "Square" are the concrete classes that implement the prototype class "Shape". These classes have their own specific attributes and methods.
 

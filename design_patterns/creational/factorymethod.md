@@ -1,12 +1,14 @@
 # Factory Method
 
-The "Factory Method" design pattern is a creation pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects to be created. In other words, the "Factory Method" pattern defines an interface for creating objects, but allows subclasses to decide which objects to create.
+The "Factory Method" design pattern solves the problem of creating objects without explicitly specifying the specific class to be created. Instead of directly creating an object from a class, a factory is used to create objects through a factory method. This allows for greater flexibility and extensibility in object creation, since the object creation logic is separated from the object usage logic.
 
-The idea behind the pattern is to define an abstract class that has a method for creating objects. Subclasses can then implement that method to create different types of objects. In this way, the abstract class can provide a generic interface for creating objects, while subclasses can customize object creation as needed.
+The idea behind this pattern is to define an abstract class that has a method for creating objects. Subclasses can implement that method to create different types of objects. In this way, the abstract class can provide a generic interface for object creation, while the subclasses can customize object creation as needed.
 
-In Java, the "Factory Method" pattern is implemented by creating an abstract class that defines the "Factory Method" method for creating objects. Then, several subclasses are created that implement the "Factory Method" method to create different types of objects.
+The "Factory Method" pattern is implemented by creating an abstract class that defines the "Factory Method" method for creating objects. Then, several subclasses are created that implement the "Factory Method" method to create different types of objects.
 
 ## Example
+
+![ClassDiagram](../creational/classDiagrams/)
 
 A real example of the implementation of the "Factory Method" design pattern would be in an order management system in an online store. Suppose the store has different types of shipping, such as express shipping, standard shipping, economy shipping, etc. To implement the "Factory Method" pattern, we could create an interface called "ShippingMethod" that defines the "calculateShippingCost()" method to calculate the shipping cost of an order.
 
@@ -27,7 +29,7 @@ public class StandardShipping implements ShippingMethod {
 
 public class ExpressShipping implements ShippingMethod {
     public double calculateShippingCost(Order order) {
-        // Calculation of shipping cost for express shipment
+        // Calculation of shipping cost for express shipping
     }
 }
 ```
