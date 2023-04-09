@@ -10,8 +10,54 @@ The Singleton pattern provides a solution to the above problem by defining a cla
 
 By using the Singleton pattern, we can ensure that a class has only one instance, and that this instance is globally accessible. This pattern also promotes encapsulation, by hiding the creation of the singleton instance from the client code. It is useful in scenarios where we need to manage limited resources, such as connections to a database, or in situations where we need to maintain a single global state, such as in a configuration object.
 ## Example: 
+Let's say we have a class DatabaseConnection that represents a connection to a database. We want to ensure that there is only one instance of this class throughout the lifetime of the application, to avoid having multiple connections to the same database.
+
 ### Structure
 <p align="center">
     <img src="./diagrams/singleton.svg"/>
 </p>
-### Implementation
+
+### Implementation
+
+To implement this, we can use the Singleton pattern. Here's an example implementation:
+
+``` Java
+public class DatabaseConnection {
+    private static DatabaseConnection instance;
+    private Connection connection;
+
+    private DatabaseConnection() {
+        // Initialize the connection
+    }
+
+    public static DatabaseConnection getInstance() {
+        if (instance == null) {
+            instance = new DatabaseConnection();
+        }
+        return instance;
+    }
+
+    public Connection getConnection() {
+        return connection;
+    }
+}
+
+```
+
+In the above code, we have a private static variable instance that holds the single instance of the `DatabaseConnection` class, a private constructor that initializes the connection to the database, and a public static method `getInstance()` that returns the instance of the class. The `getInstance()` method checks if the instance is null, and if it is, creates a new instance of the class. Otherwise, it simply returns the existing instance.
+
+We also have a public method `getConnection()` that returns the connection object.
+
+Now, in the client code, we can get the instance of the `DatabaseConnection` class using the `getInstance()` method, and then use the `getConnection()` method to get the connection object. For example:
+
+
+``` Java
+DatabaseConnection connection = DatabaseConnection.getInstance();
+Connection dbConnection = connection.getConnection();
+
+```
+
+This way, we ensure that only one instance of the `DatabaseConnection` class is created throughout the lifetime of the application, and we can use it to get the connection object to the database.
+
+
+
