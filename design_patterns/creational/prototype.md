@@ -8,7 +8,7 @@ Once the prototype class has been created, instances of this class can be create
 
 ## Example
 
-![ClassDiagram](../creational/classDiagrams/)
+![ClassDiagram](../creational/classDiagrams/cdCreational/cdPrototype1.png)
 
 In this example, the "Shape" class is the abstract prototype class that defines the basic structure of a shape. The classes "Rectangle" and "Square" are the concrete classes that implement the prototype class "Shape". These classes have their own specific attributes and methods.
 
@@ -66,6 +66,8 @@ public class Square extends Shape {
 ```
 
 The "ShapeCache" class is the class that is responsible for maintaining a cache of the cloned shapes. When the "getShape()" method is called with a shape identifier, the "ShapeCache" class searches its map of cloned shapes and returns a copy of the corresponding shape. The "PrototypePatternDemo" class is the main class that creates the shapes and clones them as needed.
+
+![ClassDiagram](../creational/classDiagrams/cdCreational/cdPrototype2.png)
 
 ``` java
 public class ShapeCache {
