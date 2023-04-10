@@ -8,7 +8,7 @@ Once the prototype class has been created, instances of this class can be create
 
 ## Example
 
-![ClassDiagram](http://www.plantuml.com/plantuml/png/TT312i8m30RWUvyYu6LZx0N4mwwU1ESBP6sObThDDbD4VNVhgjGnxIrV-9kGoZCw7ev6OEFPeMIG1hs7UeyzmKr0U2LejOIQdRRj20lWQqyJAg0btWNDyhclrKpzg952xznfzUueXvTiIj9qbbwsQGuaMJo4Y5jkGuMsDPzDYoHP_kE_bAnF0xeKY-NVJBp6wbwMQS0tnhYeoAfmooS0)
+![ClassDiagram](http://www.plantuml.com/plantuml/png/VP71JiCm38RlUOf8N8f6Ns2Qq2Gui0DYejmG1o-9sg8qAROBGi2xayLgjrA9dkhFzb__VxV4W3nqNi616C6mDXw8TDL0x_INqkafMxlM5MCRwbnVy6VlPcHLEtvAiBXSu9tz2ob38Qdr7bih3OlmKSo8yJ5aqOV3gpEiVfIIynvJ1Q7suuch4QJffTXfhteR0ASbgVxTa21km3HJ6dGazz2lzHrGarusukLAPgydwxaiylXE4XJ7cSkKZs2p-FB3UumSZqdlWTbXk7LT70_le0q5O4sZwlFBsRxykyrtMPvoEeTYMsrTi4FdVm40)
 
 In this example, the "Shape" class is the abstract prototype class that defines the basic structure of a shape. The classes "Rectangle" and "Square" are the concrete classes that implement the prototype class "Shape". These classes have their own specific attributes and methods.
 
@@ -66,8 +66,6 @@ public class Square extends Shape {
 ```
 
 The "ShapeCache" class is the class that is responsible for maintaining a cache of the cloned shapes. When the "getShape()" method is called with a shape identifier, the "ShapeCache" class searches its map of cloned shapes and returns a copy of the corresponding shape. The "PrototypePatternDemo" class is the main class that creates the shapes and clones them as needed.
-
-![ClassDiagram](http://www.plantuml.com/plantuml/png/JO-_2eCm4CRtFCKtMbfVG8e8xT2b83YM3eSUAcWYkMkXID-zgSdWbjpl-tDNYPBNrpoPTY8HD0CjVA5sOAm607B8VtIdfS2DP0YFSwD-jFqfYijDTaJFklspI0z5n8bEZhejDWlWxSREV4sghBrJfv-5Qr9bRwyyEwp9DzDeK-BZkRFkzipBs8G2hRCQ38BIL6oxSDOF)
 
 ``` java
 public class ShapeCache {

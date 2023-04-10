@@ -8,7 +8,7 @@ The Abstract Factory pattern is implemented by creating an abstract interface or
 
 ## Example
 
-![ClassDiagram](../creational/classDiagrams/)
+![ClassDiagram](http://www.plantuml.com/plantuml/png/hL31YeCm4BtdAt9K5lq0MHRTWx27fGSfFKzZB86OI3AsbBR_NZKvc61l1WB3l7dlpRpI8XWSUqc4GcuwO9nMPui66DRJr-PE7uHExuiomm7vxuYeLP8Mr5K1M1le-Omj1NaHmYHOIqz2jVfcTrJy1tPeTjIhXa4A1YYqyd8PxPny4IVY1LUKf44Zr2KDh8v_iyzLYtQsYLFzVkPvbClcJ70fMQ-PPJ_nPZ7k4uZR_lZGVG5yozC-3pY1rMeENHgUl0qwOibLE_Ro3G00)
 
 Suppose we have two families of objects: Buttons and Boxes. Each family has two variants: Buttons for Windows and Buttons for MacOS, Frames for Windows and Frames for MacOS. We want to create an application that can use the different variants depending on the operating system it runs on.
 

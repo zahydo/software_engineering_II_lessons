@@ -8,11 +8,12 @@ The "Builder" class can be complemented by a "Director" class that uses the meth
 
 ## Example
 
-![ClassDiagram](../creational/classDiagrams/)
-
 A real example of implementation of the "Builder" pattern in Java could be the construction of a "User" object for an authentication system. The "User" object is complex and has many attributes, such as first name, last name, email, password, date of birth, among others. Using the "Builder" pattern, we can create a constructor that receives each of the attributes and sets them in the "User" object incrementally.
 
 First, we create the class "User", which is the class we want to build:
+
+![ClassDiagram](http://www.plantuml.com/plantuml/png/nLB1JiCm3BtdAtBiDFO3EqpJ19mcX8Ju06y98vApejY50-BVQTgqIbf3Z-kjxzdlsNxP4qFWngCw8n3fLx91VolTVfit5uYVmDkjVk7WhfSUHf1Gwy5X2Nq0qLSTJ8cUNE1t0zps7-ipu3smxPXrzAvcfdSQOOeCPkctD8g8PBBgNIwM7mUFQbNCjgQScqtI5d_MpemoH_XJPQGG_jTuY9i80ZsUzfHRdzFMGlT85PSHD0xfJd67QHoKq-91azYFoXxFeN5eRlQ6bXFCPbnEIwuNmv4hvI3a-kM3Iqsd-5Cb9aQHXx3PTV1MTrMaTsflhwRn-0i0)
+
 ```java
 public class User {
     private String firstName;
@@ -71,6 +72,7 @@ public class UserBuilder {
     }
 }
 ```
+
 Finally, we can use the "UserBuilder" class to build a "User" object with different combinations of attributes:
 ```java
 User user1 = new UserBuilder()

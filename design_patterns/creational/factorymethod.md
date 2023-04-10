@@ -8,7 +8,7 @@ The "Factory Method" pattern is implemented by creating an abstract class that d
 
 ## Example
 
-![ClassDiagram](../creational/classDiagrams/)
+![ClassDiagram](http://www.plantuml.com/plantuml/png/fP71IWCn48RlUOevLefvW21I4Bs9X_e2OpBQXJG9CnEmgEzktBL8RBpOqsxop_yD_v-DABBMVJHJKk9dz0JRtLJAb5xkINSvm9jPUuo-HbGwIZTPT9Kv43ju-FfSW8EGwrCays6CZoW2MyKKaCFHz7_IxMjX4ZaVr4UxGw-P3pEEgR5wUINVnyT38TVYSFjlr5-K7_gyjj4kHyPsszbECElPFbxwLzu-Om-4gtThJnvXEDJtEvnPmWsLOQbcASFQwx4E3fREnMmeXRgFdm00)
 
 A real example of the implementation of the "Factory Method" design pattern would be in an order management system in an online store. Suppose the store has different types of shipping, such as express shipping, standard shipping, economy shipping, etc. To implement the "Factory Method" pattern, we could create an interface called "ShippingMethod" that defines the "calculateShippingCost()" method to calculate the shipping cost of an order.
 
