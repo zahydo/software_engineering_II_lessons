@@ -67,7 +67,7 @@ public class Square extends Shape {
 
 The "ShapeCache" class is the class that is responsible for maintaining a cache of the cloned shapes. When the "getShape()" method is called with a shape identifier, the "ShapeCache" class searches its map of cloned shapes and returns a copy of the corresponding shape. The "PrototypePatternDemo" class is the main class that creates the shapes and clones them as needed.
 
-![ClassDiagram](../creational/classDiagrams/cdCreational/cdPrototype2.png)
+![ClassDiagram](//www.plantuml.com/plantuml/png/JO-_2eCm4CRtFCKtMbfVG8e8xT2b83YM3eSUAcWYkMkXID-zgSdWbjpl-tDNYPBNrpoPTY8HD0CjVA5sOAm607B8VtIdfS2DP0YFSwD-jFqfYijDTaJFklspI0z5n8bEZhejDWlWxSREV4sghBrJfv-5Qr9bRwyyEwp9DzDeK-BZkRFkzipBs8G2hRCQ38BIL6oxSDOF)
 
 ``` java
 public class ShapeCache {
