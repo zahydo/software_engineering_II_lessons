@@ -61,6 +61,20 @@ Upon completion of this course, you should be able to:
   - [Creational patterns](design_patterns/creational/README.md)
     - [Singleton](design_patterns/creational/singleton.md)
     - [Builder](../software_engineering_II_lessons/design_patterns/creational/builder.md)
+    - [Factory Method](design_patterns/creational/factorymethod.md)
+    - [Abstract Factory](design_patterns/creational/abstractfactory.md)
+    - [Prototype](design_patterns/creational/prototype.md)
+  - [Behavioral patterns](design_patterns/behavioral/README.md)
+    - [Chain Responsability](design_patterns/behavioral/chainResponsibility.md)
+    - [Command](design_patterns/behavioral/command.md)
+    - [Iterator](design_patterns/behavioral/iterator.md)
+    - [Mediator](design_patterns/behavioral/mediator.md)
+    - [Memento](design_patterns/behavioral/memento.md)
+    - [Observer](design_patterns/behavioral/observer.md)
+    - [State](design_patterns/behavioral/state.md)
+    - [Strategy](design_patterns/behavioral/strategy.md)
+    - [Template Method](design_patterns/behavioral/templateMethod.md)
+    - [Visitor](design_patterns/behavioral/visitor.md)
     
 ## How to Contribute
 

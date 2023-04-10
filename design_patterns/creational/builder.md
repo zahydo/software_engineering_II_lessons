@@ -6,13 +6,15 @@ The "Builder" pattern is implemented by creating a "Builder" class that contains
 
 The "Builder" class can be complemented by a "Director" class that uses the methods of the "Builder" class to construct the complex object. The "Director" is responsible for the construction sequence and uses the methods of the "Builder" class to set the values of the attributes. This allows the creation of complex objects in a more flexible and structured way.
 
+## Diagram class of example
+
+![ClassDiagram](http://www.plantuml.com/plantuml/png/nLB1JiCm3BtdAtBiDFO3EqpJ19mcX8Ju06y98vApejY50-BVQTgqIbf3Z-kjxzdlsNxP4qFWngCw8n3fLx91VolTVfit5uYVmDkjVk7WhfSUHf1Gwy5X2Nq0qLSTJ8cUNE1t0zps7-ipu3smxPXrzAvcfdSQOOeCPkctD8g8PBBgNIwM7mUFQbNCjgQScqtI5d_MpemoH_XJPQGG_jTuY9i80ZsUzfHRdzFMGlT85PSHD0xfJd67QHoKq-91azYFoXxFeN5eRlQ6bXFCPbnEIwuNmv4hvI3a-kM3Iqsd-5Cb9aQHXx3PTV1MTrMaTsflhwRn-0i0)
+
 ## Example
 
 A real example of implementation of the "Builder" pattern in Java could be the construction of a "User" object for an authentication system. The "User" object is complex and has many attributes, such as first name, last name, email, password, date of birth, among others. Using the "Builder" pattern, we can create a constructor that receives each of the attributes and sets them in the "User" object incrementally.
 
 First, we create the class "User", which is the class we want to build:
-
-![ClassDiagram](http://www.plantuml.com/plantuml/png/nLB1JiCm3BtdAtBiDFO3EqpJ19mcX8Ju06y98vApejY50-BVQTgqIbf3Z-kjxzdlsNxP4qFWngCw8n3fLx91VolTVfit5uYVmDkjVk7WhfSUHf1Gwy5X2Nq0qLSTJ8cUNE1t0zps7-ipu3smxPXrzAvcfdSQOOeCPkctD8g8PBBgNIwM7mUFQbNCjgQScqtI5d_MpemoH_XJPQGG_jTuY9i80ZsUzfHRdzFMGlT85PSHD0xfJd67QHoKq-91azYFoXxFeN5eRlQ6bXFCPbnEIwuNmv4hvI3a-kM3Iqsd-5Cb9aQHXx3PTV1MTrMaTsflhwRn-0i0)
 
 ```java
 public class User {
@@ -92,3 +94,5 @@ User user2 = new UserBuilder()
                 .build();
 ```
 In this example, we can see how the "UserBuilder" class is in charge of building the "User" object in a gradual and flexible way, allowing the creation of objects with different combinations of attributes. In addition, the "UserBuilder" class can also include methods to validate the attribute values and ensure that the constructed object is consistent.
+
+[Back](../creational/README.md)

@@ -27,3 +27,5 @@ It's important to note that `design patterns` are different from `architectural 
 `Code patterns`, on the other hand, are more specific and concrete solutions to common programming problems. They are low-level and implementation-focused and provide guidance on how to implement a particular feature or functionality. `Code patterns` are often language-specific and cannot be easily applied across different domains or programming languages.
 
 In summary, `design patterns` are focused on software design and architecture, while `code patterns` are focused on implementation and coding, and `architectural patterns` are in a high-level of abstraction handling non-code concerns. All of them, `design patterns`, `architectural patterns` and `code patterns` are important for software development and can help developers create better and more maintainable software.
+
+[Back to Index](../README.md)

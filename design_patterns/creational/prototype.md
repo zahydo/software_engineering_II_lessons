@@ -6,11 +6,13 @@ To implement the "Prototype" pattern, it is necessary to create a prototype clas
 
 Once the prototype class has been created, instances of this class can be created and cloned when necessary. In this way, complex objects with many attributes can be created in a more efficient way, since it is not necessary to create each object from scratch. The "Prototype" pattern is particularly useful when many similar objects are needed, but with small differences in their attributes. By cloning an existing object, you can save a lot of resources and time in creating new objects.
 
-## Example
+## Diagram class of example
 
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/VP71JiCm38RlUOf8N8f6Ns2Qq2Gui0DYejmG1o-9sg8qAROBGi2xayLgjrA9dkhFzb__VxV4W3nqNi616C6mDXw8TDL0x_INqkafMxlM5MCRwbnVy6VlPcHLEtvAiBXSu9tz2ob38Qdr7bih3OlmKSo8yJ5aqOV3gpEiVfIIynvJ1Q7suuch4QJffTXfhteR0ASbgVxTa21km3HJ6dGazz2lzHrGarusukLAPgydwxaiylXE4XJ7cSkKZs2p-FB3UumSZqdlWTbXk7LT70_le0q5O4sZwlFBsRxykyrtMPvoEeTYMsrTi4FdVm40)
 
-In this example, the "Shape" class is the abstract prototype class that defines the basic structure of a shape. The classes "Rectangle" and "Square" are the concrete classes that implement the prototype class "Shape". These classes have their own specific attributes and methods.
+## Example
+
+In this example, the `Shape` class is the abstract prototype class that defines the basic structure of a shape. The classes "Rectangle" and "Square" are the concrete classes that implement the prototype class "Shape". These classes have their own specific attributes and methods.
 
 ``` java
 public abstract class Shape implements Cloneable {
@@ -107,3 +109,5 @@ public class PrototypePatternDemo {
 }
 ```
 In summary, the "Prototype" design pattern allows us to create complex objects from existing objects by cloning. This allows us to create objects more efficiently and also allows us to modify cloned objects as needed without having to create new objects from scratch. In Java, to implement this pattern, we need to create a prototype class that implements the "Cloneable" interface and then implement the "clone()" method of the class. We can then create instances of this class and clone them as needed.
+
+[Back](../creational/README.md)
