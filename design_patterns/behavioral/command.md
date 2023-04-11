@@ -20,7 +20,7 @@ Imagine that you are building a text editor application that allows users to edi
 
 1. Declare the command interface with a single execution method:
 ``` Java
-public interface Command {
+public interface ICommand {
     void execute();
 }
 
@@ -28,7 +28,7 @@ public interface Command {
 2. Start extracting requests into concrete command classes that implement the command interface:
 
 ``` Java
-public class OpenFileCommand implements Command {
+public class OpenFileCommand implements ICommand {
     private final FileSystemReceiver fileSystem;
 
     public OpenFileCommand(FileSystemReceiver fs) {
@@ -41,7 +41,7 @@ public class OpenFileCommand implements Command {
     }
 }
 
-public class SaveFileCommand implements Command {
+public class SaveFileCommand implements ICommand {
     private final FileSystemReceiver fileSystem;
 
     public SaveFileCommand(FileSystemReceiver fs) {
@@ -59,10 +59,10 @@ public class SaveFileCommand implements Command {
 
 ``` Java
 public class MenuOptions {
-    private final Command openCommand;
-    private final Command saveCommand;
+    private final ICommand openCommand;
+    private final ICommand saveCommand;
 
-    public MenuOptions(Command open, Command save) {
+    public MenuOptions(ICommand open, ICommand save) {
         this.openCommand = open;
         this.saveCommand = save;
     }
@@ -81,8 +81,8 @@ public class MenuOptions {
 
 ``` Java
 FileSystemReceiver fileSystem = new FileSystemReceiver();
-Command openCommand = new OpenFileCommand(fileSystem);
-Command saveCommand = new SaveFileCommand(fileSystem);
+ICommand openCommand = new OpenFileCommand(fileSystem);
+ICommand saveCommand = new SaveFileCommand(fileSystem);
 
 MenuOptions menu = new MenuOptions(openCommand, saveCommand);
 menu.clickOpen();
@@ -95,8 +95,8 @@ menu.clickSave();
 FileSystemReceiver fileSystem = new FileSystemReceiver();
 
 //2. Create commands, and associate them with receivers if needed.
-Command openCommand = new OpenFileCommand(fileSystem);
-Command saveCommand = new SaveFileCommand(fileSystem);
+ICommand openCommand = new OpenFileCommand(fileSystem);
+ICommand saveCommand = new SaveFileCommand(fileSystem);
 
 //3. Create senders, and associate them with specific commands.
 MenuOptions menu = new MenuOptions(openCommand, saveCommand);
