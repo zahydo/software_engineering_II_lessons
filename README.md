@@ -55,6 +55,12 @@ Upon completion of this course, you should be able to:
 - [Design patterns](design_patterns/README.md)
   - [Structural patterns](design_patterns/structural/README.md)
     - [Decorator](design_patterns/structural/decorator.md)
+  - [Creational patterns](design_patterns/creational/README.md)
+    - [Abstract factory](design_patterns/creational/abstractfactory.md)
+    - [Factory method](design_patterns/creational/factorymethod.md)
+    - [Singleton](design_patterns/creational/singleton.md)
+  - [Behavioral patterns](design_patterns/behavioral/README.md)
+    - [Command](design_patterns/behavioral/command.md)
 
 ## How to Contribute
 
