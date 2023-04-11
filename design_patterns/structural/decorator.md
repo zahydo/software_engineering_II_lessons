@@ -1,12 +1,22 @@
 # Decorator pattern
 
+## Description
+
 The Decorator pattern is a structural design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.
 
 The pattern involves a set of decorator classes that are used to wrap concrete components. The decorator classes have the same interface as the components they wrap, so that the client can interact with the object in the same way as before. However, the decorator adds its own behavior before or after the method call to the wrapped object.
 
 The Decorator pattern is useful when you want to add responsibilities to individual objects dynamically and transparently, without affecting other objects. It is also useful when you have a lot of similar objects that differ only in the way they handle some specific behavior.
 
+## Example:
+
 An example of the Decorator pattern using Java code could be:
+
+### Structure:
+
+![Decorator](diagrams/Decorator.drawio.svg)
+
+### Implementation:
 
 ```java
 // Component interface
@@ -143,3 +153,5 @@ UserController loggingUserController = new LoggingDecorator(basicUserController)
 ```
 
 This creates a BasicUserController object and wraps it with a LoggingDecorator, adding the behavior of logging authentication attempts to a file. Now, when you call the authenticateUser() method on the loggingUserController object, it will first log the authentication attempt to a file before calling the wrapped object to authenticate the user.
+
+[Back to the list](./README.md)
