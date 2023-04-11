@@ -7,6 +7,12 @@ The benefits of this pattern are:
 - There will be a single instance: which means that we do not have to create a different instance every time we need the data. 
 - It can be accessed from anywhere: as mentioned above this instance is global so it can be accessed from anywhere in the app.
 
+# Diagram class of example
+
+![DiagramSingleton](http://www.plantuml.com/plantuml/png/RO-noiCm38JtF8L6Xv__1JAbb0vTkfG-W8X5CDWgI4gNqdTlcheu66ky--uuZMeejgJOJH5LuRY84DjDIU3PmNh_m9XeWAj9u3bBb334IaFlXLGhDR0QyaJ3ldhp_c0cEsVRzIr0oIwOoEqNhE3Z7dofs8Z-PvVawRFHbQMDR6OQuSFt6LSzLHKKhbIykf7OBoc-0G00)
+
+# Example
+
 An example of the Proxy pattern using Java code could be:
 
 Suppose we have an online shopping application that requires users to login in order to make purchases and access their personal data. In this case, we can create a Singleton class called CurrentUser that has the data of the logged-in user. This class can have methods to set and get the user's data, such as their name, email, address, and so on. In this way, in different parts of the application we can get the instance of CurrentUser and access the logged-in user's data without having to create a new instance every time we need this data. In addition, being a single global instance, we can ensure that the user data is consistent and up-to-date in all parts of the application.
@@ -57,3 +63,5 @@ public class CurrentUser {
 ```
 
 In this example, the `CurrentUser` class has a private constructor, which means that instances of it cannot be created from outside the class. Instead, the static method `getInstance()` is used to get the single instance of `CurrentUser`. Within this method, it checks if an instance already exists and, if not, a new instance is created and returned. The class also has methods to set and get the user's data, such as name, email and address. These methods can be used in different parts of the application to access the current user's data without having to create a new instance of the class each time.
+
+[Back](../creational/README.md)

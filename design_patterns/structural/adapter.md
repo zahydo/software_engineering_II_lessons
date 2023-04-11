@@ -6,6 +6,10 @@ We can make use of this pattern if an external entity cannot communicate with an
 		
 The responsibility of this pattern is to adapt a class so that another one understands it. 
 
+# Diagram class of example
+![DiagramAdapter](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuShCAqajIajCJbLmIItBJ4uD3NPIgEPI00BjvFoylDJa4WrDAuMo_CmKhbekhkISnE9Yg4h_d1JSAh6P6--Cfjwf4YoAQO5ZIc81K3l2BReAAM1Jh11s4p89uHsR6Zqz97r8xe588MpZuaAoMLVN3icdLWgbnQd5N0wfUId0O0C0)
+
+# Example
 An example of the Adapter pattern using Java code could be:
 
 Suppose we have an old storage device that only connects through an old USB port, and we want to connect it to our new computer, which only has USB-C ports. We could use the Adapter pattern to create an adapter that converts the USB-C port to an older USB port.
@@ -46,3 +50,4 @@ DeviceUSB_C adapter = new AdapterUSB_C(device);
 
 adapter.connectByUSB_C();
 ```
+[Back](../structural/README.md)
