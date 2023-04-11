@@ -59,48 +59,6 @@ public class SongCollection implements Aggregate<Song> {
     }
 }
 
-public class Song {
-    private String title;
-    private String artist;
-    
-    public Song(String title, String artist) {
-        this.title = title;
-        this.artist = artist;
-    }
-    
-    public String getTitle() {
-        return title;
-    }
-    
-    public String getArtist() {
-        return artist;
-    }
-}
-
-public class SongCollection implements Aggregate<Song> {
-    private List<Song> songs;
-    
-    public SongCollection() {
-        this.songs = new ArrayList<>();
-    }
-    
-    public void addSong(Song song) {
-        songs.add(song);
-    }
-    
-    public Song getSong(int index) {
-        return songs.get(index);
-    }
-    
-    public int getSize() {
-        return songs.size();
-    }
-    
-    public Iterator<Song> createIterator() {
-        return new SongIterator(this);
-    }
-}
-
 public class SongIterator implements Iterator<Song> {
     private SongCollection collection;
     private int index;
