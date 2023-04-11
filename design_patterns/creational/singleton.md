@@ -1,4 +1,4 @@
-# Abstract Singleton 
+# Singleton 
 ## Description
 The Singleton design pattern is a creational design pattern that ensures that a class has only one instance, and provides a global point of access to that instance. It guarantees that the object is initialized only once, and that all subsequent calls to that object return the same instance.
 
