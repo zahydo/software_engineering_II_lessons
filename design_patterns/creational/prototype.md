@@ -3,6 +3,11 @@ Prototype is a creational design pattern that allows objects to be created by cl
 
 The Prototype pattern works by defining a prototype object that serves as a template for creating new objects. This prototype object is then cloned to create new objects with the same properties and behavior as the original prototype. This allows new objects to be created without having to know the specific details of their construction.
 
+## Class Diagram
+<p align="center">
+    <img src="../../classDiagrams/Prototype.jpg">
+</p>
+
 ## Example:
 
 ```Java 
@@ -64,8 +69,5 @@ public class App{
     }
 }
 ```
-<p align="center">
-    <img src="../../classDiagrams/Prototype.jpg">
-</p>
 
 [Back to the list](./README.md)

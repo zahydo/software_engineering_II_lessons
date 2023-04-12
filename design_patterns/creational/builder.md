@@ -3,10 +3,10 @@ Builder is a creational design pattern that is used to create complex objects st
 
 In the Builder pattern, an interface for building complex objects is defined and a concrete implementation of the interface is provided to build the object. The build interface allows different parts of the object to be defined and a concrete implementation allows the object to be constructed from the parts.
 
-Los componentes son:
-director 
-producto  
-
+## Class Diagram
+<p align="center">
+    <img src="../../classDiagrams/Builder.jpg">
+</p>
 
 ## Example:
 
@@ -126,8 +126,5 @@ public class App{
     }
 }
 ```
-<p align="center">
-    <img src="../../classDiagrams/Builder.jpg">
-</p>
 
 [Back to the list](./README.md)

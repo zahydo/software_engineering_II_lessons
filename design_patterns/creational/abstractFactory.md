@@ -3,6 +3,11 @@ Abstract Factory is a creational design pattern that provides an interface for c
 
 The Abstract Factory pattern works by defining an abstract factory class that specifies a set of methods for creating related objects. Subclasses of the abstract factory implement these methods to create different sets of related objects that conform to the same interface. This allows the client code to create different sets of related objects without having to know their specific classes.
 
+## Class Diagram
+<p align="center">
+    <img src="./../../classDiagrams/AbstractFactory.jpg">
+</p>
+
 ## Example:
 
 ```Java 
@@ -208,8 +213,5 @@ public class App {
 }
 ```
 
-<p align="center">
-    <img src="./../../classDiagrams/AbstractFactory.jpg">
-</p>
 
 [Back to the list](./README.md)

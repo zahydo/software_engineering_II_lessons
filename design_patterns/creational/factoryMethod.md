@@ -5,6 +5,11 @@ The Factory Method pattern works by defining a factory method in a superclass th
 
 By using the Factory Method pattern, code can be written to depend on abstractions rather than concrete classes, which makes the code more flexible and extensible. The Factory Method pattern is commonly used in situations where there are many different types of objects that need to be created, or where the type of object that needs to be created is not known until runtime.
 
+## Class Diagram
+<p align="center">
+    <img src="../../classDiagrams/FactoryMethod.jpg">
+</p>
+
 ## Example
 ```Java 
 public interface IConexion{
@@ -112,8 +117,5 @@ public class App {
     }
 }
 ```
-<p align="center">
-    <img src="../../classDiagrams/FactoryMethod.jpg">
-</p>
 
 [Back to the list](./README.md)

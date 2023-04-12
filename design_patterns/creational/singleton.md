@@ -3,6 +3,12 @@ The Singleton design pattern is a creational pattern that ensures that there is 
 
 The Singleton pattern is used when a single instance of a class is needed throughout the system, such as to control access to a shared resource or to handle the configuration of an application. By having a single instance of the class, the creation of multiple unnecessary instances is avoided and the efficiency and performance of the system are improved.
 
+## Class Diagram
+
+<p align="center">
+    <img src="../../classDiagrams/Singleton.jpg">
+</p>
+
 ### Example:
 
 ```Java 
