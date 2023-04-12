@@ -88,3 +88,9 @@ public class clsChainResponsability{
 ```
 Here we have the base class of the entire program, which is hosted by the main method. When initializing objects, we start with the `atrGeneralInformation` attribute which is the first in the chain of handlers. From there, the object will determine if it has what is necessary to solve the request, or it will pass the responsibility to the other object, which in this case would be `atrConsultant`.
 
+## Class Diagram
+
+![Chain of Responsability](//www.plantuml.com/plantuml/png/hP91IyD048Nl-HLpJ2avgBUWWeIYFTh4auYCoJHPsCo6tQaWiV_TJQsmXqsXnPoIcVVUV1b6iP3TOasmBb3hWgPl61Fmpx8bUH1VKORJmVP_xpburoA7JwEQP9yajKRdeDRkaPWiwZLlZUrnaXwJikfzitf-MPNLmGjtSFLRHx5Fo8qccuS0X-ROatIcsSCo6ZqHnRoBozWBmswd1LbccQ_FOWuZ_vcrwgWkTyDWx3pipPcmGMPwwGexLBmXDnXs-A6qagyZtkW4HTL-KkybAThMvL2ALTo-lWLHuGtUVcTP_AWYid3PiNRuUyaCQfRTn-UTDeIJJmj3XXy0)
+
+
+[Back](../behavioral/README.md)
