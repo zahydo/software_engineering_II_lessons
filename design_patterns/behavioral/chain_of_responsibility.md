@@ -91,4 +91,4 @@ public class CreditRequestHandler {
 
 # Diagrama Chain of Responsibility 
 
-![Diagrama Chain of Responsibility](.png)
+![Diagrama Chain of Responsibility](Diagramchain_of_responsibility.png)

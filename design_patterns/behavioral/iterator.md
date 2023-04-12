@@ -76,4 +76,4 @@ In this example, the Iterator design pattern allows us to traverse the list of b
 
 # Diagrama Iterator
 
-![Diagrama Iterator](.png)
+![Diagrama Iterator](DiagramaIteratorPattern.png)

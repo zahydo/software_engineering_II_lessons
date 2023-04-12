@@ -91,4 +91,4 @@ In this example, we create two product objects (ProductA and ProductB) for the U
 
 # Diagrama Abstract Factory
 
-![Diagrama Abstract Factory]("aqui va el nombre de la imagen".png)
+![Diagrama Abstract Factory](DiagramaAbstract_FactoryPattern.png)
