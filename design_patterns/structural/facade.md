@@ -6,7 +6,11 @@ Facade pattern hides the complexities of the system and provides an interface to
 
 This pattern involves a single class which provides simplified methods required by client and delegates calls to methods of existing system classes.
 
-### Example
+# Class diagram
+
+![Facade](class-diagrams/Facade.jpg)
+
+# Example
 
 In this example, we have several subsystem classes that are responsible for different parts of the computer, including the CPU, Memory, and HardDrive classes.
 
@@ -87,12 +91,3 @@ Jumping to position 0...
 Executing CPU instructions...
 BUILD SUCCESSFUL (total time: 0 seconds)
 ```
-
-Next, we have the diagram class of Facade example:
-
-![Facade](Diagrams/Facade.jpg)
-
-A description of the Facade design pattern:
-
-![Facade](Diagrams/FacadeDescription.jpg)
-Image taken from https://refactoring.guru/design-patterns/facade

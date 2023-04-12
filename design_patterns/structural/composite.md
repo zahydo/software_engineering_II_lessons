@@ -1,12 +1,14 @@
 # Composite pattern
 
-## Description
-
 Composite pattern is used where we need to treat a group of objects in similar way as a single object. Composite pattern composes objects in term of a tree structure to represent part as well as whole hierarchy. This type of design pattern comes under structural pattern as this pattern creates a tree structure of group of objects.
 
 This pattern creates a class that contains group of its own objects. This class provides ways to modify its group of same objects
 
-### Example
+# Class diagram
+
+![Composite](class-diagrams/Composite.jpg)
+
+# Example
 
 In this example, we have a Component interface which defines the interface for both Leaf and Composite objects.
 
@@ -92,12 +94,3 @@ Leaf 2
 Leaf 3
 BUILD SUCCESSFUL (total time: 0 seconds)
 ```
-
-Next, we have the diagram class of Composite example:
-
-![Composite](Diagrams/Composite.jpg)
-
-A description of the Composite pattern:
-
-![Composite](Diagrams/CompositeDescription.jpg)
-Image taken from https://refactoring.guru/design-patterns/composite

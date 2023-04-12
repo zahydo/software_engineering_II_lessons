@@ -1,12 +1,14 @@
 # Bridge pattern
 
-## Description
-
 Bridge is used when we need to decouple an abstraction from its implementation so that the two can vary independently. This type of design pattern comes under structural pattern as this pattern decouples implementation class and abstract class by providing a bridge structure between them.
 
 This pattern involves an interface which acts as a bridge which makes the functionality of concrete classes independent from interface implementer classes. Both types of classes can be altered structurally without affecting each other.
 
-### Example
+# Class diagram
+
+![Bridge](class-diagrams/Bridge.jpg)
+
+# Example
 
 In this example, we have an Implementor interface called DrawingAPI which defines the interface for drawing circles.
 
@@ -100,12 +102,3 @@ API1.circle at (1.00, 2.00) radius 3.00
 API2.circle at (5.00, 7.00) radius 11.00
 BUILD SUCCESSFUL (total time: 0 seconds)
 ```
-
-Next, we have the diagram class of Bridge example:
-
-![Bridge](Diagrams/Bridge.jpg)
-
-A description of the Bridge design pattern:
-
-![Bridge](Diagrams/BridgeDescription.jpg)
-Image taken from https://refactoring.guru/design-patterns/bridge

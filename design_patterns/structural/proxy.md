@@ -6,7 +6,11 @@ In proxy pattern, a class represents functionality of another class. This type o
 
 In proxy pattern, we create object having original object to interface its functionality to outer world.
 
-### Example
+# Class diagram
+
+![Proxy](class-diagrams/Proxy.jpg)
+
+# Example
 
 In this example, we have a Subject interface called Internet which defines the interface for the Real subject class and the Proxy class.
 
@@ -97,12 +101,3 @@ Exception in thread "main" java.lang.Exception: Access Denied to twitter.com
 	at proxy.Client.main(Client.java:10)
 BUILD FAILED (total time: 0 seconds)
 ```
-
-Next, we have the diagram class of Proxy example:
-
-![Proxy](Diagrams/Proxy.jpg)
-
-A description of the Proxy pattern:
-
-![Proxy](Diagrams/ProxyDescription.jpg)
-Image taken from https://refactoring.guru/design-patterns/proxy
