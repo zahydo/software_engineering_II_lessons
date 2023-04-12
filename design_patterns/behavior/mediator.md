@@ -5,6 +5,7 @@ One of the advantages offered by Object-Oriented Programming (OOP) is the abilit
 To avoid this, we can use the Mediator pattern, which is a pattern that manages the way a set of classes communicate with each other. Mediator is especially useful when we have many classes communicating directly because through the implementation of this pattern, we can create a layer of bidirectional communication, in which classes can communicate with each other through a common object that acts as a mediator or intermediary.
 
 In large projects, we may encounter a problem in which the number of classes increases and so do the relationships they have with the rest of the classes in the project. This can pose a serious problem of coupling with the rest of the classes in our project, especially because we create direct communication channels that are difficult to trace or debug.
+
 ## 🏗️ Estructure
 <p align="center">
 <img src="https://i.postimg.cc/fRRt8R3Z/Estructura-Mediator-drawio.png" alt="mypic" width="75%">

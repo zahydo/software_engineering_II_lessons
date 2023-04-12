@@ -4,6 +4,7 @@ Iterator is a behavioral design pattern that allows you to traverse elements of 
 
 The Iterator pattern is composed of two main elements: the iterator and the collection. The iterator is responsible for providing a method to access the elements of the collection one by one, while the collection is responsible for providing a method to obtain an iterator to traverse its elements.
 
+## 🏗️ Estructure
 <p align="center">
 <img src="https://res.cloudinary.com/dz5pw4p7y/image/upload/v1681088167/design_patterns/iterator_pcy9mx.png" alt="mypic" width="75%">
 </p>

@@ -4,6 +4,7 @@ Bridge is a structural design pattern that allows you to split a large class, or
 
 In this pattern, two hierarchies of classes are created: one representing the abstraction (the interface or API that the client uses) and one representing the implementation (the class that provides the actual functionality). The abstraction communicates with the implementation through an interface, allowing the implementation to be changed without affecting the abstraction.
 
+## 🏗️ Estructure
 <p align="center">
 <img src="https://res.cloudinary.com/dz5pw4p7y/image/upload/v1681075873/design_patterns/bridge_irha1h.png" alt="mypic" width="75%">
 </p>

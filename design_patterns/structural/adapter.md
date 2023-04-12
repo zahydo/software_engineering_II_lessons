@@ -4,6 +4,7 @@ The Adapter pattern, also known as the Wrapper pattern, is a well-established so
 
 This pattern is particularly valuable when there is a need to combine existing classes or components with new ones without making any changes to the existing code, thus promoting reusability and maintainability.
 
+## 🏗️ Estructure
 <p align="center">
 <img src="https://res.cloudinary.com/dzxhdnqm4/image/upload/v1681170223/uml_adapter_lps08h.png" alt="uml-composite" width="75%">
 </p>

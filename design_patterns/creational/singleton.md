@@ -4,6 +4,8 @@ The Singleton pattern is a design pattern used to ensure that a class has only o
 - Create a private constructor to prevent an instance of the class from being created from outside the class.
 - Create a private and static variable of the same class that will be the only instance of the class.
 - Create a public and static method that returns the only instance of the class created in step 2.
+
+## 🏗️ Estructure
 <p align="center">
 <img src="https://res.cloudinary.com/dilrruxyx/image/upload/v1681007458/singleton_any5uv.png" alt="mypic" width="75%">
 </p>

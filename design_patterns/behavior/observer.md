@@ -4,6 +4,7 @@ The Observer pattern is a design pattern that establishes a one-to-many relation
 
 This pattern is useful for maintaining synchronization and consistency between related objects without them being tightly coupled, facilitating scalability, maintainability and modularity of the code.
 
+## 🏗️ Estructure
 <p align="center">
 <img src="https://res.cloudinary.com/dzxhdnqm4/image/upload/v1681008518/UML_Observer_aczpve.png" alt="uml-observer" width="70%">
 </p>

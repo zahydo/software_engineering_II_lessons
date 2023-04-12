@@ -3,6 +3,7 @@
 The Prototype pattern allows us to hide the complexity of creating new instances for the client. Instead of creating a new instance from scratch, which can involve expensive operations, an existing object is copied as a prototype, containing the state of the object. The copied object can then modify the same properties only if necessary. This approach saves valuable resources and time, especially in situations where object creation is a heavy process.
 
 The Prototype pattern is considered a creational design pattern and is used when object creation is slow and expensive. Copying existing objects using the "clone()" method is one of the simplest ways to implement the Prototype pattern. However, it's important to note that the way of copying existing objects may vary depending on the specific business model.
+
 ## 🏗️ Estructure 
 <p align="center">
 <img src="https://i.postimg.cc/26PLpLLt/prototype-Estructure-drawio.png" alt="mypic" width="75%">

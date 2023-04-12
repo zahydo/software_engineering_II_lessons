@@ -4,6 +4,7 @@ The Proxy pattern is a structural design pattern that involves a class represent
 
 This pattern is particularly useful when you want to control access to a resource, optimize performance, or add functionality to an object without changing its implementation.
 
+## 🏗️ Estructure
 <p align="center">
 <img src="https://res.cloudinary.com/dzxhdnqm4/image/upload/v1681172218/uml_proxy_idrwa0.png" alt="uml-proxy" width="65%">
 </p>

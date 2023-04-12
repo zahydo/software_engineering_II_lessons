@@ -4,6 +4,7 @@ The Composite pattern is a powerful and versatile software design pattern that s
 
 This pattern is particularly useful in scenarios where an application needs to handle both individual objects and groups of objects in a uniform manner, as it allows objects to be composed of other objects, ultimately forming a tree-like structure.
 
+## 🏗️ Estructure
 <p align="center">
 <img src="https://res.cloudinary.com/dzxhdnqm4/image/upload/v1681005367/UML_Composite_aqcqxr.png" alt="uml-composite" width="60%">
 </p>
