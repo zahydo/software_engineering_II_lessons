@@ -10,7 +10,8 @@ Let's assume we have an application that processes different types of documents 
 
 To solve this problem, we can use the Visitor pattern. We can define a Visitor interface with a method for each type of document, which calculates the number of words in that type of document. Then, we can create a concrete class for each type of document and make it implement the Visitor interface. Finally, we can create a Document class that accepts visitors (visit) and provides an accept method that accepts a visitor and calls the appropriate method based on the type of document.
 
-## Diagram class of example
+## Class Diagram of example:
+
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/hL2x2i8m5DtlLzmnHVe73WMhivFE8RcLGDgKF5f1_NURI4i9BXM7d73VvvpAUMvzQ3MepfDjk22iZGWjTVwYdFB6uWC6eoGECJpN9pOzx6LJhD9NOoMBWEC4wyhnBaYpX4WH2tZ1bsFp5Iu4zPxb78RFduQ5vivXPB5r9Z7SEfIu_tGgleC9QoTBdAJZE1TWb-8R-QMN5V-tUp5v_opBw5oMYQkoL5e1a0jTsdDjK54dGwlV)
 
 

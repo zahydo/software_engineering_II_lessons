@@ -6,9 +6,12 @@ In this pattern, a Flyweight Factory creates and manages a pool of Flyweight obj
 
 The Flyweight pattern is particularly useful in situations where a large number of objects need to be created and memory usage is a concern. It can be used in a variety of contexts, such as graphics rendering, text processing, and game development, where objects with similar properties are frequently used.
 
-## Diagram class of example
+## Class Diagram of example:
+
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/ZP2zJiGm3CTtFuN7djhU0qJeT19IDoP6n12blXAH9YV71Sh7krDHJWxg3Kpvi7_EB_zZ5iioZG5y5EAJTOHTc5_93q-27r0ZK-o9Aw4tCNWlxEEmC_YIV0zV02xOdF4sHSSaL98jdb9Sa2v5MGxPlvD1_xDtAIGs2xKiK6_fIib6mUOFj_kVcdwciquIpwlPvJ8RlBFdcvLjjFa0DGuaQlHCipwXVKK4mLDS4nkjZvNb8L-8XyT2QvlLVZhlFm_5KDX8jsrHlrxUp0NuTL9OaQirE5Bifp5y0m00)
-# Example
+
+## Example
+
 ```java
 import java.awt.Color;
 import java.util.HashMap;

@@ -6,7 +6,8 @@ We can make use of this pattern if an external entity cannot communicate with an
 		
 The responsibility of this pattern is to adapt a class so that another one understands it. 
 
-# Diagram class of example
+## Class Diagram of example:
+
 ![DiagramAdapter](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuShCAqajIajCJbLmIItBJ4uD3NPIgEPI00BjvFoylDJa4WrDAuMo_CmKhbekhkISnE9Yg4h_d1JSAh6P6--Cfjwf4YoAQO5ZIc81K3l2BReAAM1Jh11s4p89uHsR6Zqz97r8xe588MpZuaAoMLVN3icdLWgbnQd5N0wfUId0O0C0)
 
 # Example

@@ -2,11 +2,9 @@
 
 It is a behavior design pattern that allows requesting an operation to an object without actually knowing the content of this operation or the actual recipient of it. To do this, the request is encapsulated as an object, which also facilitates the parameterization of the methods.
 
-## Problem
-
 Suppose we have a smart home with different rooms, and we want to implement a system so that users can control the lights in each room using a remote control. To do this, we can use the command pattern.
 
-# Solution
+## Example
 
 First, we create a command interface which will have a execute method.
 

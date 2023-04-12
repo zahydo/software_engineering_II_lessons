@@ -2,8 +2,6 @@
 
 Strategy is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
 
-## Problem
-
 One day you decided to create a navigation app for casual travelers. The app was centered around a beautiful map which helped users quickly orient themselves in any city.
 
 One of the most requested features for the app was automatic route planning. A user should be able to enter an address and see the fastest route to that destination displayed on the map.
@@ -18,8 +16,6 @@ Any change to one of the algorithms, whether it was a simple bug fix or a slight
 
 In addition, teamwork became inefficient. Your teammates, who had been hired right after the successful release, complain that they spend too much time resolving merge conflicts. Implementing a new feature requires you to change the same huge class, conflicting with the code produced by other people.
 
-## Solution
-
 The Strategy pattern suggests that you take a class that does something specific in a lot of different ways and extract all of these algorithms into separate classes called strategies.
 
 The original class, called context, must have a field for storing a reference to one of the strategies. The context delegates the work to a linked strategy object instead of executing it on its own.
@@ -32,7 +28,7 @@ In our navigation app, each routing algorithm can be extracted to its own class 
 
 Even though given the same arguments, each routing class might build a different route, the main navigator class doesn’t really care which algorithm is selected since its primary job is to render a set of checkpoints on the map. The class has a method for switching the active routing strategy, so its clients, such as the buttons in the user interface, can replace the currently selected routing behavior with another one.
 
-## Diagram of example
+## Class Diagram of example:
 
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuShCAqajIajCJbK8BYbAB4bDhrIevb800ksKVF-2LA1GPdwUHbvfhg6L0b2jZWAGQGHcQe99hbekhkISnE9Y1UVylEIYr99Kc3cEAIdKCYguD0d8IYwXmBoIr0gOTjrYgB5MS3z3Z8Kgqy2KruGeIAr8JIv5E8k0tTW2H5UtnWvXAov_eYdZWha_NnSXw92QbmACG000)
 

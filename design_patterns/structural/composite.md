@@ -17,8 +17,10 @@ The Composite class, on the other hand, would represent the company's department
 
 This way, when adding or removing an employee or department, the hierarchical structure of the organization can be easily updated without affecting the rest of the system. Operations can also be performed at different levels of the hierarchy, such as generating reports or calculating salaries, in a uniform and simplified manner.
 
-## Diagram class of example
+## Class Diagram of example:
+
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/pL7BQiCm4BplL-Xee-W7J0Y1Fg1GUab_O1CjHg27aTO1q_RVMwLMxBgK-DYZPcSqixFxn1YvTnRmc3ZYYSN9OahYmNKs34JY3PH7HuquS3I-1MLq8undK0ajng4HElH7Io2Bf9hpDsBaRyHFVWso9Nv1HrLTo1VeIMSWE-JNuIBAIB6v1aMjAnezcslWB-Ov63tZHNBXJAkeBN4PfkpvR19l2xA33u3lTkwfmyYEFET-g4X-2UH4NDtAZRLkRxDsYSVUsbVZQ7PgkSJ-N-gxu3hqG-uzXi3JJo37KLM3xABni_-AYrhWV-R9VWKIstUbPYTV39QL0PI8IkscT7lokdVs4m00)
+
 # Example
 ```java
 // Component

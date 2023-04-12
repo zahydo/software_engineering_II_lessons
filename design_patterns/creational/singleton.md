@@ -7,9 +7,9 @@ The benefits of this pattern are:
 - There will be a single instance: which means that we do not have to create a different instance every time we need the data. 
 - It can be accessed from anywhere: as mentioned above this instance is global so it can be accessed from anywhere in the app.
 
-# Diagram class of example
+# Class Diagram of example:
 
-![DiagramSingleton](http://www.plantuml.com/plantuml/png/RO-noiCm38JtF8L6Xv__1JAbb0vTkfG-W8X5CDWgI4gNqdTlcheu66ky--uuZMeejgJOJH5LuRY84DjDIU3PmNh_m9XeWAj9u3bBb334IaFlXLGhDR0QyaJ3ldhp_c0cEsVRzIr0oIwOoEqNhE3Z7dofs8Z-PvVawRFHbQMDR6OQuSFt6LSzLHKKhbIykf7OBoc-0G00)
+![ClassDiagram](http://www.plantuml.com/plantuml/png/RO-noiCm38JtF8L6Xv__1JAbb0vTkfG-W8X5CDWgI4gNqdTlcheu66ky--uuZMeejgJOJH5LuRY84DjDIU3PmNh_m9XeWAj9u3bBb334IaFlXLGhDR0QyaJ3ldhp_c0cEsVRzIr0oIwOoEqNhE3Z7dofs8Z-PvVawRFHbQMDR6OQuSFt6LSzLHKKhbIykf7OBoc-0G00)
 
 # Example
 

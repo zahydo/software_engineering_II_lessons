@@ -2,11 +2,12 @@
 
 It is a behavior design pattern, which allows us to have information about the traversal of a collection of objects, either the number of objects in the collection, or how many elements are needed to traverse. We find this pattern useful for accessing objects in an array or a collection of objects without exposing their underlying representation.
 
-## Problem
+## Class Diagram of example:
 
+![Iterator_Patter](//www.plantuml.com/plantuml/png/bL1DIyGm4BtdLyonPSd-W1wMlGgoUXSFQNPq8yb4CXCGrlvtszYIjdYnXp8ytiTxEREO93buvKWmlHcBy30UHcA2kuBnEzmCN_1BchQ3FaQFXdvnci6d_WEjg44fwmqpN7BeCJqwbjb1Kq6uWp7avRLWvNSFABTu7U1GDKtXm2nfTxntbANU5BtSDNoos0tGDgU49C-HdRX8fSPV9TRQfltl-DNiu_5KNx43cz08yfgXzQbMtR8siDRV6oiNFZq6965rHhhcu7y0)
+
+## Example
 Suppose we have a list of numbers that we need to iterate through. In this list, all objects can be traversed in different ways, even up to objects that have been traversed before. It is necessary to implement a way to repeat the list without repeating elements already traversed.
-
-## Solution
 
 To implement the iterator pattern, we are first going to declare an interface called ``Iiterator``.
 
@@ -63,8 +64,6 @@ while (iterator.hasNext()) {
 ```
 In this solution, the ``getIterator()`` method of the ``NumberList`` class returns an instance of the ``ListIterator`` class, which is capable of traversing the list of numbers and returning each element one by one. Then, in the main program, a ``while`` loop is used to traverse the list and the ``next()`` method of the iterator is called to get each number.
 
-## Class Diagram
 
-![Iterator_Patter](//www.plantuml.com/plantuml/png/bL1DIyGm4BtdLyonPSd-W1wMlGgoUXSFQNPq8yb4CXCGrlvtszYIjdYnXp8ytiTxEREO93buvKWmlHcBy30UHcA2kuBnEzmCN_1BchQ3FaQFXdvnci6d_WEjg44fwmqpN7BeCJqwbjb1Kq6uWp7avRLWvNSFABTu7U1GDKtXm2nfTxntbANU5BtSDNoos0tGDgU49C-HdRX8fSPV9TRQfltl-DNiu_5KNx43cz08yfgXzQbMtR8siDRV6oiNFZq6965rHhhcu7y0)
 
 [Back](../behavioral/README.md)

@@ -14,8 +14,10 @@ Instead of creating separate classes for each message type and mobile device, we
 
 Finally, we can create a "MessageBridge" class that accepts both a message and a mobile device, and calls the "send" and "connect" methods respectively, using the concrete objects. This way, we can send different types of messages from any mobile device, without having to create separate classes for each message-device combination.
 
-## Diagram class of example
+## Class Diagram of example:
+
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/fPB1wW8X4CRlFeN7_v_O5-Yqr7RSMtGNdM92dKLDekZTMzY6PY689I-AyttVRvHfSp6fN89N60kaex6WUuZPd47VbHxN2c95a_x-rxeIElLGGjfX7YXZmKeijnJ1bhd1UfEptb9AG3i_bXD5jAGn31u2n9A_G3c3PHtiuLf-2ZZGRRbTFhYdYbv6BFaCvcqIkXDJ6suYJFjqAMFT-opxVFa4PHvFJSF03nK1K2r4Dqx34m00)
+
 # Example
 
 ```java

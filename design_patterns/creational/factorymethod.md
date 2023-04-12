@@ -6,7 +6,8 @@ The idea behind this pattern is to define an abstract class that has a method fo
 
 The "Factory Method" pattern is implemented by creating an abstract class that defines the "Factory Method" method for creating objects. Then, several subclasses are created that implement the "Factory Method" method to create different types of objects.
 
-## Diagram class of example
+## Class Diagram of example:
+
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/fP71IWCn48RlUOevLefvW21I4Bs9X_e2OpBQXJG9CnEmgEzktBL8RBpOqsxop_yD_v-DABBMVJHJKk9dz0JRtLJAb5xkINSvm9jPUuo-HbGwIZTPT9Kv43ju-FfSW8EGwrCays6CZoW2MyKKaCFHz7_IxMjX4ZaVr4UxGw-P3pEEgR5wUINVnyT38TVYSFjlr5-K7_gyjj4kHyPsszbECElPFbxwLzu-Om-4gtThJnvXEDJtEvnPmWsLOQbcASFQwx4E3fREnMmeXRgFdm00)
 
 ## Example

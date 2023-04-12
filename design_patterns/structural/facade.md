@@ -4,11 +4,11 @@ The Facade pattern is a structural design pattern that solves the integration of
 
 The facade pattern is commonly used in very large applications, for example: Facebook, Youtube and Instagram, because they handle subsystems of logging, security, analytics, transfers, among others.
 
-# Diagram class of example
+## Class Diagram of example:
 
 ![DiagramFacade](http://www.plantuml.com/plantuml/png/VLB1JiCm3BttAtpC13rnom4D4DoA9Y5nprg3CjncD4abGFmxJOrBCvNjCCL-zdj-JztwOFeGMofgCjv35RsjTsG-i8Ul0iPVUPogQdUbOVnZZ971KMpnpdMXTwJXULdo1Bv7G_OJUmttyYmcw6AXf3RSIahgnH9gU0gzxLut6WPd6qPzS4ULTKnpY3wmh28Sa3JOBgpCpE9gRmvkchg45XihRqF1PSlVXIJ2dYKFllB14fw_DEtiJVscJWdpc2JapihrnIy7XiVKKuAid3Qx4fRP79TYK6escMdSZXifazoye5KYK4opXjzGS6ejkkLdL9RNVo5gY1xzAPvdyi-Ck1MEBNPDREa7)
 
-# Example
+## Example
 An example of the Facade pattern using Java code could be:
 
 Suppose we are developing a music application and we need to use different subsystems to play music, such as MP3 player, volume control and sound equalizer. Instead of exposing these subsystems directly to our application, we can use the Facade pattern to create a MusicPlayer class that encapsulates all these functionalities and exposes them to our application in a simpler way.

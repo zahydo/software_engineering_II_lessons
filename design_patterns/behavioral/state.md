@@ -2,18 +2,14 @@
 
 State is a behavioral design pattern that lets an object alter its behavior when its internal state changes. It appears as if the object changed its class.
 
-## Problem
-
 The State pattern is closely related to the concept of a Finite-State Machine.
 The main idea is that, at any given moment, there’s a finite number of states which a program can be in. Within any unique state, the program behaves differently, and the program can be switched from one state to another instantaneously. However, depending on a current state, the program may or may not switch to certain other states. These switching rules, called transitions, are also finite and predetermined.
-
-## Solution
 
 The State pattern suggests that you create new classes for all possible states of an object and extract all state-specific behaviors into these classes.
 
 Instead of implementing all behaviors on its own, the original object, called context, stores a reference to one of the state objects that represents its current state, and delegates all the state-related work to that object.
 
-## Diagram class of example:
+## Class Diagram of example:
 
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/lPB1Yjim48RlVefXJywXsdlBGfBIynRIM-b1aSUnYYqPQUnkANttZZN8LLetK0Wh247CwDElRxoFf0DDGryzFiAd3k6zTuGl1ARNCG9rcc3GrX7_8cW8s690Pn38SnN1J87t1CmX17_-YeP0kmOQxF6Y2QEKtiGHZMsjWJDsUhO-B0HBgfARyhq_Ak0r1Zill5EY9i2xIYhJkMV8x6q34Iarr4NRBX5aKMUZac1F6GAyVlwDQlp1aFMkBixB4RMM5jmk4vYHZEMCh0X3gmsAimPRwp0cHGDIvvi8hGzf_myVgigCp9Gar_dM-SW_v_cTX6ic864wVIX7Q8Unnm4TyNuZyZAlCVZPDX9vpPGoYy53CQdobW9Tfju_pnW20qlLjvzIc3zzZuI3yXEfCN3EtjKFGkSB8oEiku2b23gXr4EQIrePfzQlm-6twz37UhSnn-kMEzixRjexlhQzunti7JRj3TgwqjaKiRGrQY8CJbNo5kcKsaSfVNZHx28BaBOaBxzykQ4-KU3mdx-03fTOllaF7V044ZpjQWvSTfRVRvI_jRzyw2qlSgu4vvOy8ZuERETved6Yjt3h-_q_nlOKxvH3nhf7rqn3_mi0)
 

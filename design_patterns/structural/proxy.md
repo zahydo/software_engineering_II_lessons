@@ -4,16 +4,14 @@ The Proxy pattern is a structural design pattern that provides a much higher sec
 A small example to understand the definition of this pattern is when we are going to make a transfer within some application, we have to think if we want to add certain business rules at the time of making a transfer or a layer of security is necessary. 
 The proxy pattern will help to solve this and other problems, to be able to give solution to this type of cases it is necessary to analyze if the project needs more business rules or if we need a security layer and thus to be able to implement this pattern. 
 
-# Diagram class of example
+# Class Diagram of example:
 
 ![DiagramFacade](http://www.plantuml.com/plantuml/png/hP6z2i8m4CVtF4N6YhOFK4IAhWwYJv2sPmd6H2uNjAZlRgGzID5DCsJ8Z_m_xYfF2YcSZT2M08-g0RdLDIhivLt8UERIW6tNpfsoEbwbF11gsyr6Y401xHVy5A8nodkMsuCoesHkXgUIsL-DTkXkVUB4vcMQPA310su28bXYlL-Yy5_NQPkzjPaiv2K6l3fi9x5vqCj7KQJXFW7N4kamytp5K4owCs2vAfQ9Atu1)
 
 # Example
 An example of the Proxy pattern using Java code could be:
 
-
 Suppose we have a library application and we want to restrict access to certain functions only to users with valid credentials. We could have a RealLibrary class that has methods for borrowing and returning books, but only allow access to those methods if the user is logged in. In this case, we can create a class BibliotecaProxy that has an instance of BibliotecaReal and a method prestarLibro that first checks if the user is logged in before calling the corresponding BibliotecaReal method. If the user is not logged in, the user will be prompted to log in first.
-
 
 ```Java
 interface Library {

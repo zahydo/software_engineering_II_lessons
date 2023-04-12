@@ -6,7 +6,7 @@ To implement the "Prototype" pattern, it is necessary to create a prototype clas
 
 Once the prototype class has been created, instances of this class can be created and cloned when necessary. In this way, complex objects with many attributes can be created in a more efficient way, since it is not necessary to create each object from scratch. The "Prototype" pattern is particularly useful when many similar objects are needed, but with small differences in their attributes. By cloning an existing object, you can save a lot of resources and time in creating new objects.
 
-## Diagram class of example
+## Class Diagram of example:
 
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/VP71JiCm38RlUOf8N8f6Ns2Qq2Gui0DYejmG1o-9sg8qAROBGi2xayLgjrA9dkhFzb__VxV4W3nqNi616C6mDXw8TDL0x_INqkafMxlM5MCRwbnVy6VlPcHLEtvAiBXSu9tz2ob38Qdr7bih3OlmKSo8yJ5aqOV3gpEiVfIIynvJ1Q7suuch4QJffTXfhteR0ASbgVxTa21km3HJ6dGazz2lzHrGarusukLAPgydwxaiylXE4XJ7cSkKZs2p-FB3UumSZqdlWTbXk7LT70_le0q5O4sZwlFBsRxykyrtMPvoEeTYMsrTi4FdVm40)
 

@@ -6,7 +6,7 @@ The "Builder" pattern is implemented by creating a "Builder" class that contains
 
 The "Builder" class can be complemented by a "Director" class that uses the methods of the "Builder" class to construct the complex object. The "Director" is responsible for the construction sequence and uses the methods of the "Builder" class to set the values of the attributes. This allows the creation of complex objects in a more flexible and structured way.
 
-## Diagram class of example
+## Class Diagram of example:
 
 ![ClassDiagram](http://www.plantuml.com/plantuml/png/nLB1JiCm3BtdAtBiDFO3EqpJ19mcX8Ju06y98vApejY50-BVQTgqIbf3Z-kjxzdlsNxP4qFWngCw8n3fLx91VolTVfit5uYVmDkjVk7WhfSUHf1Gwy5X2Nq0qLSTJ8cUNE1t0zps7-ipu3smxPXrzAvcfdSQOOeCPkctD8g8PBBgNIwM7mUFQbNCjgQScqtI5d_MpemoH_XJPQGG_jTuY9i80ZsUzfHRdzFMGlT85PSHD0xfJd67QHoKq-91azYFoXxFeN5eRlQ6bXFCPbnEIwuNmv4hvI3a-kM3Iqsd-5Cb9aQHXx3PTV1MTrMaTsflhwRn-0i0)
 
