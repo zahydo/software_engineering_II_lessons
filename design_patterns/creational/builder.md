@@ -90,7 +90,7 @@ public class Pizza{
 ```
 
 ```Java 
-//Director se encaga de gestionar la creacion del producto
+//Director: is the class in charge of managing the creation of the product
 public class Cocina{
     private PizzaBuilder pizzaBuilder;
     
@@ -126,3 +126,8 @@ public class App{
     }
 }
 ```
+<p align="center">
+    <img src="../../classDiagrams/Builder.jpg">
+</p>
+
+[Back to the list](./README.md)

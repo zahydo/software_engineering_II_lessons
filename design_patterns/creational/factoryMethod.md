@@ -82,7 +82,6 @@ public class ConexionVacia implements IConexion{
 public class ConexionFabrica{
     
     //Interfaz para retornar una instancia segun lo que reciba
-    //Permite conservar la independencia
     public IConexion getConexion(String motor){
         if(motor == null){
             return nre ConexionVacia();
@@ -113,3 +112,8 @@ public class App {
     }
 }
 ```
+<p align="center">
+    <img src="../../classDiagrams/FactoryMethod.jpg">
+</p>
+
+[Back to the list](./README.md)

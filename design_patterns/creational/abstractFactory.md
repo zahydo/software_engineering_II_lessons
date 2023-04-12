@@ -207,3 +207,9 @@ public class App {
     }
 }
 ```
+
+<p align="center">
+    <img src="./../../classDiagrams/AbstractFactory.jpg">
+</p>
+
+[Back to the list](./README.md)

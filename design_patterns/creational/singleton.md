@@ -41,3 +41,8 @@ public class App{
 	}
 }
 ```
+<p align="center">
+    <img src="../../classDiagrams/Singleton.jpg">
+</p>
+
+[Back to the list](./README.md)
