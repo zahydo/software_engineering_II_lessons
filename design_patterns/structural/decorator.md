@@ -14,7 +14,9 @@ An example of the Decorator pattern using Java code could be:
 
 ### Structure:
 
-![Decorator](diagrams/Decorator.drawio.svg)
+<p align="center">
+    <img src="diagrams/Decorator.drawio.svg"/>
+</p>
 
 ### Implementation:
 

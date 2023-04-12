@@ -18,7 +18,9 @@ The Proxy pattern is useful when we need to control access to a resource, such a
 
 ### Structure:
 
-![Proxy](diagrams/Proxy.drawio.svg)
+<p align="center">
+    <img src="diagrams/Proxy.drawio.svg"/>
+</p>
 
 ### Implementation:
 

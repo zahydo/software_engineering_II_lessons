@@ -22,7 +22,9 @@ Suppose we have a music system with several complex classes and methods that int
 
 ### Structure:
 
-![Facade](diagrams/Facade.drawio.svg)
+<p align="center">
+    <img src="diagrams/Facade.drawio.svg"/>
+</p>
 
 ### Implementation:
 

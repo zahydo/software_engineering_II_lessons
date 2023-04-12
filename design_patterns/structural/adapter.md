@@ -18,7 +18,9 @@ A detailed example is presented showing how the "MySqlAdapter" adapter is implem
 
 ### Structure:
 
-![Adapter](diagrams/Adapter.drawio.svg)
+<p align="center">
+    <img src="diagrams/Adapter.drawio.svg"/>
+</p>
 
 ### Implementation:
 
