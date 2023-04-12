@@ -65,8 +65,15 @@ Upon completion of this course, you should be able to:
     - [Abstract factory](design_patterns/creational/abstractfactory.md)
     - [Factory method](design_patterns/creational/factorymethod.md)
     - [Singleton](design_patterns/creational/singleton.md)
+    - [Builder](design_patterns/creational/builder.md)
+    - [Prototype](design_patterns/creational/prototype.md)
   - [Behavioral patterns](design_patterns/behavioral/README.md)
     - [Command](design_patterns/behavioral/command.md)
+    - [Iterator](design_patterns/behavioral/Iterator.md)
+    - [Template Method](design_patterns/behavioral/TemplateMethod.md)
+    - [Chain of Responsibility](design_patterns/behavioral/chainofresponsibility.md)
+
+
 
 ## How to Contribute
 
