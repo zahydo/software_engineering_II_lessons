@@ -1,4 +1,4 @@
-# Proxy pattern
+# Proxy
 
 The Proxy pattern provides a surrogate or placeholder for another object to control access to it. In other words, it allows you to create a proxy object that acts as an intermediary between a client object and the real object it needs to interact with. This can be useful for a variety of reasons, such as:
 
@@ -53,6 +53,11 @@ public class Client {
     }
 }
 ```
+
+# Diagrama Proxy
+
+![Diagrama Proxy](DiagramaProxyPattern.png)
+
 In this example, you have an interface Resource that defines the operations that can be performed on the resource object. You also have a concrete implementation ResourceImpl that performs the actual operations, but takes a long time to initialize.
 
 To delay the creation of the ResourceImpl object until it is actually needed, you create a ResourceProxy object that acts as a surrogate for the ResourceImpl object. When a client requests an operation on the proxy object, the proxy object checks if the real object has been created yet. If not, it creates it on the fly. Once the real object is created, the proxy simply forwards the operation to it.

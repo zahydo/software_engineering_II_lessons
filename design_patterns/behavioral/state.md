@@ -1,4 +1,4 @@
-# State pattern
+# State
 
 The state design pattern is a behavioral pattern that allows an object to alter its behavior when its internal state changes. This pattern is useful when an object's behavior is dependent on its state and needs to change dynamically at runtime depending on that state. The state pattern involves creating separate state classes that encapsulate the behavior of the object based on its state, and the object delegates the behavior to the appropriate state object based on its current state. This results in cleaner, more modular code that is easier to maintain and extend over time.
 
@@ -84,5 +84,10 @@ trafficLight.changeState(new YellowLightState());
 // Switch back to the red light state
 trafficLight.changeState(new RedLightState());
 ```
+
+# Diagrama State
+
+![Diagrama State](DiagramaStatePattern.png)
+
 
 This will change the traffic light color and display the appropriate message based on the current state.

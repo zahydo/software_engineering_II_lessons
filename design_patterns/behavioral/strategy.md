@@ -4,3 +4,7 @@
 
 
 [TODO ejemplo]
+
+# Diagrama Strategy
+
+![Diagrama Strategy](.png)

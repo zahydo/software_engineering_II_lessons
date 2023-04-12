@@ -4,3 +4,8 @@
 
 
 [TODO ejemplo]
+
+
+# Diagrama Prototype
+
+![Diagrama Prototype](.png)

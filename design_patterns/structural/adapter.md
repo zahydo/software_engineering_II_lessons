@@ -1,4 +1,4 @@
-# Adapter pattern
+# Adapter
 
 The Adapter design pattern is a structural pattern that allows objects with incompatible interfaces to collaborate. It acts as a wrapper or translator, converting the interface of one class into another interface that clients expect. This pattern is useful when you want to reuse existing code that doesn't quite fit with the rest of your application. By using an adapter, you can make the code work without modifying the original source.
 
@@ -54,4 +54,9 @@ public class Main {
     }
 }
 ```
+
+# Diagrama Adapter
+
+![Diagrama Adapter](DiagramaAdapterPattern.png)
+
 In this example, you create an AdapterClass that takes an instance of AdapteeClass as a parameter and implements the TargetInterface. The method() implementation in the adapter simply calls the specificMethod() of the AdapteeClass. Then, you can pass the adapter to the ClientClass and call its doSomething() method, which expects an instance of TargetInterface. By using the Adapter pattern, you're able to use AdapteeClass in your application without modifying the existing code.

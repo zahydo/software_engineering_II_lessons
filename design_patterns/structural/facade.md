@@ -1,4 +1,4 @@
-# Facade pattern
+# Facade
 
 The Facade design pattern is a structural design pattern that provides a simplified interface to a complex system of classes, libraries, or APIs. It encapsulates a set of interfaces, implementations, and/or subsystems behind a single high-level interface, making it easier to use and reducing the complexity of the system.
 
@@ -73,6 +73,11 @@ public interface Codec {
     // implementation omitted for brevity
 }
 ```
+
+# Diagrama Facade
+
+![Diagrama Facade](DiagramaFacadePattern.png)
+
 In this example, the VideoConversionFacade class provides a simplified interface to the video conversion system, hiding the complexity of the subsystems behind it. The client code can simply call the convertVideo() method with the source filename, destination filename, and desired format, and the facade will take care of the rest. The subsystems, such as the CodecFactory and BitrateReducer, are still present and doing their work behind the scenes, but the client code doesn't need to worry about them.
 
 Overall, this solution simplifies the use of the video conversion system, improves its maintainability, and reduces the coupling between the client code and the subsystem components, all thanks to the Facade pattern.

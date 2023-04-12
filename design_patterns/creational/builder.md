@@ -1,4 +1,4 @@
-# Builder pattern
+# Builder
 
 The Builder pattern is a creational design pattern that separates the construction of a complex object from its representation, allowing the same construction process to create different representations. It is used to construct complex objects step by step and produce different types and representations of objects using the same construction code. The builder pattern is useful when the creation process is complex, and the result object is composed of many parts that need to be created in a specific order. By using this pattern, clients can create objects without knowing the underlying implementation details of the construction process. The builder pattern typically involves defining a builder interface, a concrete builder class that implements the interface, and a director class that uses the builder to construct the final object.
 
@@ -95,5 +95,10 @@ CharacterCreator creator = new CharacterCreator(builder);
 creator.createCharacter("Elf", "Wizard", "Magic Missiles");
 Character character = builder.build();
 ```
+
+# Diagrama Builder
+
+![Diagrama Builder](DiagramaBuilderPattern.png)
+
 
 This way, the player can easily create custom characters by specifying the desired attributes, and the Builder pattern takes care of the complex creation process.

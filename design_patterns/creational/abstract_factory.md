@@ -4,3 +4,7 @@
 
 
 [TODO ejemplo]
+
+# Diagrama Abstract Factory
+
+![Diagrama Abstract Factory](.png)

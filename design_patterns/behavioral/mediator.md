@@ -1,4 +1,4 @@
-# Mediator pattern
+# Mediator
 
 The Mediator pattern is a behavioral pattern that promotes loose coupling between a set of objects by creating a mediator object that encapsulates the communication between them. It allows objects to interact with each other without being tightly coupled to each other, which can make the system more flexible and easier to maintain. The Mediator pattern is often used in complex systems where many objects need to communicate with each other, but direct communication between them would be difficult to manage.
 
@@ -74,6 +74,11 @@ public class Main {
     }
 }
 ```
+
+# Diagrama Mediator
+
+![Diagrama Mediator](DiagramaMediatorPattern.png)
+
 
 In this implementation, the ChatRoom interface defines a sendMessage method that allows users to send messages to each other, but without directly interacting with each other. The ChatRoomImpl class implements this interface and acts as the mediator between the users. It maintains a list of users in the chat room and forwards messages to all users except the sender.
 

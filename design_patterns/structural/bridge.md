@@ -1,3 +1,6 @@
-# Bridge pattern
+# Bridge
 
 
+# Diagrama Bridge
+
+![Diagrama Bridge](.png)
