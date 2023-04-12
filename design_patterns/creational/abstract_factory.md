@@ -7,4 +7,4 @@
 
 # Diagrama Abstract Factory
 
-![Diagrama Abstract Factory](.png)
+![Diagrama Abstract Factory]("aqui va el nombre de la imagen".png)
