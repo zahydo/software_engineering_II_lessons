@@ -73,3 +73,5 @@ public class Client {
 In this example, FlyweightFactory is the flyweight factory that manages the creation and storage of flyweight objects. Flyweight is the interface that defines the render operation that is invoked when a new text is to be processed, and ConcreteFlyweight is the concrete implementation of the Flyweight interface that represents a specific flyweight.
 
 The Client class represents the application that uses flyweights to process text. In the main method, three different flyweight objects are created using the factory, and the render method is called on each of them to process different texts with different intrinsic and extrinsic properties.
+
+[Back](../structural/README.md)
