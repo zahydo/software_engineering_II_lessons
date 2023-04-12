@@ -32,6 +32,10 @@ In our navigation app, each routing algorithm can be extracted to its own class 
 
 Even though given the same arguments, each routing class might build a different route, the main navigator class doesn’t really care which algorithm is selected since its primary job is to render a set of checkpoints on the map. The class has a method for switching the active routing strategy, so its clients, such as the buttons in the user interface, can replace the currently selected routing behavior with another one.
 
+## Diagram of example
+
+![ClassDiagram](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuShCAqajIajCJbK8BYbAB4bDhrIevb800ksKVF-2LA1GPdwUHbvfhg6L0b2jZWAGQGHcQe99hbekhkISnE9Y1UVylEIYr99Kc3cEAIdKCYguD0d8IYwXmBoIr0gOTjrYgB5MS3z3Z8Kgqy2KruGeIAr8JIv5E8k0tTW2H5UtnWvXAov_eYdZWha_NnSXw92QbmACG000)
+
 ## Example
 
 In this example, we have two concrete strategies ConcreteStrategyAdd and ConcreteStrategySubtract that implement the Strategy interface, which defines the doOperation() method for performing the strategy.
@@ -106,3 +110,4 @@ public class StrategyPatternExample {
     }
 }
 
+[Back](../behavioral/README.md)

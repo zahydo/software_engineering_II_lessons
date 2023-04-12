@@ -25,6 +25,9 @@ As you can see, we’ve got two types of steps:
 
 There’s another type of step, called hooks. A hook is an optional step with an empty body. A template method would work even if a hook isn’t overridden. Usually, hooks are placed before and after crucial steps of algorithms, providing subclasses with additional extension points for an algorithm.
 
+## Diagram of example:
+![ClassDiagram](http://www.plantuml.com/plantuml/png/bP31IiGm48RlUOeSAw4l8285KKz2GM_YOTeCTN2Ib6GgQksxMrC3bLqMzXJuVxvlCjCaWIYJOmLTaWYzw9uX9NqF3lMivX8l-ZsGrUH929Y-iBeuABEhPVWyqg6tVuqPjtTHQXjr4wb_GrcdcNzwi_UP8jY1To581ypdaq_eHWR11vJNO5iGmUXlFs1DyTVcW7m5SKYN-b4Y-U7v9TCdkVewNqtbqrrzrtNPR9UKBwi6lPqS_m00)
+
 ## Example
 
 In this example, we have an abstract Game class that defines the template method play(), which defines the steps in the algorithm for playing a game. The initialize(), startPlay(), and endPlay() methods are abstract and must be implemented by subclasses.
@@ -117,3 +120,4 @@ Football game finished!
 
 This demonstrates how the play() method in the Game class defines the overall structure for playing a game, while the concrete subclasses provide specific implementations for the initialize(), startPlay(), and endPlay() methods.
 
+[Back](../behavioral/README.md)
