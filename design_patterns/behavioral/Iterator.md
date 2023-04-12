@@ -2,7 +2,6 @@
 
 ## Description: 
 The Iterator Pattern is a design pattern that provides a way to access the elements of a collection without exposing its underlying representation or modifying its structure. This pattern allows you to traverse a collection of elements in a consistent manner regardless of its specific implementation.
-jsjsjs
 
 ## Problem: 
 
