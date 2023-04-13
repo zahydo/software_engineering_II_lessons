@@ -23,7 +23,7 @@ An example can be when the accelerator of a car is stepped on and the engine rea
 ### Structure:
 
 <p align="center">
-    <img src="./diagrams/observer.svg"/>
+    <img src="./diagrams/Observer.svg"/>
 </p>
 
 ### Implementation:
