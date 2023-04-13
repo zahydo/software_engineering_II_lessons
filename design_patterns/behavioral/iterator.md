@@ -4,7 +4,7 @@ It is a behavior design pattern, which allows us to have information about the t
 
 ## Class Diagram of example:
 
-![Iterator_Patter](//www.plantuml.com/plantuml/png/bL1DIyGm4BtdLyonPSd-W1wMlGgoUXSFQNPq8yb4CXCGrlvtszYIjdYnXp8ytiTxEREO93buvKWmlHcBy30UHcA2kuBnEzmCN_1BchQ3FaQFXdvnci6d_WEjg44fwmqpN7BeCJqwbjb1Kq6uWp7avRLWvNSFABTu7U1GDKtXm2nfTxntbANU5BtSDNoos0tGDgU49C-HdRX8fSPV9TRQfltl-DNiu_5KNx43cz08yfgXzQbMtR8siDRV6oiNFZq6965rHhhcu7y0)
+![classDiagram](http://www.plantuml.com/plantuml/png/bL1DIyGm4BtdLyonPSd-W1wMlGgoUXSFQNPq8yb4CXCGrlvtszYIjdYnXp8ytiTxEREO93buvKWmlHcBy30UHcA2kuBnEzmCN_1BchQ3FaQFXdvnci6d_WEjg44fwmqpN7BeCJqwbjb1Kq6uWp7avRLWvNSFABTu7U1GDKtXm2nfTxntbANU5BtSDNoos0tGDgU49C-HdRX8fSPV9TRQfltl-DNiu_5KNx43cz08yfgXzQbMtR8siDRV6oiNFZq6965rHhhcu7y0)
 
 ## Example
 Suppose we have a list of numbers that we need to iterate through. In this list, all objects can be traversed in different ways, even up to objects that have been traversed before. It is necessary to implement a way to repeat the list without repeating elements already traversed.

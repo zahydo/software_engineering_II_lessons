@@ -4,6 +4,11 @@ This is a behavioral design pattern that allows requests to be passed between th
 
 The main advantages of this pattern is that the request handling order can be controlled and new handlers can be added without altering the already functional code, although there is the risk that the request cannot be resolved by any of the handlers. 
 
+## Class Diagram of example:
+
+![classDiagram](http://www.plantuml.com/plantuml/png/hP91IyD048Nl-HLpJ2avgBUWWeIYFTh4auYCoJHPsCo6tQaWiV_TJQsmXqsXnPoIcVVUV1b6iP3TOasmBb3hWgPl61Fmpx8bUH1VKORJmVP_xpburoA7JwEQP9yajKRdeDRkaPWiwZLlZUrnaXwJikfzitf-MPNLmGjtSFLRHx5Fo8qccuS0X-ROatIcsSCo6ZqHnRoBozWBmswd1LbccQ_FOWuZ_vcrwgWkTyDWx3pipPcmGMPwwGexLBmXDnXs-A6qagyZtkW4HTL-KkybAThMvL2ALTo-lWLHuGtUVcTP_AWYid3PiNRuUyaCQfRTn-UTDeIJJmj3XXy0)
+
+## Example
 Let's take the example of a call center. When calling, a bot does not give general information about the services it can provide. If the user does not need general information, but what he needs is communication with a consultant, then the responsibility for the request will fall on the next handler object, which will check if he can provide a solution or pass it to the next handler.
 
 ```Java
@@ -87,10 +92,5 @@ public class clsChainResponsability{
 }
 ```
 Here we have the base class of the entire program, which is hosted by the main method. When initializing objects, we start with the `atrGeneralInformation` attribute which is the first in the chain of handlers. From there, the object will determine if it has what is necessary to solve the request, or it will pass the responsibility to the other object, which in this case would be `atrConsultant`.
-
-## Class Diagram
-
-![Chain of Responsability](//www.plantuml.com/plantuml/png/hP91IyD048Nl-HLpJ2avgBUWWeIYFTh4auYCoJHPsCo6tQaWiV_TJQsmXqsXnPoIcVVUV1b6iP3TOasmBb3hWgPl61Fmpx8bUH1VKORJmVP_xpburoA7JwEQP9yajKRdeDRkaPWiwZLlZUrnaXwJikfzitf-MPNLmGjtSFLRHx5Fo8qccuS0X-ROatIcsSCo6ZqHnRoBozWBmswd1LbccQ_FOWuZ_vcrwgWkTyDWx3pipPcmGMPwwGexLBmXDnXs-A6qagyZtkW4HTL-KkybAThMvL2ALTo-lWLHuGtUVcTP_AWYid3PiNRuUyaCQfRTn-UTDeIJJmj3XXy0)
-
 
 [Back](../behavioral/README.md)

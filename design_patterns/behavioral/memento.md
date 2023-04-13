@@ -4,7 +4,7 @@ It is a behavior design pattern which allows saving and restoring to some previo
 
 ## Class Diagram of example:
 
-![Memento_Patter](//www.plantuml.com/plantuml/png/ZP712e9048Rl-nHxLC8Na10lGPTEzWAB3YgfApjZ5E6xjrEJQ0kH5-7__vd_6ysHZAEfxrJP6KHzXXiTgfQiqm-b_PDeybAg2tBjKB-adKOW3aPhAnQl5Y_-dZ5NOF44FGnaHNM0lWkY_gqkTgnc9KYY_EAHo9yyimgEFRQCSLyw1ASWKrvuph_sKfB9td729iJ-c7PStSgDgm-RPCjDgIuT60BS-3uGeFdeX9mBZ6Iphx5TXIg7eUAV-WG0)
+![classDiagram](http://www.plantuml.com/plantuml/png/ZP712e9048Rl-nHxLC8Na10lGPTEzWAB3YgfApjZ5E6xjrEJQ0kH5-7__vd_6ysHZAEfxrJP6KHzXXiTgfQiqm-b_PDeybAg2tBjKB-adKOW3aPhAnQl5Y_-dZ5NOF44FGnaHNM0lWkY_gqkTgnc9KYY_EAHo9yyimgEFRQCSLyw1ASWKrvuph_sKfB9td729iJ-c7PStSgDgm-RPCjDgIuT60BS-3uGeFdeX9mBZ6Iphx5TXIg7eUAV-WG0)
 
 ## Example
 Again, let's take a text editor. Previously, these editors did not have the option of reverting to a previous state in order to correct a mistake, so they had to redo all the work; if it was not time to redo everything.
