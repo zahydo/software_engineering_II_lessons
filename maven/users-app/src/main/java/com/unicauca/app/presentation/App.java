@@ -1,4 +1,4 @@
-package com.unicauca.app;
+package com.unicauca.app.presentation;
 
 import com.unicauca.app.access.IUserRepository;
 import com.unicauca.app.access.UserRepositoryImpl;
@@ -6,7 +6,6 @@ import com.unicauca.app.domain.services.IUserService;
 import com.unicauca.app.domain.services.LoggingDecorator;
 import com.unicauca.app.domain.services.UserServiceDecorator;
 import com.unicauca.app.domain.services.UserServiceImpl;
-import com.unicauca.app.presentation.UserController;
 
 /**
  * Hello world!

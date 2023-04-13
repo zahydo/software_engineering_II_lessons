@@ -18,7 +18,7 @@ To run the application using Maven, you can use the exec plugin to execute the m
 3. Run the following command to execute the main class:
 
 ```
-mvn exec:java -Dexec.mainClass="com.unicauca.app.App"
+mvn exec:java -Dexec.mainClass="com.unicauca.app.presentation.App"
 ```
 
 Replace com.example.MainClass with the fully qualified name of the main class.
