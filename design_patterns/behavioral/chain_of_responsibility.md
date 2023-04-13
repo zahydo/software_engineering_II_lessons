@@ -87,7 +87,7 @@ public class CreditRequestHandler {
 
          employee1.approveCredit(request1); // Prints "Request approved by a level 1 employee."
          employee1.approveCredit(request2); // Print "
-~~~java
+~~~
 
 # Diagrama Chain of Responsibility 
 
