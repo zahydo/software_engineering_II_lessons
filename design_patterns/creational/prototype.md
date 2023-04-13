@@ -23,7 +23,7 @@ As an example we are simply going to create a "Person" object and we are going t
 ### Structure:
 
 <p align="center">
-    <img src="./diagrams/prototype.svg"/>
+    <img src="./diagrams/Prototype.svg"/>
 </p>
 
 ### Implementation:
