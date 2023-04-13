@@ -21,7 +21,7 @@ The solution to this problem is to use the Chain of Responsibility design patter
 ### Structure:
 
 <p align="center">
-    <img src="./diagrams/chainofresponsibility.svg"/>
+    <img src="./diagrams/ChainofResponsability.drawio.svg"/>
 </p>
 
 ### Implementation:
