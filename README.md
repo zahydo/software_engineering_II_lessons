@@ -40,6 +40,8 @@ Upon completion of this course, you should be able to:
 ## Resources
 
 - [Clean Code: A Handbook of Agile Software Craftsmanship](./resources/Clean%20Code-%20A%20Handbook%20of%20Agile%20Software%20Craftsmanship.pdf)
+- [How do architecture patterns and tactics interact? A model and annotation](./resources/How%20do%20architecture%20patterns%20and%20tactics%20interact%3F%20A%20model%20and%20annotation.pdf)
+- [Software Architecture in Practice](./resources/Bass%2C%20Clements%2C%20Kazman%20-%202003%20-%20Software%20Architecture%20in%20Practice.pdf)
 
 ### Online resources:
 - [Online Moodle Course](http://univirtual.unicauca.edu.co/moodle/course/view.php?id=2234)
