@@ -72,6 +72,7 @@ Upon completion of this course, you should be able to:
     - [Iterator](design_patterns/behavioral/Iterator.md)
     - [Template Method](design_patterns/behavioral/TemplateMethod.md)
     - [Chain of Responsibility](design_patterns/behavioral/chainofresponsibility.md)
+    - [Observer](design_patterns/behavioral/observer.md)
 
 
 
