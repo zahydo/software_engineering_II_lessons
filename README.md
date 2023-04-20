@@ -60,6 +60,26 @@ Upon completion of this course, you should be able to:
 - [Design patterns](design_patterns/README.md)
   - [Structural patterns](design_patterns/structural/README.md)
     - [Decorator](design_patterns/structural/decorator.md)
+    - [Adapter](design_patterns/structural/adapter.md)
+    - [Facade](design_patterns/structural/facade.md)
+    - [Proxy](design_patterns/structural/proxy.md)
+    - [Bridge](design_patterns/structural/Bridge.md)
+    - [Composite](design_patterns/structural/Composite.md)
+    - [Flyweight](design_patterns/structural/Flyweight.md)
+  - [Creational patterns](design_patterns/creational/README.md)
+    - [Abstract factory](design_patterns/creational/abstractfactory.md)
+    - [Factory method](design_patterns/creational/factorymethod.md)
+    - [Singleton](design_patterns/creational/singleton.md)
+    - [Builder](design_patterns/creational/builder.md)
+    - [Prototype](design_patterns/creational/prototype.md)
+  - [Behavioral patterns](design_patterns/behavioral/README.md)
+    - [Command](design_patterns/behavioral/command.md)
+    - [Iterator](design_patterns/behavioral/Iterator.md)
+    - [Template Method](design_patterns/behavioral/TemplateMethod.md)
+    - [Chain of Responsibility](design_patterns/behavioral/chainofresponsibility.md)
+    - [Observer](design_patterns/behavioral/observer.md)
+
+
 
 ## How to Contribute
 
