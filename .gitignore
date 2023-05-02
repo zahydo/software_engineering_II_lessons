@@ -39,3 +39,7 @@ target/
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+InsertionSort.java
+QuickSort.java
+SelectionSort.java
