@@ -61,7 +61,10 @@ This code separates the `Shape` interface into smaller, more focused interfaces 
 
 ### Related patterns
 
-- [Pattern names]
+- YAGNI 
+- KISS 
+- Separation of Concerns
+- Boy-Scout Rule
 
 
 [Back to the list](./README.md)

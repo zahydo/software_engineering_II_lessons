@@ -82,5 +82,5 @@ This implementation is closed for modification because you can add new shapes to
 
 - [Pattern names]
 
-
+---
 [Back to the list](./README.md)

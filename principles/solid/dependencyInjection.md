@@ -89,7 +89,10 @@ This allows you to easily inject an implementation of those databases as depende
 
 ### Related patterns
 
-- [Pattern names]
+- Separation of Concerns
+- Composition Over Inheritance
+- Code For The Maintainer
+- Boy-Scout Rule
 
 
 [Back to the list](./README.md)

@@ -78,10 +78,14 @@ public class GradeCalculator {
 This code separates the responsibilities of managing student information and calculating grades into two separate classes, Student and GradeCalculator, respectively.
 ### Related principles
 
-- [Separation of concerns](../general/separationofconcerns.md)
+- [Links to other principles] 
+
 ### Related patterns
 
-- [Pattern names]
+- Separation of Concerns
+- KISS
+- Do The Simplest Thing That Could Possibly Work
+- Boy-Scout Rule
 
 
 [Back to the list](./README.md)

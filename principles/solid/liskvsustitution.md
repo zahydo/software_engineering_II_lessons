@@ -127,11 +127,12 @@ calculateArea(triangle); // not reached
 This ensures that the `Triangle` class can be used interchangeably with the `Shape` class, without affecting the correctness of the program.
 ### Related principles
 
-- [Composition over inheritance](../general/compositionoverinheritance.md)
+- [Links to other principles] 
 
 ### Related patterns
 
-- [Pattern names]
+- Code For The Maintainer
+- Boy-Scout Rule
 
 
 [Back to the list](./README.md)
