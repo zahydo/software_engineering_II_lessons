@@ -11,10 +11,7 @@ import co.edu.unicauca.openmarket.domain.Product;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ProductServiceTest {
@@ -80,6 +77,7 @@ public class ProductServiceTest {
     assertFalse(result);
   }
 
+ 
   @Test
   public void testEditProduct() {
     Product product = new Product();

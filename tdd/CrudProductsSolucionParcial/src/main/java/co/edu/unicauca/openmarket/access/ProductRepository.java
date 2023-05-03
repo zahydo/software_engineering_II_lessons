@@ -128,6 +128,7 @@ public class ProductRepository implements IProductRepository {
             if (id <= 0 || product == null) {
                 return false;
             }
+            
             //this.connect();
 
             String sql = "UPDATE  products "

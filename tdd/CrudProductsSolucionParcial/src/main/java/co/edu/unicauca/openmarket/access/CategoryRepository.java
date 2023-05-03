@@ -191,25 +191,7 @@ public class CategoryRepository implements ICategoryRepository {
         }
         return categories;
     }
-  @Override
-    public List<Category> findByName(String name) {
-        List<Category> categories = new ArrayList<>();
-        try {
-            String sql = "SELECT * FROM categories WHERE name = ?";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, name);
-            ResultSet rs = pstmt.executeQuery();
 
-            while (rs.next()) {
-                Long id = rs.getLong("categoryId");
-                String categoryName = rs.getString("name");
-                Category category = new Category(id, categoryName);
-                categories.add(category);
-            }
-        } catch (SQLException e) {
-            Logger.getLogger(ProductRepository.class.getName()).log(Level.SEVERE, null, e);
-        }
-        return categories;
-    }
+    
 
 }

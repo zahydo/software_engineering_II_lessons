@@ -50,9 +50,7 @@ public class CategoryService {
         return repository.findAll();
     }
        
-       public List<Category> findCategoriesByName(String name){
-        return repository.findByName(name);
-    }
+ 
        
    
 }  
