@@ -1,111 +1,101 @@
-# Bridge pattern
+# Bridge
 
 ## Description
 
-Bridge is used when we need to decouple an abstraction from its implementation so that the two can vary independently. This type of design pattern comes under structural pattern as this pattern decouples implementation class and abstract class by providing a bridge structure between them.
+The Bridge pattern is a structural design pattern that allows you to separate the user interface of a class from its underlying implementation, allowing both to vary independently.
 
-This pattern involves an interface which acts as a bridge which makes the functionality of concrete classes independent from interface implementer classes. Both types of classes can be altered structurally without affecting each other.
+## Problem:
 
-### Example
+When you have multiple classes with different variants, such as different types of shapes, colors, fonts, etc., you can have a combinatorial explosion of classes that become difficult to maintain and extend. Instead, the Bridge pattern can be used to separate the variations of the main classes.
 
-In this example, we have an Implementor interface called DrawingAPI which defines the interface for drawing circles.
+## Solution:
 
-```Java
-// Implementor interface
-public interface DrawingAPI {
-    void drawCircle(double x, double y, double radius);
+The solution offered by the Bridge pattern is to create two separate class hierarchies: one for the abstraction and one for the implementation. The abstraction defines the interface that the user interface uses to interact with the object, while the implementation defines the specifics of how that interface is implemented. This allows new variants of the implementation to be added without changing the user interface, and vice versa.
+
+## Example:
+
+Suppose we are developing a card game in which different characters have different abilities.
+
+The problem is that adding new abilities for characters may require modifying all existing classes, which is tedious and error prone.
+
+The solution is to apply the Bridge pattern to separate character classes from skill classes. In this way, you can create two separate class hierarchies, one for characters and one for abilities, and then connect them using an abstraction that allows you to assign abilities to characters.
+
+### Structure:
+
+<p align="center">
+    <img src="diagrams/Bridge.drawio.svg"/>
+</p>
+
+### Implementation:
+
+```java
+// Implementation of abilities
+interface Ability {
+    void perform();
 }
-```
 
-We have two Concrete Implementor classes, DrawingAPI1 and DrawingAPI2, which implement the DrawingAPI interface and provide different ways of drawing circles.
-
-```Java
-// Concrete Implementor 1
-public class DrawingAPI1 implements DrawingAPI {
-    @Override
-    public void drawCircle(double x, double y, double radius) {
-        System.out.printf("API1.circle at (%.2f, %.2f) radius %.2f\n", x, y, radius);
+class AttackAbility implements Ability {
+    public void perform() {
+        System.out.println("Performing attack");
     }
 }
 
-// Concrete Implementor 2
-public class DrawingAPI2 implements DrawingAPI {
-    @Override
-    public void drawCircle(double x, double y, double radius) {
-        System.out.printf("API2.circle at (%.2f, %.2f) radius %.2f\n", x, y, radius);
-    }
-}
-```
-
-We have an Abstraction class called Shape which has a reference to the DrawingAPI interface. 
-It also has an abstract draw method that will be implemented by its subclasses.
-
-```Java
-// Abstraction
-public abstract class Shape {
-    protected DrawingAPI drawingAPI;
-
-    protected Shape(DrawingAPI drawingAPI) {
-        this.drawingAPI = drawingAPI;
-    }
-
-    public abstract void draw();
-}
-```
-
-We have a Refined Abstraction class called Circle which extends the Shape class and has fields for the x and y coordinates and the radius of the circle. It has a constructor that takes these parameters as well as a reference to the DrawingAPI interface. It overrides the draw method of the Shape class and calls the drawCircle method of the DrawingAPI interface.
-
-```Java
-// Refined Abstraction
-public class Circle extends Shape {
-    private double x, y, radius;
-
-    public Circle(double x, double y, double radius, DrawingAPI drawingAPI) {
-        super(drawingAPI);
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-    }
-
-    @Override
-    public void draw() {
-        drawingAPI.drawCircle(x, y, radius);
+class DefenseAbility implements Ability {
+    public void perform() {
+        System.out.println("Performing defense");
     }
 }
 ```
 
-In the client code, we create an array of Shape objects and initialize them with instances of Circle. We pass in different implementations of the DrawingAPI interface to the Circle constructor to get different ways of drawing circles. We then call the draw method on each Shape object, which in turn calls the appropriate drawCircle method of the DrawingAPI object. This allows us to separate the abstraction and the implementation of drawing circles, and to easily swap in different implementations without changing the client code.
+```java
+// Implementation of characters
+abstract class Character {
+    protected Ability ability;
 
-```Java
-// Client code
-public class Client {
+    public Character(Ability ability) {
+        this.ability = ability;
+    }
+
+    abstract void display();
+}
+
+class Warrior extends Character {
+    public Warrior(Ability ability) {
+        super(ability);
+    }
+
+    void display() {
+        System.out.println("I am a warrior");
+        ability.perform();
+    }
+}
+
+class Mage extends Character {
+    public Mage(Ability ability) {
+        super(ability);
+    }
+
+    void display() {
+        System.out.println("I am a mage");
+        ability.perform();
+    }
+}
+```
+
+```java
+// Usage of the Bridge pattern
+public class CardGame {
     public static void main(String[] args) {
-        Shape[] shapes = new Shape[2];
-        shapes[0] = new Circle(1, 2, 3, new DrawingAPI1());
-        shapes[1] = new Circle(5, 7, 11, new DrawingAPI2());
+        Ability attackAbility = new AttackAbility();
+        Ability defenseAbility = new DefenseAbility();
 
-        for (Shape shape : shapes) {
-            shape.draw();
-        }
+        Warrior warriorWithAttack = new Warrior(attackAbility);
+        warriorWithAttack.display(); // Prints "I am a warrior" and "Performing attack"
+
+        Mage mageWithDefense = new Mage(defenseAbility);
+        mageWithDefense.display(); // Prints "I am a mage" and "Performing defense"
     }
-    
 }
 ```
 
-The result will be the following.
-
-```Java
-run:
-API1.circle at (1.00, 2.00) radius 3.00
-API2.circle at (5.00, 7.00) radius 11.00
-BUILD SUCCESSFUL (total time: 0 seconds)
-```
-
-Next, we have the diagram class of Bridge example:
-
-![Bridge](Diagrams/Bridge.jpg)
-
-A description of the Bridge design pattern:
-
-![Bridge](Diagrams/BridgeDescription.jpg)
-Image taken from https://refactoring.guru/design-patterns/bridge
+[Back to the list](./README.md)

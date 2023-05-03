@@ -1,103 +1,82 @@
-# Composite pattern
+# Composite
 
 ## Description
 
-Composite pattern is used where we need to treat a group of objects in similar way as a single object. Composite pattern composes objects in term of a tree structure to represent part as well as whole hierarchy. This type of design pattern comes under structural pattern as this pattern creates a tree structure of group of objects.
+The Composite pattern is a structural design pattern that allows you to build complex objects from simpler and similar objects, by creating a tree structure composed of composite and leaf objects. The goal is to treat individual objects and composites in the same way, allowing the client to work with them transparently.
 
-This pattern creates a class that contains group of its own objects. This class provides ways to modify its group of same objects
+In this pattern, a composite object contains a list of child objects (composites or leaves) and behaves like a leaf object for its parent container and like a container object for its children. This allows you to build a nested and recursive tree structure that can be treated as a single entity.
 
-### Example
+## Problem:
 
-In this example, we have a Component interface which defines the interface for both Leaf and Composite objects.
+A common problem that can be solved with the Composite pattern is creating hierarchical structures of objects where individual and composite objects are treated in the same way. For example, a file in a directory structure is a composite object that contains files and other directories.
 
-```Java
-// Component interface
-public interface Component {
-    void display();
+## Solution:
+
+The solution to this problem is the implementation of the Composite pattern, which involves defining a common interface for all objects in the structure, both composites and leaves. This interface defines methods for adding, removing, and getting child objects, as well as performing operations on the objects in the structure.
+
+## Example:
+
+The Component interface defines the methods that must be implemented by all classes that are part of the composite structure. The Leaf class is a leaf class that implements the Component interface, while the Composite class is a composite class that contains a list of child objects and also implements the Component interface.
+
+### Structure:
+
+<p align="center">
+    <img src="diagrams/Composite.drawio.svg"/>
+</p>
+
+### Implementation:
+
+```java
+interface Component {
+    void operation();
+    void add(Component c);
+    void remove(Component c);
+    Component getChild(int index);
 }
-```
 
-We have a Leaf class which implements the Component interface and represents a single object in the composite structure.
-
-```Java
-// Leaf class
-public class Leaf implements Component {
-    private String name;
-
-    public Leaf(String name) {
-        this.name = name;
+class Leaf implements Component {
+    public void operation() {
+        // Implementation of the leaf operation
     }
 
-    public void display() {
-        System.out.println(name);
+    public void add(Component c) {
+        // Throws an exception or does nothing since a leaf cannot have children
+    }
+
+    public void remove(Component c) {
+        // Throws an exception or does nothing since a leaf cannot have children
+    }
+
+    public Component getChild(int index) {
+        // Throws an exception or does nothing since a leaf cannot have children
+        return null;
     }
 }
-```
 
-We have a Composite class which also implements the Component interface and represents a collection of objects in the composite structure. It has a list of Component objects and provides methods to add and remove components. It also overrides the display method of the Component interface to display all the components in the list.
+class Composite implements Component {
+    private List<Component> children = new ArrayList<>();
 
-```Java
-// Composite class
-public class Composite implements Component {
-    private List<Component> components = new ArrayList<>();
-
-    public void add(Component component) {
-        components.add(component);
-    }
-
-    public void remove(Component component) {
-        components.remove(component);
-    }
-
-    public void display() {
-        for (Component component : components) {
-            component.display();
+    public void operation() {
+        // Implementation of the composite operation
+        for (Component child : children) {
+            child.operation();
         }
     }
-}
-```
 
-In the client code, we create several Leaf objects and two Composite objects. We add the Leaf objects to one Composite object, add the other Composite object to another Composite object, and then add that Composite object to the first Composite object. We then call the display method on the top-level Composite object, which displays all the objects in the composite structure. This allows us to treat both individual Leaf objects and collections of objects represented by Composite objects uniformly.
+    public void add(Component c) {
+        children.add(c);
+    }
 
-```Java
-// Client code
-public class Client {
-    public static void main(String[] args) {
-        Component leaf1 = new Leaf("Leaf 1");
-        Component leaf2 = new Leaf("Leaf 2");
-        Component leaf3 = new Leaf("Leaf 3");
+    public void remove(Component c) {
+        children.remove(c);
+    }
 
-        Composite composite1 = new Composite();
-        composite1.add(leaf1);
-        composite1.add(leaf2);
-
-        Composite composite2 = new Composite();
-        composite2.add(leaf3);
-
-        Composite composite3 = new Composite();
-        composite3.add(composite1);
-        composite3.add(composite2);
-
-        composite3.display();
+    public Component getChild(int index) {
+        return children.get(index);
     }
 }
 ```
 
-The result will be the following.
+The Composite pattern allows you to create hierarchical structures of objects and treat them uniformly, regardless of whether they are individual or composite objects. This provides greater flexibility and extensibility to applications and can be easily implemented in any programming language.
 
-```Java
-run:
-Leaf 1
-Leaf 2
-Leaf 3
-BUILD SUCCESSFUL (total time: 0 seconds)
-```
-
-Next, we have the diagram class of Composite example:
-
-![Composite](Diagrams/Composite.jpg)
-
-A description of the Composite pattern:
-
-![Composite](Diagrams/CompositeDescription.jpg)
-Image taken from https://refactoring.guru/design-patterns/composite
+[Back to the list](./README.md)

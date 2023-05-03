@@ -1,120 +1,83 @@
-# Flyweight pattern
+# Flyweight
 
 ## Description
 
-Flyweight pattern is primarily used to reduce the number of objects created and to decrease memory footprint and increase performance. This type of design pattern comes under structural pattern as this pattern provides ways to decrease object count thus improving the object structure of application.
+The Flyweight pattern is a structural design pattern that allows you to share objects that have similar properties, reducing the memory usage and improving performance. It achieves this by storing the intrinsic (immutable) state of objects in a separate Flyweight object and the extrinsic (mutable) state in the context object. The Flyweight objects are shared between multiple contexts, while the context objects vary and are unique to each use.
 
-Flyweight pattern tries to reuse already existing similar kind objects by storing them and creates new object when no matching object is found.
+The main idea behind the Flyweight pattern is to avoid creating too many objects that have the same properties, which can lead to a high memory footprint and slow down the application. By sharing objects, you can save memory and improve performance, especially in applications that handle a large number of similar objects.
 
-### Example
+## Problem:
 
-In this example, we have a Flyweight interface which defines the interface for concrete flyweight objects.
+A common problem that can be solved with the Flyweight pattern is the creation of large numbers of similar objects that consume a lot of memory. For example, a text editor application that needs to display a large number of characters on the screen. Each character could be represented by a separate object, which would lead to a high memory usage. Instead, by using the Flyweight pattern, each character can be represented by a shared Flyweight object, reducing memory usage.
 
-```Java
-import java.awt.Color;
-import java.awt.Graphics;
-import java.util.Random;
-import javax.swing.JFrame;
-import java.util.HashMap;
-import java.util.Map;
+## Solution:
 
-// Flyweight interface
-public interface Shape {
-    void draw(Graphics g, int x, int y, int width, int height, Color color);
+The solution to this problem is to implement the Flyweight pattern, which involves separating the intrinsic state of the objects from the extrinsic state and creating a Flyweight factory that creates and manages the shared Flyweight objects. The Flyweight factory ensures that only one instance of each Flyweight object is created and shared between multiple contexts.
+
+## Example:
+
+The Flyweight interface defines the method for the operation, which uses the intrinsic state and the extrinsic state in the context. The ConcreteFlyweight class implements the Flyweight interface and stores the intrinsic state in a private field. The FlyweightFactory class creates and manages the shared Flyweight objects and ensures that only one instance of each Flyweight object is created. The Context class stores the extrinsic state.
+
+### Structure:
+
+<p align="center">
+    <img src="diagrams/Flyweight.drawio.svg"/>
+</p>
+
+### Implementation:
+
+```java
+interface Flyweight {
+    void operation(Context context);
 }
-```
 
-We have a concrete flyweight class called Rectangle which implements the Shape interface and represents a rectangle shape.
+class ConcreteFlyweight implements Flyweight {
+    private final String intrinsicState;
 
-```Java
-// Concrete Flyweight class
-public class Rectangle implements Shape {
-    public void draw(Graphics g, int x, int y, int width, int height, Color color) {
-        g.setColor(color);
-        g.fillRect(x, y, width, height);
+    public ConcreteFlyweight(String intrinsicState) {
+        this.intrinsicState = intrinsicState;
+    }
+
+    public void operation(Context context) {
+        // Implementation of the operation using the intrinsic state and the extrinsic state in the context
     }
 }
-```
 
-We also have a Flyweight factory class called ShapeFactory which maintains a pool of flyweight objects and provides a method called getShape to get a flyweight object for a given key. If a flyweight object with that key already exists in the pool, the factory returns that object. Otherwise, it creates a new flyweight object and adds it to the pool.
+class FlyweightFactory {
+    private final Map<String, Flyweight> flyweights = new HashMap<>();
 
-```Java
-// Flyweight factory class
-public class ShapeFactory {
-    private static final Map<String, Shape> shapes = new HashMap<>();
-
-    public static Shape getShape(String key) {
-        Shape shape = shapes.get(key);
-
-        if (shape == null) {
-            shape = new Rectangle();
-            shapes.put(key, shape);
+    public Flyweight getFlyweight(String intrinsicState) {
+        if (!flyweights.containsKey(intrinsicState)) {
+            flyweights.put(intrinsicState, new ConcreteFlyweight(intrinsicState));
         }
-
-        return shape;
+        return flyweights.get(intrinsicState);
     }
 }
-```
 
-In the client code, we create a JFrame and a Graphics object for the JFrame. We then create 1000 shapes using the ShapeFactory, randomly selecting colors, positions, and sizes for each shape. Because we are reusing flyweight objects from the ShapeFactory, the memory usage of our program is significantly reduced.
+class Context {
+    private final String extrinsicState;
 
-```Java
+    public Context(String extrinsicState) {
+        this.extrinsicState = extrinsicState;
+    }
+
+    public String getExtrinsicState() {
+        return extrinsicState;
+    }
+}
+
 // Client code
-public class Client {
-    private static final String[] colors = {"Red", "Green", "Blue"};
-    private static final int CANVAS_SIZE = 500;
+FlyweightFactory flyweightFactory = new FlyweightFactory();
+Context context1 = new Context("Extrinsic state 1");
+Context context2 = new Context("Extrinsic state 2");
 
-    public static void main(String[] args) {
-        Random random = new Random();
-        JFrame frame = new JFrame("Flyweight Pattern Example");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(CANVAS_SIZE, CANVAS_SIZE);
-        frame.setVisible(true);
+Flyweight flyweight1 = flyweightFactory.getFlyweight("Intrinsic state");
+flyweight1.operation(context1);
 
-        Graphics g = frame.getGraphics();
-
-        for (int i = 0; i < 1000; i++) {
-            Shape shape = ShapeFactory.getShape(getRandomColor());
-            shape.draw(g, getRandomX(), getRandomY(), getRandomWidth(), getRandomHeight(), Color.black);
-        }
-    }
-
-    private static String getRandomColor() {
-        return colors[(int)(Math.random() * colors.length)];
-    }
-
-    private static int getRandomX() {
-        return (int)(Math.random() * CANVAS_SIZE);
-    }
-
-    private static int getRandomY() {
-        return (int)(Math.random() * CANVAS_SIZE);
-    }
-
-    private static int getRandomWidth() {
-        return (int)(Math.random() * 100);
-    }
-
-    private static int getRandomHeight() {
-        return (int)(Math.random() * 100);
-    }
-}
+Flyweight flyweight2 = flyweightFactory.getFlyweight("Intrinsic state");
+flyweight2.operation(context2);
 ```
 
-By using the Flyweight pattern, we can optimize the performance of our program by reusing objects and reducing memory usage.
+The Flyweight pattern allows you to reduce memory usage and improve performance by sharing objects that have similar properties. By separating the intrinsic state from the extrinsic state, you can create shared objects that can be used in multiple contexts. The Flyweight pattern is especially useful in applications that handle a large number of similar objects
 
-The result will be the following.
-
-```Java
-run:
-BUILD SUCCESSFUL (total time: 4 seconds)
-```
-
-Next, we have the diagram class of Flyweight example:
-
-![Flyweight](Diagrams/Flyweight.jpg)
-
-A description of the Flyweight design pattern:
-
-![Flyweight](Diagrams/FlyweightDescription.jpg)
-Image taken from https://refactoring.guru/design-patterns/flyweight
+[Back to the list](./README.md)
