@@ -94,3 +94,4 @@ If you want to contribute to this Repo, you must follow the next steps:
 ## Author
 
 [@sahydo](https://sahydo.com)
+[@BraianRey]
