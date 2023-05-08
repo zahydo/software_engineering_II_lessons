@@ -15,6 +15,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 
 public class ProductServiceTest {
 
@@ -27,24 +28,28 @@ public class ProductServiceTest {
     }
 
     @Test
+    @DisplayName("Guardar un producto")
     public void testSaveProduct() {
         boolean result = this.service.saveProduct("Test Product", "This is a test product.");
         assertTrue(result);
     }
 
     @Test
+    @DisplayName("Guardar un producto con nombre invalido")
     public void testSaveProductInvalidName() {
         boolean result = this.service.saveProduct("", "This is an invalid product.");
         assertFalse(result);
     }
 
     @Test
+    @DisplayName("Buscar todos los productos")
     public void testFindAllProducts() {
         List<Product> products = this.service.findAllProducts();
         assertEquals(2, products.size());
     }
 
     @Test
+    @DisplayName("Buscar un producto por id")
     public void testFindProductById() {
         Product product = this.service.findProductById(1L);
         assertNotNull(product);
@@ -52,24 +57,28 @@ public class ProductServiceTest {
     }
 
     @Test
+    @DisplayName("Buscar un producto por id no encontrado")
     public void testFindProductByIdNotFound() {
         Product product = this.service.findProductById(10L);
         assertNull(product);
     }
 
     @Test
+    @DisplayName("Borrar un producto")
     public void testDeleteProduct() {
         boolean result = this.service.deleteProduct(1L);
         assertTrue(result);
     }
 
     @Test
+    @DisplayName("Borrar un producto no encontrado")
     public void testDeleteProductNotFound() {
         boolean result = this.service.deleteProduct(10L);
         assertFalse(result);
     }
 
     @Test
+    @DisplayName("Editar un producto")
     public void testEditProduct() {
         Product product = new Product();
         product.setProductId(1L);
@@ -80,6 +89,7 @@ public class ProductServiceTest {
     }
 
     @Test
+    @DisplayName("Editar un producto no encontrado")
     public void testEditProductNotFound() {
         Product product = new Product();
         product.setProductId(10L);

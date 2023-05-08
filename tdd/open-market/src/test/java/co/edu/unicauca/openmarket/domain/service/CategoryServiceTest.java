@@ -15,6 +15,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 
 public class CategoryServiceTest {
 
@@ -27,24 +28,28 @@ public class CategoryServiceTest {
     }
 
     @Test
+    @DisplayName("Guardar una categoria")
     public void testSaveCategory() {
         boolean result = this.service.saveCategory("Test Category");
         assertTrue(result);
     }
 
     @Test
+    @DisplayName("Guardar una categoria con nombre invalido")
     public void testSaveCategoryInvalidName() {
         boolean result = this.service.saveCategory("");
         assertFalse(result);
     }
 
     @Test
+    @DisplayName("Buscar todas las categorias")
     public void testFindAllCategories() {
         List<Category> categories = this.service.findAllCategory();
         assertEquals(2, categories.size());
     }
 
     @Test
+    @DisplayName("Buscar una categoria por id")
     public void testFindCategoryById() {
         Category category = this.service.findCategoryById(1L);
         assertNotNull(category);
@@ -52,24 +57,28 @@ public class CategoryServiceTest {
     }
 
     @Test
+    @DisplayName("Buscar una categoria por id no encontrada")
     public void testFindCategoryByIdNotFound() {
         Category category = this.service.findCategoryById(10L);
         assertNull(category);
     }
 
     @Test
+    @DisplayName("Borrar una categoria")
     public void testDeleteCategory() {
         boolean result = this.service.deleteCategory(1L);
         assertTrue(result);
     }
 
     @Test
+    @DisplayName("Borrar una categoria por id no encontrada")
     public void testDeleteCategoryNotFound() {
         boolean result = this.service.deleteCategory(10L);
         assertFalse(result);
     }
 
     @Test
+    @DisplayName("Editar una categoria")
     public void testEditCategory() {
         Category category = new Category();
         category.setCategoryId(1L);
@@ -79,6 +88,7 @@ public class CategoryServiceTest {
     }
 
     @Test
+    @DisplayName("Editar una categoria por id no encontrada")
     public void testEditCategoryNotFound() {
         Category category = new Category();
         category.setCategoryId(10L);
