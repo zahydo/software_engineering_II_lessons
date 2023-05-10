@@ -6,9 +6,9 @@
 package com.unicauca.practice.junit_git.src.sorting;
 
 import com.unicauca.practice.junit_git.src.sorting.util.BubbleSort;
-import com.unicauca.practice.junit_git.src.sorting.util.InsertionSort;
-import com.unicauca.practice.junit_git.src.sorting.util.QuickSort;
-import com.unicauca.practice.junit_git.src.sorting.util.SelectionSort;
+//import com.unicauca.practice.junit_git.src.sorting.util.InsertionSort;
+//import com.unicauca.practice.junit_git.src.sorting.util.QuickSort;
+//import com.unicauca.practice.junit_git.src.sorting.util.SelectionSort;
 import com.unicauca.practice.junit_git.src.sorting.util.SortingUtil;
 
 /**
