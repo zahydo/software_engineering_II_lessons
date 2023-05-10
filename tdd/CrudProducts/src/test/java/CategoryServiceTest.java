@@ -29,52 +29,52 @@ public class CategoryServiceTest {
     }
   
     @Test
-    public void testSaveProduct() {
+    public void testSaveCategory() {
       boolean result =
         this.service.saveCategory(3L,"This is a test Category");
       assertTrue(result);
     }
   
     @Test
-    public void testSaveProductInvalidName() {
+    public void testSaveCategoryInvalidName() {
       boolean result =
         this.service.saveCategory(4l, "");
       assertFalse(result);
     }
   
     @Test
-    public void testFindAllProducts() {
+    public void testFindAllCategory() {
       List<Category> categories = this.service.findAllCategory();
       assertEquals(2, categories.size());
     }
   
     @Test
-    public void testFindProductById() {
+    public void testFindCategoryById() {
     Category categorie = this.service.findCategoryById(1L);
       assertNotNull(categorie);
       assertEquals(1L, categorie.getCategoryId().longValue());
     }
   
     @Test
-    public void testFindProductByIdNotFound() {
+    public void testFindCategoryByIdNotFound() {
        Category categorie = this.service.findCategoryById(10L);
       assertNull(categorie);
     }
   
     @Test
-    public void testDeleteProduct() {
+    public void testDeleteCategory() {
       boolean result = this.service.deleteCategory(1L);
       assertTrue(result);
     }
   
     @Test
-    public void testDeleteProductNotFound() {
+    public void testDeleteCategoryNotFound() {
       boolean result = this.service.deleteCategory(10L);
       assertFalse(result);
     }
   
     @Test
-    public void testEditProduct() {
+    public void testEditCategory() {
       Category categoria1 = new Category();
       categoria1.setCategoryId(3L);
       categoria1.setName("Category 3");
@@ -83,7 +83,7 @@ public class CategoryServiceTest {
     }
   
     @Test
-    public void testEditProductNotFound() {
+    public void testEditCategoryNotFound() {
       Category categoria1 = new Category();
       categoria1.setCategoryId(3L);
       categoria1.setName("Category 3");
