@@ -31,7 +31,7 @@ public class ProductRepository implements IProductRepository {
 
         try {
             //Validate product
-            if (newProduct == null || newProduct.getName().isBlank()) {
+            if (newProduct == null || newProduct.getName().isEmpty()) {
                 return false;
             }
             //this.connect();

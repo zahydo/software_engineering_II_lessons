@@ -34,7 +34,7 @@ public class ProductService {
         newProduct.setDescription(description);
         
         //Validate product
-        if (newProduct.getName().isBlank() ) {
+        if (newProduct.getName().isEmpty() ) {
             return false;
         }
 
@@ -53,6 +53,10 @@ public class ProductService {
         return repository.findById(id);
     }
     
+    public Product findProductByName(String name){
+        return repository.findByName(name);
+    }
+    
     public boolean deleteProduct(Long id){
         return repository.delete(id);
     }
@@ -60,7 +64,7 @@ public class ProductService {
     public boolean editProduct(Long productId, Product prod) {
         
         //Validate product
-        if (prod == null || prod.getName().isBlank() ) {
+        if (prod == null || prod.getName().isEmpty() ) {
             return false;
         }
         return repository.edit(productId, prod);

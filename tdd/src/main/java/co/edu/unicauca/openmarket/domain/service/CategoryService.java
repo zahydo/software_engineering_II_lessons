@@ -26,30 +26,31 @@ public class CategoryService {
         this.repository = repository;
     }
 
-
     public boolean saveCategory(String name) {
         
         Category newCategory = new Category();
         newCategory.setName(name);
         
         //Validate category
-        if (newCategory.getName().isBlank() ) {
+        if (newCategory.getName().isEmpty() ) {
             return false;
         }
-
         return repository.save(newCategory);
-
     }
 
-    public List<Category> findAllCategorys() {
-        List<Category> categorys = new ArrayList<>();
-        categorys = repository.findAll();;
+    public List<Category> findAllCategories() {
+        List<Category> categories = new ArrayList<>();
+        categories = repository.findAll();;
 
-        return categorys;
+        return categories;
     }
     
     public Category findCategoryById(Long id){
         return repository.findById(id);
+    }
+    
+    public Category findCategoryByName(String name){
+        return repository.findByName(name);
     }
     
     public boolean deleteCategory(Long id){
@@ -59,7 +60,7 @@ public class CategoryService {
     public boolean editCategory(Long categoryId, Category cat) {
         
         //Validate category
-        if (cat == null || cat.getName().isBlank() ) {
+        if (cat == null || cat.getName().isEmpty() ) {
             return false;
         }
         return repository.edit(categoryId, cat);

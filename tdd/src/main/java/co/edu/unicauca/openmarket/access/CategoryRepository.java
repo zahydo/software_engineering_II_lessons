@@ -32,13 +32,13 @@ public class CategoryRepository implements ICategoryRepository {
 
         try {
             //Validate category
-            if (newCategory == null || newCategory.getName().isBlank()) {
+            if (newCategory == null || newCategory.getName().isEmpty()) {
                 return false;
             }
             //this.connect();
 
-            String sql = "INSERT INTO category ( name) "
-                    + "VALUES ( ?, ? )";
+            String sql = "INSERT INTO categories ( name ) "
+                    + "VALUES ( ? )";
 
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, newCategory.getName());
@@ -53,10 +53,10 @@ public class CategoryRepository implements ICategoryRepository {
 
     @Override
     public List<Category> findAll() {
-        List<Category> categorys = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
         try {
 
-            String sql = "SELECT * FROM categorys";
+            String sql = "SELECT * FROM categories";
             //this.connect();
 
             Statement stmt = conn.createStatement();
@@ -66,21 +66,21 @@ public class CategoryRepository implements ICategoryRepository {
                 newCategory.setCategoryId(rs.getLong("categoryId"));
                 newCategory.setName(rs.getString("name"));
 
-                categorys.add(newCategory);
+                categories.add(newCategory);
             }
             //this.disconnect();
 
         } catch (SQLException ex) {
             Logger.getLogger(CategoryRepository.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return categorys;
+        return categories;
     }
 
     private void initDatabase() {
         // SQL statement for creating a new table
-        String sql = "CREATE TABLE IF NOT EXISTS categorys (\n"
+        String sql = "CREATE TABLE IF NOT EXISTS categories (\n"
                 + "	categoryId integer PRIMARY KEY AUTOINCREMENT,\n"
-                + "	name text NOT NULL,\n"
+                + "	name text NOT NULL\n"
                 + ");";
 
         try {
@@ -128,13 +128,13 @@ public class CategoryRepository implements ICategoryRepository {
             }
             //this.connect();
 
-            String sql = "UPDATE  categorys "
+            String sql = "UPDATE  categories "
                     + "SET name=?"
                     + "WHERE categoryId = ?";
 
             PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, Category.getName());
-            pstmt.setLong(3, id);
+            pstmt.setLong(1, id);
+            pstmt.setString(2, Category.getName());
             pstmt.executeUpdate();
             //this.disconnect();
             return true;
@@ -153,7 +153,7 @@ public class CategoryRepository implements ICategoryRepository {
             }
             //this.connect();
 
-            String sql = "DELETE FROM categorys "
+            String sql = "DELETE FROM categories "
                     + "WHERE categoryId = ?";
 
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -171,7 +171,7 @@ public class CategoryRepository implements ICategoryRepository {
     public Category findById(Long id) {
         try {
 
-            String sql = "SELECT * FROM categorys  "
+            String sql = "SELECT * FROM categories  "
                     + "WHERE categoryId = ?";
 
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -199,7 +199,7 @@ public class CategoryRepository implements ICategoryRepository {
     public Category findByName(String name) {
         try {
 
-            String sql = "SELECT * FROM categorys  "
+            String sql = "SELECT * FROM categories  "
                     + "WHERE name LIKE ?";
 
             PreparedStatement pstmt = conn.prepareStatement(sql);
