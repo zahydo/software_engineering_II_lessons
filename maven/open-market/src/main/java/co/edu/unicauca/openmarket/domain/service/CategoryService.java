@@ -26,7 +26,7 @@ public class CategoryService {
         Category newCategory = new Category();
         newCategory.setName(name);
 
-        //Validate category
+        // Validate category
         if (newCategory.getName().isEmpty()) {
             return false;
         }
@@ -35,7 +35,7 @@ public class CategoryService {
 
     }
 
-    public List<Category> findAllCategory() {
+    public List<Category> findAllCategories() {
         List<Category> category = new ArrayList<>();
         category = repository.findAll();
 
@@ -52,7 +52,7 @@ public class CategoryService {
 
     public boolean editCategory(Long categoryId, Category category) {
 
-        //Validate category
+        // Validate category
         if (category == null || category.getName().isEmpty()) {
             return false;
         }

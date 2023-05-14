@@ -4,11 +4,11 @@ import co.edu.unicauca.openmarket.access.IProductRepository;
 import co.edu.unicauca.openmarket.domain.Product;
 import java.util.List;
 
-public class MemoryAdapterRepository implements IProductRepository {
+public class MemoryAdapterProductRepository implements IProductRepository {
 
   private ProductArrayService productArrayService;
 
-  public MemoryAdapterRepository() {
+  public MemoryAdapterProductRepository() {
     productArrayService = new ProductArrayService();
   }
 

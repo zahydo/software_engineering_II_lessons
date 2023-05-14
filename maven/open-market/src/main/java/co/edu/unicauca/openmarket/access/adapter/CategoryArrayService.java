@@ -23,17 +23,9 @@ public class CategoryArrayService {
   public Category upsertCategory(Category category, boolean createNewOne) {
     Category categ = null;
     for (Category c : categories) {
-      if (
-        category.getCategoryId() != null &&
-        c.getCategoryId().equals(category.getCategoryId())
-      ) {
+      if (category.getCategoryId() != null &&
+          c.getCategoryId().equals(category.getCategoryId())) {
         c.setName(category.getName());
-        c.setPrice(category.getPrice());
-        c.setCategory(category.getCategory());
-        c.setDescription(category.getDescription());
-        c.setLocation(category.getLocation());
-        c.setUser(category.getUser());
-
         categ = c;
         break;
       }
