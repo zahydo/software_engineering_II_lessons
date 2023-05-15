@@ -1,6 +1,6 @@
 package co.edu.unicauca.openmarket.access;
 
-import co.edu.unicauca.openmarket.access.adapter.MemoryAdapterRepository;
+import co.edu.unicauca.openmarket.access.adapter.MemoryAdapterProductRepository;
 
 /**
  * Fabrica que se encarga de instanciar ProductRepository o cualquier otro que
@@ -44,7 +44,7 @@ public class Factory {
                 result = new ProductRepository();
                 break;
             case "adapter":
-                result = new MemoryAdapterRepository();
+                result = new MemoryAdapterProductRepository();
                 break;
         }
 
