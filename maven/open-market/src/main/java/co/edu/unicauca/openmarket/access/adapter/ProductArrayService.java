@@ -37,7 +37,7 @@ public class ProductArrayService {
         prod = p;
         break;
       }
-    }
+    }    
     if (prod == null && createNewOne) {
       product.setProductId((long) (products.size() + 1));
       products.add(product);
