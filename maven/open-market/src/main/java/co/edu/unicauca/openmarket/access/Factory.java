@@ -1,5 +1,6 @@
 package co.edu.unicauca.openmarket.access;
 
+import co.edu.unicauca.openmarket.access.adapter.CatAdapterRepository;
 import co.edu.unicauca.openmarket.access.adapter.MemoryAdapterRepository;
 
 /**
@@ -59,6 +60,9 @@ public class Factory {
         switch (type) {
             case "default":
                 result = new CategoryRepository();
+                break;
+            case "adapter":
+                result = new CatAdapterRepository();
                 break;
         }
 
