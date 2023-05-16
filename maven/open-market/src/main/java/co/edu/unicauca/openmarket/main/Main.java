@@ -3,7 +3,7 @@ package co.edu.unicauca.openmarket.main;
 import co.edu.unicauca.openmarket.access.Factory;
 import co.edu.unicauca.openmarket.access.*;
 import co.edu.unicauca.openmarket.domain.service.*;
-import co.edu.unicauca.openmarket.presentation.GUI;
+import co.edu.unicauca.openmarket.presentation.ui.GUI;
 
 /**
  *
