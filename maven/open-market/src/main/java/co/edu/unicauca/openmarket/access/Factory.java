@@ -1,6 +1,6 @@
 package co.edu.unicauca.openmarket.access;
 
-import co.edu.unicauca.openmarket.access.adapter.MemoryAdapterCategoryRepository;
+import co.edu.unicauca.openmarket.access.adapter.memoryAdapterCategoryRepository;
 import co.edu.unicauca.openmarket.access.adapter.MemoryAdapterProductRepository;
 
 /**
@@ -53,6 +53,12 @@ public class Factory {
 
     }
 
+    /**
+     * Método que crea una instancia concreta de la jerarquia ICategoryRepository
+     *
+     * @param type cadena que indica qué tipo de clase hija debe instanciar
+     * @return una clase hija de la abstracción ICategoryRepository
+     */
     public ICategoryRepository getRepositoryCategory(String type) {
 
         ICategoryRepository result = null;
@@ -62,7 +68,7 @@ public class Factory {
                 result = new CategoryRepository();
                 break;
             case "adapter":
-                result = new MemoryAdapterCategoryRepository();
+                result = new memoryAdapterCategoryRepository();
                 break;
         }
 

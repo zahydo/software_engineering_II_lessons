@@ -1,14 +1,14 @@
 package co.edu.unicauca.openmarket.access.adapter;
 
-import co.edu.unicauca.openmarket.domain.Category;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryArrayService {
+import co.edu.unicauca.openmarket.domain.Category;
 
-  private List<Category> categories;
+public class categoryArrayService {
+    private List<Category> categories;
 
-  public CategoryArrayService() {
+  public categoryArrayService() {
     this.categories = new ArrayList<>();
   }
 
@@ -16,16 +16,19 @@ public class CategoryArrayService {
     return categories;
   }
 
-  public void setCategories(List<Category> pCategory) {
-    this.categories = pCategory;
+  public void setCategories(List<Category> pCategories) {
+    this.categories = pCategories;
   }
 
   public Category upsertCategory(Category category, boolean createNewOne) {
     Category categ = null;
     for (Category c : categories) {
-      if (category.getCategoryId() != null &&
-          c.getCategoryId().equals(category.getCategoryId())) {
+      if (
+        category.getCategoryId() != null &&
+        c.getCategoryId().equals(category.getCategoryId())
+      ) {
         c.setName(category.getName());
+
         categ = c;
         break;
       }

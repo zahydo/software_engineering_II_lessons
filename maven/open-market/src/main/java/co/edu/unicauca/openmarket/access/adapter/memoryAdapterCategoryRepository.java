@@ -1,12 +1,12 @@
 package co.edu.unicauca.openmarket.access.adapter;
 
-import co.edu.unicauca.openmarket.access.ICategoryRepository;
-import co.edu.unicauca.openmarket.domain.Category;
 import java.util.List;
 
-public class MemoryAdapterCategoryRepository implements ICategoryRepository {
+import co.edu.unicauca.openmarket.access.ICategoryRepository;
+import co.edu.unicauca.openmarket.domain.Category;
 
-  private CategoryArrayService categoryArrayService;
+public class MemoryAdapterCategoryRepository implements ICategoryRepository{
+    private CategoryArrayService categoryArrayService;
 
   public MemoryAdapterCategoryRepository() {
     categoryArrayService = new CategoryArrayService();
@@ -42,4 +42,5 @@ public class MemoryAdapterCategoryRepository implements ICategoryRepository {
   public List<Category> findAll() {
     return this.categoryArrayService.getCategories();
   }
+  
 }
