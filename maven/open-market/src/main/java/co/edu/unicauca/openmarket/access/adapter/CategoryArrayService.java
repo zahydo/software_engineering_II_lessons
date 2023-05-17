@@ -66,4 +66,12 @@ public class CategoryArrayService {
     }
     return categoriesByName;
   }
+
+  public List<Category> findAll(){
+    List<Category> categoriesByName = new ArrayList<>();
+    for (Category c : categories) {
+      categoriesByName.add(c);
+    }
+    return categoriesByName;
+  }
 }

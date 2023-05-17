@@ -1,19 +1,19 @@
 package co.edu.unicauca.openmarket.domain.service;
 
 import co.edu.unicauca.openmarket.access.Factory;
-import co.edu.unicauca.openmarket.domain.Category;
 import co.edu.unicauca.openmarket.access.ICategoryRepository;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import co.edu.unicauca.openmarket.domain.Category;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 public class CategoryServiceTest {
@@ -25,14 +25,14 @@ public class CategoryServiceTest {
         repository = Factory.getInstance().getRepositoryCategory("adapter");
         service = new CategoryService(repository);
     }
-
+    
     @BeforeEach
-    public void clean() {
-        for (Category c : repository.findAll()) {
-            repository.delete(c.getCategoryId());
+    public void clean(){
+        for(Category category : repository.findAll()){
+            repository.delete(category.getCategoryId());
         }
     }
-
+    
     @Test
     @DisplayName("Guardar una categoria")
     public void testSaveCategory() {
@@ -50,17 +50,17 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Buscar todas las categorias")
     public void testFindAllCategories() {
-        this.service.saveCategory("Test Category");
+        this.service.saveCategory("Test Category1");
+        this.service.saveCategory("Test Category2");
         List<Category> categories = this.service.findAllCategories();
-        assertEquals(1, categories.size());
+        assertEquals(2, categories.size());
     }
 
     @Test
     @DisplayName("Buscar una categoria por id")
     public void testFindCategoryById() {
         this.service.saveCategory("Test Category");
-        Category firstCategory = this.service.findAllCategories().get(0);
-        Category category = this.service.findCategoryById(firstCategory.getCategoryId());
+        Category category = this.service.findCategoryById(1L);
         assertNotNull(category);
         assertEquals(1L, category.getCategoryId().longValue());
     }
@@ -76,8 +76,7 @@ public class CategoryServiceTest {
     @DisplayName("Borrar una categoria")
     public void testDeleteCategory() {
         this.service.saveCategory("Test Category");
-        Category firsCategory = this.service.findAllCategories().get(0);
-        boolean result = this.service.deleteCategory(firsCategory.getCategoryId());
+        boolean result = this.service.deleteCategory(1L);
         assertTrue(result);
     }
 
@@ -91,12 +90,11 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Editar una categoria")
     public void testEditCategory() {
-        this.service.saveCategory("Test Category");
-        Category firsCategory = this.service.findAllCategories().get(0);
         Category category = new Category();
-        category.setCategoryId(firsCategory.getCategoryId());
+        this.service.saveCategory("Test Category");
+        category.setCategoryId(1L);
         category.setName("Test Category");
-        boolean result = this.service.editCategory(firsCategory.getCategoryId(), category);
+        boolean result = this.service.editCategory(1L, category);
         assertTrue(result);
     }
 
