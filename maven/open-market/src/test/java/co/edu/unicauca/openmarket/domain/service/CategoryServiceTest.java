@@ -1,5 +1,6 @@
 package co.edu.unicauca.openmarket.domain.service;
 
+import co.edu.unicauca.openmarket.access.Factory;
 import co.edu.unicauca.openmarket.access.ICategoryRepository;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -23,7 +24,7 @@ public class CategoryServiceTest {
     private ICategoryRepository repository;
 
     public CategoryServiceTest() {
-        repository = new MockCategoryRepository();
+        repository = Factory.getInstance().getRepositoryCategory("adapter");
         service = new CategoryService(repository);
     }
 
@@ -44,14 +45,17 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Buscar todas las categorias")
     public void testFindAllCategories() {
+        this.service.saveCategory("Test Category");
         List<Category> categories = this.service.findAllCategory();
-        assertEquals(2, categories.size());
+        assertEquals(1, categories.size());
     }
 
     @Test
     @DisplayName("Buscar una categoria por id")
     public void testFindCategoryById() {
-        Category category = this.service.findCategoryById(1L);
+        this.service.saveCategory("Test Category");
+        Category firstCategory = this.service.findAllCategory().get(0);
+        Category category = this.service.findCategoryById(firstCategory.getCategoryId());
         assertNotNull(category);
         assertEquals(1L, category.getCategoryId().longValue());
     }
@@ -66,7 +70,9 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Borrar una categoria")
     public void testDeleteCategory() {
-        boolean result = this.service.deleteCategory(1L);
+        this.service.saveCategory("Test Category");
+        Category firstCategory = this.service.findAllCategory().get(0);
+        boolean result = this.service.deleteCategory(firstCategory.getCategoryId());
         assertTrue(result);
     }
 
@@ -80,10 +86,12 @@ public class CategoryServiceTest {
     @Test
     @DisplayName("Editar una categoria")
     public void testEditCategory() {
+        this.service.saveCategory("Test Category");
+        Category firstCategory = this.service.findAllCategory().get(0);
         Category category = new Category();
-        category.setCategoryId(1L);
-        category.setName("Test Category");
-        boolean result = this.service.editCategory(1L, category);
+        category.setCategoryId(firstCategory.getCategoryId());
+        category.setName("Edit Test Category");
+        boolean result = this.service.editCategory(firstCategory.getCategoryId(), category);
         assertTrue(result);
     }
 
@@ -97,68 +105,5 @@ public class CategoryServiceTest {
         assertFalse(result);
     }
 
-    private class MockCategoryRepository implements ICategoryRepository {
-
-        private List<Category> categories;
-
-        public MockCategoryRepository() {
-            categories = new ArrayList<>();
-            Category category1 = new Category(1L, "Category 1");
-            category1.setCategoryId(1L);
-            category1.setName("Category 1");
-            Category category2 = new Category();
-            category2.setCategoryId(2L);
-            category2.setName("Category 2");
-            categories.add(category1);
-            categories.add(category2);
-        }
-
-        @Override
-        public boolean save(Category category) {
-            categories.add(category);
-            return true;
-        }
-
-        @Override
-        public List<Category> findAll() {
-            return categories;
-        }
-
-        @Override
-        public Category findById(Long id) {
-            for (Category category : categories) {
-                if (category.getCategoryId().equals(id)) {
-                    return category;
-                }
-            }
-            return null;
-        }
-
-        @Override
-        public boolean delete(Long id) {
-            Category category = findById(id);
-            if (category != null) {
-                categories.remove(category);
-                return true;
-            }
-            return false;
-        }
-
-        @Override
-        public boolean edit(Long id, Category category) {
-            Category categoryToUpdate = findById(id);
-            if (categoryToUpdate != null) {
-                categoryToUpdate.setName(category.getName());
-                return true;
-            }
-            return false;
-        }
-
-        @Override
-        public List<Category> findByName(String name) {
-            throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods,
-                                                                           // choose Tools | Templates.
-        }
-
-    }
+ 
 }
