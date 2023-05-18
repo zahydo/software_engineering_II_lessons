@@ -7,11 +7,4 @@ import java.util.List;
  *
  * @author Libardo, Julio
  */
-public interface IProductRepository extends IRepository<Product> {
-    boolean save(Product product);
-    boolean edit(Long id, Product product);
-    boolean delete(Long id);
-    Product findById(Long id);
-    List<Product> findByName(String name);
-    List<Product> findAll();
-}
+public interface IProductRepository extends IRepository<Product> {}
