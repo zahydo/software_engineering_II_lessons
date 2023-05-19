@@ -48,7 +48,7 @@
 - ### findById
 
 <div align="center">
-  <img src="img\findByIdCategory.png">
+  <img src="img\FindByIdCategory.png">
 </div>
 
 ## POST
