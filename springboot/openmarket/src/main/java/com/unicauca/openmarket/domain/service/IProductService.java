@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unicauca.openmarket.service;
+package com.unicauca.openmarket.domain.service;
 
 import com.unicauca.openmarket.domain.entity.Product;
 import java.util.List;

@@ -1,5 +1,5 @@
 
-package com.unicauca.openmarket.service;
+package com.unicauca.openmarket.domain.service;
 
 import com.unicauca.openmarket.access.dao.ICategoryRepository;
 import com.unicauca.openmarket.domain.entity.Category;

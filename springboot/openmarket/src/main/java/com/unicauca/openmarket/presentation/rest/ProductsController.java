@@ -6,7 +6,7 @@
 package com.unicauca.openmarket.presentation.rest;
 
 import com.unicauca.openmarket.domain.entity.Product;
-import com.unicauca.openmarket.service.IProductService;
+import com.unicauca.openmarket.domain.service.IProductService;
 import java.util.List;
 import static org.hibernate.criterion.Projections.id;
 import org.springframework.beans.factory.annotation.Autowired;

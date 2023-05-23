@@ -6,7 +6,7 @@
 package com.unicauca.openmarket.presentation.rest;
 
 import com.unicauca.openmarket.domain.entity.Category;
-import com.unicauca.openmarket.service.ICategoryService;
+import com.unicauca.openmarket.domain.service.ICategoryService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
