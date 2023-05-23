@@ -1,0 +1,7 @@
+INSERT INTO products (name, price, created_at) VALUES('PC', 1111, now());
+INSERT INTO products (name, price, created_at) VALUES('Cama', 2222, now());
+INSERT INTO products (name, price, created_at) VALUES('Camiseta', 333, now());
+
+INSERT INTO categories (name, created_at) VALUES('Electrodomesticos', now());
+INSERT INTO categories (name, created_at) VALUES('Muebles', now());
+INSERT INTO categories (name, created_at) VALUES('Ropa', now());
