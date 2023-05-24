@@ -1,41 +1,36 @@
 package co.unicauca.open_market.domain.entity;
 
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+
+import lombok.Data;
 
 @Entity
-public class Category {
+@Table(name = "categories")
+@Data 
+public class Category implements Serializable{
 
-    
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;
+
+    @Column(name = "name")
+    @NotNull(message = "Name is required")
     private String name;
 
-    public Category(Long categoryId, String name) {
-        this.categoryId = categoryId;
-        this.name = name;
-    }
-
-    public Category() {
-    }
-
-    public Long getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Column(name = "created_at")
+    @Temporal(TemporalType.DATE)
+    private Date createAt;
 
 }

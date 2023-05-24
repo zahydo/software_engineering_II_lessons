@@ -38,8 +38,11 @@ public class ProductServiceImpl implements IProductService {
     @Override
     @Transactional(readOnly = false)
     public Product update(Long id, Product product) {
-        product = find(id);
-        return this.repository.save(product);
+        Product updateProduct = find(id);
+        updateProduct.setName(product.getName());
+        updateProduct.setPrice(product.getPrice());
+        updateProduct.setDescription(product.getDescription());
+        return this.repository.save(updateProduct);
     }
     @Override
     @Transactional(readOnly = false)

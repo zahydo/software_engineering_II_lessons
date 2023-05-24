@@ -19,7 +19,6 @@ public class CategoryServiceImpl implements ICategoryService{
     @Transactional(readOnly=true)
     public List<Category> findAll() {
         return (List<Category>) this.repository.findAll();
-        
     }
 
     @Override
@@ -37,7 +36,8 @@ public class CategoryServiceImpl implements ICategoryService{
     @Override
     @Transactional(readOnly=false)
     public Category update(Long id, Category category) {
-        category = find(id);
+        Category updateCategory = find(id);
+        updateCategory.setName(category.getName());
         return this.repository.save(category);
     }
 
