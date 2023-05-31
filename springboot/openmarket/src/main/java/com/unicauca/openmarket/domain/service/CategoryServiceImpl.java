@@ -6,18 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.unicauca.openmarket.access.dao.ICategoryRepository;
+import com.unicauca.openmarket.access.repository.ICategoryRepository;
 import com.unicauca.openmarket.domain.entity.Category;
 
-@Service
-public class CategoryServiceImpl implements ICategoryService{
-
-    @Autowired
+@Service // Para que sea un componente de Spring
+public class CategoryServiceImpl implements ICategoryService {
+    @Autowired // Inyecta una dependencia
     private ICategoryRepository repository;
 
     /**
-     * Servicio para buscar todos los categorias 
-     * @return Listado de categorias
+     * Busca todas las categorias
+     * 
+     * @return Lista de categorias
      */
     @Override
     @Transactional(readOnly = true)
@@ -26,48 +26,53 @@ public class CategoryServiceImpl implements ICategoryService{
     }
 
     /**
-     * Busca un categoria por su Id
-     * @param CategoryId identificador del categoria
-     * @return Objeto de tipo categoria
-     */
-    @Override
-    public Category find(Long CategoryId) {
-        return repository.findById(CategoryId).orElse(null);
-    }
-
-    /**
-     * Crea un nuevo categoria
-     * @param Category categoria a crear en la base de datos
-     * @return Producto creado
+     * Busca una categoria por su id
+     * 
+     * @param id id de la categoria
+     * @return categoria
      */
     @Override
     @Transactional
-    public Category create(Category Category) {
-        return repository.save(Category);
+    public Category find(Long id) {
+        Category category = repository.findById(id).orElse(null);
+        return category;
     }
 
     /**
-     * Modifica o edita un categoria
-     * @param CategoryId identificador del categoria a modificar
-     * @param Category Categoria con los datos a editar
-     * @return Listado de Categorias
+     * Crea una categoria
+     * 
+     * @param category categoria a crear
+     * @return categoria creada
      */
     @Override
     @Transactional
-    public Category update(Long CategoryId, Category Category) {
-        Category catg = this.find(CategoryId);
-        catg.setName(Category.getName());
-        return repository.save(catg);
+    public Category create(Category category) {
+        return repository.save(category);
+    }
+
+    /**
+     * Actualiza una categoria
+     * 
+     * @param id       id de la categoria
+     * @param category categoria a actualizar
+     * @return categoria actualizada
+     */
+    @Override
+    @Transactional
+    public Category update(Long id, Category category) {
+        Category categoryUpdate = this.find(id);
+        categoryUpdate.setName(category.getName());
+        return repository.save(categoryUpdate);
     }
 
     /**
      * Elimina una categoria
-     * @param CategoryId identificador del categoria a eliminar
+     * 
+     * @param id id de la categoria
      */
     @Override
     @Transactional
-    public void delete(Long CategoryId) {
-        repository.deleteById(CategoryId);
+    public void delete(Long id) {
+        repository.deleteById(id);
     }
-
 }

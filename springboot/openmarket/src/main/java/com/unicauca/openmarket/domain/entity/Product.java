@@ -15,13 +15,13 @@ import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
-@Entity // This tells Hibernate to make a table out of this class
-@Table(name = "products") //This tells Hibernate to name the table as products and not Products
-@Data // Generate constructor, getters/setters and toString
+@Entity
+@Table(name = "products")
+@Data // Generare constructor, getters and setters and ToString methods
 public class Product implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-    private static final  Long serialVersionUID = 1L;
-    @Id
+    @Id // This makes the id as primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -29,13 +29,13 @@ public class Product implements Serializable {
     @NotNull(message = "El nombre es obligatorio")
     private String name;
 
-    @Column(name ="description")
+    @Column(name = "description")
     private String description;
 
     @Column(name = "price")
     @NotNull(message = "El precio es obligatorio")
     private Double price;
-    
+
     @Column(name = "created_at")
     @Temporal(TemporalType.DATE)
     private Date createdAt;

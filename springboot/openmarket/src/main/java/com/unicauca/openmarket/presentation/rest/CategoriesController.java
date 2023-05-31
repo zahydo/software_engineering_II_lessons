@@ -1,7 +1,5 @@
 package com.unicauca.openmarket.presentation.rest;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,77 +10,75 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unicauca.openmarket.domain.entity.Category;
+import java.util.List;
+
 import com.unicauca.openmarket.domain.service.ICategoryService;
+import com.unicauca.openmarket.domain.entity.Category;
 
 @RestController
 @RequestMapping("categories")
 public class CategoriesController {
-
     @Autowired
     private ICategoryService categoryService;
 
     /**
-     * Listar todas las categorias
-     * @return Listado de categorias en JSON
+     * Busca todas las categorias
+     * 
+     * @return Lista de categorias
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public List<Category> findAll(){
-        System.out.println("Category - findAll");
+    public List<Category> findAll() {
         return (List<Category>) categoryService.findAll();
     }
-    
+
     /**
-     * Listar un categoria por id
-     * @param id identificador del categoria 
-     * @return categoria en formato JSON
-     * @throws Exception
+     * Busca un categoria por su id
+     * 
+     * @param id id del categoria
+     * @return categoria
      */
     @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public Category findById(@PathVariable Long id){
-        System.out.println("Category - findById");
+    public Category findById(@PathVariable Long id) {
         return categoryService.find(id);
-    } 
+    }
 
     /**
-     * Crear un categoria
-     * @param category categoria
-     * @return categoria creado
+     * Crea un categoria
+     * 
+     * @param category categoria a crear
+     * @return categoria creada
      */
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
-    public Category create(@RequestBody Category category){
-        System.out.println("Category - create");
+    public Category create(@RequestBody Category category) {
         return categoryService.create(category);
     }
 
     /**
-     * Editar
-     * @param category categoria a editar
-     * @param id      identificador del categoria
-     * @return categoria editado
-     * @throws ResourceNotFoundException recurso no encontrado
-     * @throws Exception                 id no encontrado
+     * Actualiza un categoria
+     * 
+     * @param category categoria a actualizar
+     * @param id       id del categoria a actualizar
+     * @return categoria eliminada
      */
+
     @RequestMapping(value = "{id}", method = RequestMethod.PUT, produces = "application/json")
     @ResponseBody
-    public Category update(@RequestBody Category category, @PathVariable Long id){
-        System.out.println("Category - update");
+    public Category update(@RequestBody Category category, @PathVariable Long id) {
         return categoryService.update(id, category);
     }
 
     /**
-     * Eliminar
-     * @param id id del categoria
-     * @throws ResourceNotFoundException id no encontrado
+     * Elimina un categoria
+     * 
+     * @param id id del categoria a eliminar
      */
-    @RequestMapping (value = "{id}", method = RequestMethod.DELETE, produces = "application/json")
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE, produces = "application/json")
     @ResponseBody
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id){
-        System.out.println("Category - delete");
+    public void delete(@PathVariable Long id) {
         categoryService.delete(id);
     }
 }

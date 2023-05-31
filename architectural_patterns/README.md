@@ -15,5 +15,5 @@ The Model-View-Controller pattern is a popular pattern for designing user interf
 ## Microservices
 The Microservices pattern is a pattern for designing distributed systems that breaks down the system into smaller, independently deployable services. Each service is responsible for a specific set of functionalities and communicates with other services via APIs. This pattern allows for greater scalability, flexibility, and maintainability of the system.
 
-## Event-Driven Architecture
+## [Event-Driven Architecture](events.md)
 The Event-Driven Architecture pattern is a pattern for designing systems that respond to events, such as user input or data changes. The system is broken down into smaller components that communicate via events, allowing for greater scalability and flexibility. This pattern is commonly used in systems that need to handle large volumes of data and respond quickly to changes.
