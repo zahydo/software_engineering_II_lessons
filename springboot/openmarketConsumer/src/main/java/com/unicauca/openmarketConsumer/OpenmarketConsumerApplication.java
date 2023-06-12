@@ -1,8 +1,10 @@
 package com.unicauca.openmarketConsumer;
 
-import java.nio.channels.Channel;
-import java.nio.charset.StandardCharsets;
-import java.sql.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.DeliverCallback;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.unicauca.utils.Constants;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OpenmarketConsumerApplication {
 	private final static String QUEUE_NAME = "OM Products";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(Constants.HOST_NAME);
         Connection connection = factory.newConnection();
