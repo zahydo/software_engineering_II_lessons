@@ -12,7 +12,6 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.unicauca.openmarketProducer.utils.Constants;
 
 import com.unicauca.openmarketProducer.domain.entity.Product;
-import com.unicauca.openmarketProducer.utils.Constants;
 
 @Component
 public class OpenMarketRMQProducer {
