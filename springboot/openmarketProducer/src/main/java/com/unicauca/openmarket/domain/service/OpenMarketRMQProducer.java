@@ -4,6 +4,8 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.unicauca.openmarket.domain.entity.Product;
+
 @Component
 public class OpenMarketRMQProducer {
     private final RabbitTemplate rabbitTemplate;
@@ -15,8 +17,10 @@ public class OpenMarketRMQProducer {
         this.queue = queue;
     }
     
-    public void sendMessage(String message) {
+    public void sendMessage(String action, Product product) {
+        String message = action+","+product.getId()+","+product.getName()+","+product.getPrice();
         rabbitTemplate.convertAndSend(queue.getName(), message);
-        System.out.println("Mensaje enviado: " + message);
+        System.out.println("Mensaje enviado: Action:" +action+"| Product info: Id:"+product.getId()+
+                            ", Name:"+product.getName()+", Price:"+product.getPrice());
     }
 }
