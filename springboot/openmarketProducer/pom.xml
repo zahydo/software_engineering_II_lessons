@@ -15,7 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
-		<exec.mainClass>com.unicauca.openmarket.OpenmarketApplication</exec.mainClass>
+		<exec.mainClass>com.unicauca.openmarketProducer.OpenmarketProducerApplication</exec.mainClass>
 	</properties>
 	<dependencies>
 		<dependency>
