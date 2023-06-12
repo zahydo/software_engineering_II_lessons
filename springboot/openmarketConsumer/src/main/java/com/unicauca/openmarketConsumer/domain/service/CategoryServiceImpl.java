@@ -1,4 +1,4 @@
-package com.unicauca.openmarket.domain.service;
+package com.unicauca.openmarketConsumer.domain.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.unicauca.openmarket.access.repository.ICategoryRepository;
-import com.unicauca.openmarket.domain.entity.Category;
+import com.unicauca.openmarketConsumer.access.repository.ICategoryRepository;
+import com.unicauca.openmarketConsumer.domain.entity.Category;
 
 @Service // Para que sea un componente de Spring
 public class CategoryServiceImpl implements ICategoryService {

@@ -1,4 +1,4 @@
-package com.unicauca.openmarket.domain.service;
+package com.unicauca.openmarketProducer.domain.service;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;

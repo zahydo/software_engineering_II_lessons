@@ -1,4 +1,4 @@
-package com.unicauca.openmarket.domain.service;
+package com.unicauca.openmarketConsumer.domain.service;
 
 import java.io.Serializable;
 import java.util.List;

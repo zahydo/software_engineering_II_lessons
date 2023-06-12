@@ -1,8 +1,8 @@
-package com.unicauca.openmarket.access.repository;
+package com.unicauca.openmarketConsumer.access.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.unicauca.openmarket.domain.entity.Category;
+import com.unicauca.openmarketConsumer.domain.entity.Category;
 
 public interface ICategoryRepository extends CrudRepository<Category, Long> {
 

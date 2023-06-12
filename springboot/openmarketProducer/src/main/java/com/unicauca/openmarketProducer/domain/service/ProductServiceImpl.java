@@ -1,4 +1,4 @@
-package com.unicauca.openmarket.domain.service;
+package com.unicauca.openmarketProducer.domain.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.unicauca.openmarket.access.repository.IProductRepository;
-import com.unicauca.openmarket.domain.entity.Product;
+import com.unicauca.openmarketProducer.access.repository.IProductRepository;
+import com.unicauca.openmarketProducer.domain.entity.Product;
 
 @Service // Para que sea un componente de Spring
 public class ProductServiceImpl implements IProductService {

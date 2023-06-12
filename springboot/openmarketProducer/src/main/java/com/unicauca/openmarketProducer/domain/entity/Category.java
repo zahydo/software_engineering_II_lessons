@@ -1,4 +1,4 @@
-package com.unicauca.openmarket.domain.entity;
+package com.unicauca.openmarketProducer.domain.entity;
 
 import java.io.Serializable;
 

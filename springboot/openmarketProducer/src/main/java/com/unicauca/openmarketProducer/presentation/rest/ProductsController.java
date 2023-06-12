@@ -1,4 +1,4 @@
-package com.unicauca.openmarket.presentation.rest;
+package com.unicauca.openmarketProducer.presentation.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import com.unicauca.openmarket.domain.service.IProductService;
-import com.unicauca.openmarket.domain.entity.Product;
+import com.unicauca.openmarketProducer.domain.service.IProductService;
+import com.unicauca.openmarketProducer.domain.entity.Product;
 
 @RestController
 @RequestMapping("products")

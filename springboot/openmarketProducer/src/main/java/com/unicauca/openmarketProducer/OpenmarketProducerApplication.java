@@ -1,19 +1,19 @@
-package com.unicauca.openmarket;
+package com.unicauca.openmarketProducer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.unicauca.openmarket.domain.service.OpenMarketRMQProducer;
+import com.unicauca.openmarketProducer.domain.service.OpenMarketRMQProducer;
 
 @SpringBootApplication
-public class OpenmarketApplication {
+public class OpenmarketProducerApplication {
 	private final OpenMarketRMQProducer OMProducer;
 	private final OpenMarketRMQConfig OMConfig;
 	private final static String QUEUE_NAME = "OM Products";
 
 	@Autowired
-    public OpenmarketApplication(OpenMarketRMQProducer OMProducer) {
+    public OpenmarketProducerApplication(OpenMarketRMQProducer OMProducer) {
         this.OMProducer = OMProducer;
     }
 
