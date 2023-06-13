@@ -11,6 +11,7 @@ import com.unicauca.openmarketConsumer.domain.entity.Product;
 
 @Service // Para que sea un componente de Spring
 public class ProductServiceImpl implements IProductService {
+    
     @Autowired // Inyecta una dependencia
     private IProductRepository repository;
 

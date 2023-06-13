@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class OpenmarketConsumerApplication {
-	private final static String QUEUE_NAME = "OM Products";
+	private final static String QUEUE_NAME = "OMProducts";
 
 	public static void main(String[] args) throws Exception{
 		ConnectionFactory factory = new ConnectionFactory();
@@ -26,11 +26,9 @@ public class OpenmarketConsumerApplication {
             String message = new String(delivery.getBody(), "UTF-8");
             System.out.println(" [x] Received '" + message + "'");
             System.out.println(" Processing message...");
-            
         };
         channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
         });
 		SpringApplication.run(OpenmarketConsumerApplication.class, args);
 	}
-
 }
