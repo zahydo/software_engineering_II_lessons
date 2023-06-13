@@ -11,7 +11,6 @@ import com.unicauca.openmarketConsumer.domain.entity.ActionProducts;
 
 @Service
 public class ActionProductsServiceImpl implements IActionProductsService{
-
     @Autowired
     private IActionProductsRepository repository;
 

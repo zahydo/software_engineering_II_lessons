@@ -10,7 +10,7 @@ import com.rabbitmq.client.DeliverCallback;
 
 public class RabbitMQConsumer {
     
-    private final static String QUEUE_NAME = "OMProducts";
+    private final static String EXCHANGE_NAME = "OMProducts";
     private EventLogService eventService;
     
     public RabbitMQConsumer(){
@@ -24,10 +24,11 @@ public class RabbitMQConsumer {
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
-        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+        channel.exchangeDeclare(EXCHANGE_NAME, Constants.EXCHANGE_TYPE);
+        String queueName = channel.queueDeclare().getQueue();
+        channel.queueBind(queueName, EXCHANGE_NAME, "");
 
-        channel.basicQos(1);
+        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), "UTF-8");
@@ -35,7 +36,7 @@ public class RabbitMQConsumer {
             System.out.println(" Processing message...");
             this.eventService.addRow(this.eventService.proccessMessage(message));
         };
-        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
+        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {
         });
     }
 }

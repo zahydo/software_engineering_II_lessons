@@ -14,7 +14,7 @@ import com.unicauca.openmarketProducer.domain.entity.Product;
 
 @Component
 public class OpenMarketRMQProducer {
-    private final static String QUEUE_NAME = "OMProducts";
+    private final static String EXCHANGE_NAME = "OMProducts";
     ConnectionFactory factory;
     @Autowired
     public OpenMarketRMQProducer() {
@@ -28,7 +28,7 @@ public class OpenMarketRMQProducer {
 				Channel channel = connection.createChannel();
 			) 
 		{
-            channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+            channel.exchangeDeclare(EXCHANGE_NAME, Constants.EXCHANGE_TYPE);
 
 			String message = action+","+product.getId()+","+product.getName()+","+product.getPrice(); 
 			System.out.println("Informacion a enviar: Action:" +action+"| Product info: Id:"+product.getId()+
@@ -38,8 +38,7 @@ public class OpenMarketRMQProducer {
 				message = "default message";
 			} 
 
-            channel.basicPublish("", QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN,
-                    message.getBytes(StandardCharsets.UTF_8));
+            channel.basicPublish(EXCHANGE_NAME,"",null,message.getBytes(StandardCharsets.UTF_8));
 
             System.out.println(" [x] Sent '" + message + "'");
         }

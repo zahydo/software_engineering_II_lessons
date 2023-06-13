@@ -1,17 +1,18 @@
 package com.unicauca.openmarketConsumer.domain.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.unicauca.openmarketConsumer.domain.entity.ActionProducts;
 
+@Service
 public class ProccessMessageService {
-    
-    @Autowired
+
     private IActionProductsService actionsService;
 
     private ActionProducts actProduct;
 
-    public ProccessMessageService(){
+    public ProccessMessageService(IActionProductsService actionsService){
+        this.actionsService = actionsService;
     }
        
     public void procesarMensaje (String mensaje){
