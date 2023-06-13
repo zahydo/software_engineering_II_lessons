@@ -4,6 +4,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
+import com.unicauca.openmarketConsumer.domain.service.ProccessMessageService;
 import com.unicauca.utils.Constants;
 
 import org.springframework.boot.SpringApplication;
@@ -12,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class OpenmarketConsumerApplication {
 	private final static String QUEUE_NAME = "OMProducts";
-
+        private static ProccessMessageService proccessMessage = new ProccessMessageService();
 	public static void main(String[] args) throws Exception{
 		ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(Constants.HOST_NAME);
@@ -29,6 +30,7 @@ public class OpenmarketConsumerApplication {
             String message = new String(delivery.getBody(), "UTF-8");
             System.out.println(" [x] Received '" + message + "'");
             System.out.println(" Processing message...");
+            //proccessMessage.procesarMensaje(message);
             channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
         };
         channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {

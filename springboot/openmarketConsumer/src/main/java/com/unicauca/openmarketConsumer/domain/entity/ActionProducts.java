@@ -17,6 +17,13 @@ import lombok.Data;
 @Data
 public class ActionProducts implements Serializable{
     
+    public ActionProducts(Long id, String name, Double price, String action) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.action = action;
+    }
+    
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,5 +39,8 @@ public class ActionProducts implements Serializable{
     @Column(name = "action")
     @NotNull(message = "La acción es obligatoria")
     private String action;
+
+    
+    
     
 }
