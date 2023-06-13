@@ -13,11 +13,11 @@ import javax.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "actionProducts")
 @Data
-public class Category implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
+public class ActionProducts implements Serializable{
+    
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -25,4 +25,12 @@ public class Category implements Serializable {
     @NotNull(message = "El nombre es obligatorio")
     private String name;
 
+    @Column(name = "price")
+    @NotNull(message = "El precio es obligatorio")
+    private Double price;
+
+    @Column(name = "action")
+    @NotNull(message = "La acción es obligatoria")
+    private String action;
+    
 }
