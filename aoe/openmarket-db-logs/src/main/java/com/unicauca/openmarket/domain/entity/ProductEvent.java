@@ -16,7 +16,7 @@ import lombok.Data;
 @Entity
 @Table(name = "products")
 @Data // Generare constructor, getters and setters and ToString methods
-public class ProductLog implements Serializable {
+public class ProductEvent implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id // This makes the id as primary key

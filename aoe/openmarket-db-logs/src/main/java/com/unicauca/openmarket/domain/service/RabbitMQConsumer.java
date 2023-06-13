@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.unicauca.openmarket.config.RabbitMQConfig;
-import com.unicauca.openmarket.domain.entity.ProductLog;
+import com.unicauca.openmarket.domain.entity.ProductEvent;
 
 import org.springframework.amqp.AmqpRejectAndDontRequeueException;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -12,12 +12,12 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 @Component
 public class RabbitMQConsumer {
     @Autowired
-    IProductLogService productLogService;
+    IProductEventService productLogService;
 
     @RabbitListener(queues = RabbitMQConfig.DB_LOG_QUEUE)
     public void consumeMessageFromQueue(String message) {
         System.out.println("Message recieved from queue : " + message);
-        ProductLog product = new ProductLog();
+        ProductEvent product = new ProductEvent();
         String[] parts = message.split(",");
         if (parts.length == 4) {
             try {

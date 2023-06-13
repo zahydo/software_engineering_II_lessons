@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import com.unicauca.openmarket.domain.service.IProductLogService;
-import com.unicauca.openmarket.domain.entity.ProductLog;
+import com.unicauca.openmarket.domain.service.IProductEventService;
+import com.unicauca.openmarket.domain.entity.ProductEvent;
 
 @RestController
 @RequestMapping("productlogs")
 public class ProductsController {
     @Autowired
-    private IProductLogService productService;
+    private IProductEventService productService;
 
     /**
      * Busca todos los productos
@@ -28,8 +28,8 @@ public class ProductsController {
      */
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public List<ProductLog> findAll() {
-        return (List<ProductLog>) productService.findAll();
+    public List<ProductEvent> findAll() {
+        return (List<ProductEvent>) productService.findAll();
     }
 
     /**
@@ -40,7 +40,7 @@ public class ProductsController {
      */
     @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public ProductLog findById(@PathVariable Long id) {
+    public ProductEvent findById(@PathVariable Long id) {
         return productService.find(id);
     }
 
@@ -52,7 +52,7 @@ public class ProductsController {
      */
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
-    public ProductLog create(@RequestBody ProductLog product) {
+    public ProductEvent create(@RequestBody ProductEvent product) {
         return productService.create(product);
     }
 
@@ -66,7 +66,7 @@ public class ProductsController {
 
     @RequestMapping(value = "{id}", method = RequestMethod.PUT, produces = "application/json")
     @ResponseBody
-    public ProductLog update(@RequestBody ProductLog product, @PathVariable Long id) {
+    public ProductEvent update(@RequestBody ProductEvent product, @PathVariable Long id) {
         return productService.update(id, product);
     }
 
