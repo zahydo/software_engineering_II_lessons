@@ -12,7 +12,6 @@ public class CsvEventLogRepository implements IEventLogRepository {
         try (FileOutputStream fos = new FileOutputStream(fileName, true)) {
             byte[] contentBytes = row.getBytes();
             fos.write(contentBytes);
-            System.out.println("Saved an event.");
         } catch (IOException e) {
             System.err.println("An error occurred: " + e.getMessage());
         }
