@@ -1,8 +1,6 @@
 package com.unicauca.openmarketProducer.domain.service;
 import java.nio.charset.StandardCharsets;
 
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +13,7 @@ import com.unicauca.openmarketProducer.domain.entity.Product;
 
 @Component
 public class OpenMarketRMQProducer {
-    private final static String QUEUE_NAME = "OM Products";
+    private final static String QUEUE_NAME = "OMProducts";
     ConnectionFactory factory;
     @Autowired
     public OpenMarketRMQProducer() {
@@ -42,7 +40,6 @@ public class OpenMarketRMQProducer {
                     message.getBytes(StandardCharsets.UTF_8));
 
             System.out.println(" [x] Sent '" + message + "'");
-			
         }
     }
 }

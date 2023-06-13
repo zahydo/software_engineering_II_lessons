@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import com.unicauca.openmarketProducer.domain.service.IProductService;
+import com.unicauca.openmarketProducer.domain.service.OpenMarketRMQProducer;
 import com.unicauca.openmarketProducer.domain.entity.Product;
 
 @RestController
@@ -20,6 +21,7 @@ import com.unicauca.openmarketProducer.domain.entity.Product;
 public class ProductsController {
     @Autowired
     private IProductService productService;
+    private OpenMarketRMQProducer productProducer = new OpenMarketRMQProducer();
 
     /**
      * Busca todos los productos
@@ -53,6 +55,11 @@ public class ProductsController {
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
     public Product create(@RequestBody Product product) {
+        try {
+            productProducer.sendMessage("POST", product);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return productService.create(product);
     }
 
@@ -67,6 +74,13 @@ public class ProductsController {
     @RequestMapping(value = "{id}", method = RequestMethod.PUT, produces = "application/json")
     @ResponseBody
     public Product update(@RequestBody Product product, @PathVariable Long id) {
+
+        Product Product = findById(id);
+        try {
+            productProducer.sendMessage("PUT", Product);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return productService.update(id, product);
     }
 
@@ -79,6 +93,12 @@ public class ProductsController {
     @ResponseBody
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
+        Product product = findById(id);
+        try {
+            productProducer.sendMessage("DELETE", product);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         productService.delete(id);
     }
 }
