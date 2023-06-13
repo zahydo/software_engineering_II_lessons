@@ -16,16 +16,20 @@ public class OpenmarketConsumerApplication {
 	public static void main(String[] args) throws Exception{
 		ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(Constants.HOST_NAME);
+
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
+        channel.basicQos(1);
+
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), "UTF-8");
             System.out.println(" [x] Received '" + message + "'");
             System.out.println(" Processing message...");
+            channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
         };
         channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
         });

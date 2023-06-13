@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.MessageProperties;
 import com.unicauca.openmarketProducer.utils.Constants;
 
 import com.unicauca.openmarketProducer.domain.entity.Product;
@@ -28,6 +29,7 @@ public class OpenMarketRMQProducer {
 			) 
 		{
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+
 			String message = action+","+product.getId()+","+product.getName()+","+product.getPrice(); 
 			System.out.println("Informacion a enviar: Action:" +action+"| Product info: Id:"+product.getId()+
                             ", Name:"+product.getName()+", Price:"+product.getPrice());
@@ -36,7 +38,7 @@ public class OpenMarketRMQProducer {
 				message = "default message";
 			} 
 
-            channel.basicPublish("", QUEUE_NAME, null,
+            channel.basicPublish("", QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN,
                     message.getBytes(StandardCharsets.UTF_8));
 
             System.out.println(" [x] Sent '" + message + "'");

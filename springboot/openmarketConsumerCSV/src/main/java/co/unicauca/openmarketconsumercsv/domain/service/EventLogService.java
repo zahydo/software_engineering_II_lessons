@@ -3,6 +3,8 @@ package co.unicauca.openmarketconsumercsv.domain.service;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 
 
 public class EventLogService implements IEventLogService {
@@ -10,7 +12,7 @@ public class EventLogService implements IEventLogService {
     private File archivo;
     
     public EventLogService(){
-        this.archivo = new File("actionsProductsCSV");
+        this.archivo = new File("actionsProductsCSV.csv");
         createFile();
     }
     
@@ -34,26 +36,28 @@ public class EventLogService implements IEventLogService {
         if(message.length() <= 0){
             return null;
         }
-        return message.split(message);
+        return message.split(",");
     }
 
     @Override
-    public int addRow(String messageProccessed) {
-        int countAddedRows = 0;
+    public void addRow(String[] messageProccessed) {
         try{
             // Escribir datos en el archivo CSV
+            String[] valor = messageProccessed;
             FileWriter escritor = new FileWriter(archivo, true); // El segundo parámetro 'true' indica que se agregará al final del archivo existente
             PrintWriter pw = new PrintWriter(escritor);
+            CSVFormat csvFormat = CSVFormat.DEFAULT.withHeader("ACTION", "ID", "PRODUCT NAME", "PRICE");
+            CSVPrinter csvPrinter = new CSVPrinter(pw, csvFormat);
 
             // Escribir los datos en el archivo CSV
-            pw.println(messageProccessed);
+            csvPrinter.printRecord(messageProccessed[0],messageProccessed[1],messageProccessed[2],messageProccessed[3]);
 
-            pw.close();
+            csvPrinter.flush();
+            csvPrinter.close();
             System.out.println("¡Datos guardados correctamente en el archivo CSV!"); 
         }catch(Exception e){
             System.out.println("Error: "+e.getMessage());
         }
-        return countAddedRows;
     }
 
 }
