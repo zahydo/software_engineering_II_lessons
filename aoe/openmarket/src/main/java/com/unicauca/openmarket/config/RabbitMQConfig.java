@@ -1,9 +1,6 @@
 package com.unicauca.openmarket.config;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.FanoutExchange;
-import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.MessageConverter;
@@ -13,33 +10,12 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitMQConfig {
-    public static final String CSV_LOG_QUEUE = "csv-log-queue";
-    public static final String DB_LOG_QUEUE = "database-log-queue";
+
     public static final String PRODUCT_EVENTS_EXCHANGE = "product-events-exchange";
-
-    @Bean
-    public Queue csv_log_queue() {
-        return new Queue(CSV_LOG_QUEUE);
-    }
-
-    @Bean
-    public Queue db_log_queue() {
-        return new Queue(DB_LOG_QUEUE);
-    }
 
     @Bean
     public FanoutExchange product_events_exchange() {
         return new FanoutExchange(PRODUCT_EVENTS_EXCHANGE);
-    }
-
-    @Bean
-    public Binding binding1(Queue csv_log_queue, FanoutExchange product_events_exchange) {
-        return BindingBuilder.bind(csv_log_queue).to(product_events_exchange);
-    }
-
-    @Bean
-    public Binding binding2(Queue db_log_queue, FanoutExchange product_events_exchange) {
-        return BindingBuilder.bind(db_log_queue).to(product_events_exchange);
     }
 
     @Bean
