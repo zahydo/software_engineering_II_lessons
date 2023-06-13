@@ -3,10 +3,6 @@ package co.unicauca.openmarketconsumercsv.domain.service;
 
 
 import Utils.Constants;
-import java.io.IOException;
-import java.nio.channels.Channel;
-import java.sql.Connection;
-import java.util.concurrent.TimeoutException;
 
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
