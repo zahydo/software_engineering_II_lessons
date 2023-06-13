@@ -10,19 +10,28 @@ public class ProccessMessageService {
     private IActionProductsService actProductService;
 
     String action = "";
-    ActionProducts actProducts = new ActionProducts();
-    String message = action + "," +actProducts.getId() + "," 
-                                  +actProducts.getName()+"," 
-                                  +actProducts.getPrice();
+    ActionProducts actProduct = new ActionProducts();
+    
+    
+       
+    public void procesarMensaje (String mensaje){
 
-    if(action.equals("POST")){
-        actProductService.create(actProducts);
-    }else if (action.equals("GET")){
-        actProductService.findAll();
-    }else if (action.equals("PUT")){
-        actProductService.update(actProducts.getId(), actProducts);
-    }else if (action.equals("DELETE")){
-        actProductService.delete(actProducts.getId());
+        String [] split = mensaje.split(",");
+        
+        switch (split[0]) {
+        case "POST":
+            actProductService.create(actProduct);
+            
+            break;
+        case "PUT":
+            
+            break;
+        case "DELETE":
+            break;
+            
+        default:
+            break;
+    }
     }
 }
 
