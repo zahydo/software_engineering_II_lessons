@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package co.unicauca.open_market_consumer_csv.infra.messaging;
 
 import co.unicauca.open_market_consumer_csv.domain.service.ConsumerService;
@@ -12,7 +8,7 @@ import java.nio.charset.StandardCharsets;
 
 public class QueueConsumer {
 
-    private static final String QUEUE_NAME = "open-market-products";
+    private static final String QUEUE_NAME = "open-market-products-csv";
     private final ConsumerService consumerService;
 
     public QueueConsumer(ConsumerService consumerService) {

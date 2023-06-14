@@ -39,7 +39,7 @@ public class ProductServiceImpl implements IProductService {
     @Transactional(readOnly = false)
     public Product create(Product product) {
         Product newProduct = this.repository.save(product);
-        rabbitTemplate.convertAndSend("open-market-products", (String)createMessage(newProduct));
+        rabbitTemplate.convertAndSend("open-market-products-exchange", "", (String)createMessage(newProduct));
         return newProduct;
     }
 
@@ -49,8 +49,7 @@ public class ProductServiceImpl implements IProductService {
         Product updateProduct = find(id);
         updateProduct.setName(product.getName());
         updateProduct.setPrice(product.getPrice());
-        updateProduct.setDescription(product.getDescription());
-        rabbitTemplate.convertAndSend("open-market-products", (String)updateMessage(updateProduct));
+        rabbitTemplate.convertAndSend("open-market-products-exchange", "", (String)updateMessage(updateProduct));
 
         return this.repository.save(updateProduct);
     }
@@ -60,7 +59,7 @@ public class ProductServiceImpl implements IProductService {
     public Product delete(Long id) {
         Product deleteProduct = find(id);
         this.repository.delete(deleteProduct);
-        rabbitTemplate.convertAndSend("open-market-products", (String)deleteMessage(deleteProduct));
+        rabbitTemplate.convertAndSend("open-market-products-exchange", "", (String)deleteMessage(deleteProduct));
 
         return deleteProduct;
     }

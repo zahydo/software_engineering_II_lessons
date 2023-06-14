@@ -4,7 +4,7 @@
  */
 package co.unicauca.open_market_consumer_csv.domain.service;
 
-import co.unicauca.open_market_consumer_csv.domain.service.persistence.CsvWriter;
+import co.unicauca.open_market_consumer_csv.domain.persistence.CsvWriter;
 
 /**
  *
