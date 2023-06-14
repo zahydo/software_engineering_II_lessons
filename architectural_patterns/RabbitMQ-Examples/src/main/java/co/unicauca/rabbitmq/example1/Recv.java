@@ -12,8 +12,11 @@ public class Recv {
     private final static String QUEUE_NAME = "hello";
 
     public static void main(String[] argv) throws Exception {
+        //cremos una fabrica
         ConnectionFactory factory = new ConnectionFactory();
+        //le setiamos el host
         factory.setHost(Constants.HOST_NAME);
+        //con esa conexion declarmos el canall y una cola llamda hello
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
