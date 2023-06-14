@@ -46,7 +46,7 @@ public class EventLogService implements IEventLogService {
             String[] valor = messageProccessed;
             FileWriter escritor = new FileWriter(archivo, true); // El segundo parámetro 'true' indica que se agregará al final del archivo existente
             PrintWriter pw = new PrintWriter(escritor);
-            CSVFormat csvFormat = CSVFormat.DEFAULT.withHeader("ACTION", "ID", "PRODUCT NAME", "PRICE");
+            CSVFormat csvFormat = CSVFormat.DEFAULT.withHeader("");
             CSVPrinter csvPrinter = new CSVPrinter(pw, csvFormat);
 
             // Escribir los datos en el archivo CSV
