@@ -1,4 +1,4 @@
-## Diagramas de componentes
+## Componets Diagram 
 
 This System consists of the following components.
 
@@ -8,7 +8,7 @@ This System consists of the following components.
 
 The overall structural approach employed is Microservices, while additionally, the event-driven architectural design was implemented to manage the Publisher/Subscriber model.
 
-## Diagrama de secuencia Producer
+## Producer sequence Diagram
 
 this component works as a CRUD server for OpenMarket. It also publishes 
 events in a RabbitMQ Fanout.
@@ -17,7 +17,7 @@ events in a RabbitMQ Fanout.
     <img src="./diagramas-svg/Diagrama%20de%20Secuencia-Publisher.drawio.svg"/>
 </p>
 
-## Diagrama de secuencia ConsumerDb
+## ConsumerDb sequence Diagram
 
 This component receives the message from RabbitMQ that contains the product object 
 with the realized action and stores it in the database.
@@ -26,7 +26,7 @@ with the realized action and stores it in the database.
     <img src="./diagramas-svg/DiagramadeSecuenciaConsumer.svg"/>
 </p>
 
-## Diagrama de secuencia ConsumerCsv
+## ConsumerCsv sequence Diagram
 
  This component receives the message from RabbitMQ that contains a petition, which will then be stored in a CSV file.
 

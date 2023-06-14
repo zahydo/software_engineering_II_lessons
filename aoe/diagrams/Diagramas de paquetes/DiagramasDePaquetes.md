@@ -1,7 +1,6 @@
-# Diagramas de Paquetes
+# packages Diagrams
 
-
-## Diagramas de Paquete Producer
+## Producer Package Diagram
 
 <p align="center">
     <img src="./diagramas-svg/paqueteProducer.svg"/>
@@ -9,14 +8,14 @@
 
 
 
-## Diagramas de Paquete ConsumerDb 
+## ConsumerDb Package Diagram
 
 
 <p align="center">
     <img src="./diagramas-svg/paqueteConsumerdb-v2.svg"/>
 </p>
 
-## Diagramas de Paquete ConsumerCsv
+## ConsumerCsv Package Diagram
 
 <p align="center">
     <img src="./diagramas-svg/paqueteConsumercsv.svg"/>
