@@ -13,13 +13,13 @@
 ##Diagrama de secuencia ConsumerDb
 
 <p align="center">
-    <img src="./DiagramadeSecuenciaConsumer.svg"/>
+    <img src="./diagramas-svg/DiagramadeSecuenciaConsumer.svg"/>
 </p>
 
 ##Diagrama de secuencia ConsumerCsv
 
 <p align="center">
-    <img src="./DiagramadeSecuenciaConsumercsv.svg"/>
+    <img src="./diagramas-svg/DiagramadeSecuenciaConsumercsv.svg"/>
 </p>
 
 
