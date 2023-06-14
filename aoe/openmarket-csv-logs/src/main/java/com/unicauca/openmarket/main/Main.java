@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
         IEventLogRepository eventLogRepository = new CsvEventLogRepository();
         IEventLogService eventLogService = new CsvEventLogService(eventLogRepository);
+        eventLogService.appendRow("ID,Nombre,Precio,Accion");
         RabbitMQConsumer consumer;
         try {
             consumer = new RabbitMQConsumer(eventLogService, "localhost", 5672, "guest", "guest");
