@@ -10,7 +10,7 @@
 
 
 <p align="center">
-    <img src="./diagramas-svg/paqueteConsumerdb.svg"/>
+    <img src="./diagramas-svg/paqueteConsumerdb-v2.svg"/>
 </p>
 
 ##Diagramas de Paquete ConsumerCsv
