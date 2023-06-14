@@ -39,7 +39,7 @@ public class OpenMarketRMQProducer {
 			} 
 
             channel.basicPublish(EXCHANGE_NAME,"",null,message.getBytes(StandardCharsets.UTF_8));
-
+            
             System.out.println(" [x] Sent '" + message + "'");
         }
     }
