@@ -1,0 +1,76 @@
+version: "3.9"
+services:
+  rabbitmq:
+    container_name: rabbitmq-openmarket
+    restart: always
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - queue-volume:/var/lib/rabbitmq
+  mysql-db:
+    image: mysql
+    container_name: openmarket-app-db-container
+    restart: always
+    env_file:
+      - ./env/database.env
+    volumes:
+      - data-volume:/var/lib/mysql
+  api:
+    build: ./api
+    container_name: openmarket-app-api-container
+    restart: always
+    env_file:
+      - ./env/api.env
+    depends_on:
+      - mysql-db
+    ports:
+      - "8084:8084"
+  producerproduct:
+    build: ./producerproduct
+    container_name: openmarket-app-producerproduct-container
+    restart: always
+    env_file:
+      - ./env/producerproduct.env
+    depends_on:
+      - rabbitmq
+    ports:
+      - "8080:8080"
+  producercategory:
+    build: ./producercategory
+    container_name: openmarket-app-producercategory-container
+    restart: always
+    env_file:
+      - ./env/producercategory.env
+    depends_on:
+      - rabbitmq
+    ports:
+      - "8082:8082"
+  consumerproduct:
+    build: ./consumerproduct
+    container_name: openmarket-app-consumerproduct-container
+    restart: always
+    env_file:
+      - ./env/consumerproduct.env
+    depends_on:
+      - rabbitmq
+      - api
+      - producerproduct
+    ports:
+      - "8081:8081"
+  consumercategory:
+    build: ./consumercategory
+    container_name: openmarket-app-consumercategory-container
+    restart: always
+    env_file:
+      - ./env/consumercategory.env
+    depends_on:
+      - rabbitmq
+      - api
+      - producercategory
+    ports:
+      - "8083:8083"
+volumes:
+  data-volume:
+  queue-volume:
